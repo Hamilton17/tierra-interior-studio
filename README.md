@@ -12,20 +12,13 @@
 
 ## 📸 Vista previa
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  🌍  GLOBO HUB          │  🗺️  CAPAS GEOLÓGICAS                 │
-│  Globo 3D interactivo   │  Corte transversal + datos por capa   │
-│  con texturas NASA,     │  (Corteza → Núcleo interno)           │
-│  OrbitControls y        │                                       │
-│  marcadores de biomas   │  🌿  ECOSISTEMAS + CLIMA REAL         │
-│                         │  Globo clicable · Open-Meteo API      │
-├─────────────────────────┴───────────────────────────────────────┤
-│  🎮  JUEGO DE HÁBITATS  │  📚  BIBLIOTECA   │  📓  CUADERNO     │
-│  20 animales GLB 3D     │  Artículos JSON   │  localStorage     │
-│  drag & drop · 5 niveles│  quizzes · videos │  notas personales │
-└─────────────────────────┴───────────────────────────────────────┘
-```
+| Globo Interactivo | Explorador de Capas | Biomas y Ecosistemas |
+|:-:|:-:|:-:|
+| ![Globo 3D](docs/screenshots/globe-hub.png) | ![Capas](docs/screenshots/capas.png) | ![Ecosistemas](docs/screenshots/ecosistemas.png) |
+
+| Juego de Hábitats | Biblioteca | Cuaderno |
+|:-:|:-:|:-:|
+| ![Juego](docs/screenshots/juego.png) | ![Biblioteca](docs/screenshots/biblioteca.png) | ![Cuaderno](docs/screenshots/cuaderno.png) |
 
 ---
 
