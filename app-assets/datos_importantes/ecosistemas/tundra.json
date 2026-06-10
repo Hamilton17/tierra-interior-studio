@@ -1,0 +1,105 @@
+{
+  "id": "tundra",
+
+  "fichas": [
+    {
+      "ico": "🌡️",
+      "titulo": "Temperatura media",
+      "valor": "-40 a 10",
+      "unidad": "°C",
+      "contexto": "Solo 2–3 meses superan los 0 °C. La 'capa activa' que se descongela en verano apenas alcanza 30–100 cm de profundidad antes de topar con el permafrost permanente."
+    },
+    {
+      "ico": "💧",
+      "titulo": "Precipitación anual",
+      "valor": "<250",
+      "unidad": "mm/año",
+      "contexto": "Técnicamente un desierto polar. El agua disponible es mínima porque la mayor parte está congelada en el permafrost, no accesible para las plantas."
+    },
+    {
+      "ico": "🌍",
+      "titulo": "Extensión global",
+      "valor": "~8",
+      "unidad": "mill. km²",
+      "contexto": "Cubre el 8% de la superficie terrestre. Se encuentra principalmente en Canadá, Alaska, Rusia y Escandinavia, entre la taiga y la zona de hielos permanentes."
+    },
+    {
+      "ico": "❄️",
+      "titulo": "Permafrost continuo",
+      "valor": "90",
+      "unidad": "% del suelo",
+      "contexto": "El suelo congelado puede alcanzar 500 m de profundidad en Siberia. Almacena restos de mamuts, bacterias de 30,000 años y enormes cantidades de metano."
+    },
+    {
+      "ico": "☀️",
+      "titulo": "Sol de medianoche",
+      "valor": "24 h",
+      "unidad": "luz en verano",
+      "contexto": "En verano, el sol no se pone. Esto dispara un 'sprint biológico': flores, insectos y aves aprovechan la corta temporada con una actividad frenética."
+    },
+    {
+      "ico": "🌿",
+      "titulo": "Diversidad vegetal",
+      "valor": "~1,700",
+      "unidad": "spp. plantas",
+      "contexto": "Sin árboles. Dominan los musgos, líquenes, sedas y arbustos enanos (<30 cm). Muchas tienen pigmentos rojos que absorben calor solar extra — sus flores se orientan hacia el sol como antenas parabólicas."
+    }
+  ],
+
+  "comparativas": {
+    "descripcion": "La tundra es el bioma con el suelo más congelado, la vegetación más baja y el ciclo biológico más corto. Es también uno de los más vulnerables al cambio climático.",
+    "registros": [
+      { "tipo": "Mayor reserva de metano congelado",   "valor": "~1,500 Pg C",          "nota": "En permafrost ártico — mayor que todo el C en la atmósfera" },
+      { "tipo": "Bioma con calentamiento más rápido", "valor": "3–4× media global",    "nota": "Amplificación polar: retroalimentación albedo-temperatura" },
+      { "tipo": "Organismos más longevos preservados", "valor": "30,000 años",          "nota": "Bacterias y virus viables extraídos del permafrost siberiano" },
+      { "tipo": "Planta más pequeña del mundo",        "valor": "1 mm (Wolffia)",       "nota": "Aunque más conocida es Lemna, la más pequeña de tundra es Saxifraga" }
+    ]
+  },
+
+  "metodos_estudio": [
+    {
+      "metodo": "Experimentos de calentamiento ITEX",
+      "icon": "🔬",
+      "descripcion": "La red ITEX usa mini-invernaderos pasivos (hexágonos transparentes) en 100+ sitios árticos para simular 1–3 °C de calentamiento. Los resultados muestran expansión de arbustos y declive de musgos."
+    },
+    {
+      "metodo": "Monitoreo de permafrost GTN-P",
+      "icon": "🌡️",
+      "descripcion": "La red Global Terrestrial Network for Permafrost (GTN-P) registra temperatura y profundidad activa en >1,000 pozos. El permafrost ártico pierde ~30 cm de profundidad activa por década."
+    },
+    {
+      "metodo": "Análisis paleoecológico de sedimentos",
+      "icon": "🪨",
+      "descripcion": "Los sedimentos de lagos árticos conservan polen de miles de años. Permiten reconstruir la vegetación y el clima del Pleistoceno y medir cómo ha cambiado tras el último máximo glacial."
+    },
+    {
+      "metodo": "Telemetría de megafauna",
+      "icon": "📡",
+      "descripcion": "Collares GPS en caribú, lemmings y osos polares revelan rutas de migración y cambios en las áreas de campeo. El rango del caribú de la tundra se ha reducido un 19% desde 1960."
+    }
+  ],
+
+  "hitos": [
+    { "anio": 1845, "evento": "Expedición de John Franklin al Ártico — el desastre galvanizó la exploración científica de la tundra y el permafrost" },
+    { "anio": 1968, "evento": "Descubrimiento del campo petrolífero de Prudhoe Bay (Alaska) bajo la tundra — y debate sobre el impacto ecológico del oleoducto trans-Alaska" },
+    { "anio": 1990, "evento": "Primeras mediciones sistemáticas de CH₄ en la tundra (Walter, Zimov, et al.) revelan que el deshielo libera más metano del esperado" },
+    { "anio": 2006, "evento": "El 'Svalbard Global Seed Vault' abre en Noruega — un arca de Noé de semillas congeladas en la tundra polar" },
+    { "anio": 2018, "evento": "Estudio en Science estima que el permafrost ártico podría liberar 1.5 °C adicionales de calentamiento para 2100 si continúan las tendencias actuales" },
+    { "anio": 2022, "evento": "Registro de temperatura sin precedentes: 38 °C en Siberia ártica — temperatura nunca antes registrada en la tundra boreal" }
+  ],
+
+  "analogias": [
+    "El permafrost de la tundra es como un congelador de 500 metros de profundidad que lleva 10,000 años almacenando materia orgánica: si se descongela, libera en décadas lo que acumuló en milenios.",
+    "Las flores de la tundra funcionan como satélites solares: se orientan durante el día para maximizar la captación de calor y acelerar su ciclo reproductivo en los 6–8 semanas de verano.",
+    "La migración del caribú es el equivalente animal a una autopista estacional: millones de animales recorren el mismo corredor cada año con precisión de GPS, conectando la tundra con la taiga."
+  ],
+
+  "servicios_ecosistemicos": [
+    "Regulación climática: el permafrost actúa como freno natural del cambio climático al mantener congelado el carbono orgánico",
+    "Ciclo del agua ártico: alimenta ríos siberianos y canadienses que drenan al Ártico y regulan la salinidad oceánica",
+    "Biodiversidad: criadero estacional para miles de millones de aves migratorias de todos los continentes",
+    "Investigación científica: banco de datos climáticos y biológicos de decenas de miles de años preservados en el permafrost",
+    "Cultura indígena: sustento de pueblos como los Inuit, Nenets y Yupik — conocimiento acumulado de siglos en la tundra",
+    "Recursos minerales: bajo la tundra ártica hay los mayores yacimientos de gas natural, carbón y metales raros del hemisferio norte"
+  ]
+}

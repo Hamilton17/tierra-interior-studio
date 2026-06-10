@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tierra Interior Studio — Explorador de Capas</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/capas.css?v=2">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <div class="brand-icon">🌍</div>
+    <div>
+      <div class="brand-name">Tierra Interior Studio</div>
+      <div class="brand-sub">Geología y Estructura del Planeta</div>
+    </div>
+  </a>
+  <a class="nav-btn active" href="capas.html">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    Explorador
+  </a>
+  <a class="nav-btn" href="ecosistemas.html">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    Ecosistemas
+  </a>
+  <a class="nav-btn" href="biblioteca.html">
+    <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    Biblioteca
+  </a>
+  <a class="nav-btn" href="cuaderno.html">
+    <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+    Cuaderno
+  </a>
+  <a class="nav-btn" href="juego.html">
+    <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M6 12h4M8 10v4"/><circle cx="16" cy="12" r="1" fill="currentColor"/><circle cx="18" cy="10" r="1" fill="currentColor"/></svg>
+    Hábitats
+  </a>
+</div>
+
+<div class="main">
+  <!-- PANEL IZQUIERDO: lista de capas -->
+  <div class="left-panel">
+    <div class="panel-header">
+      <div class="panel-title">Capas de la Tierra</div>
+      <div class="panel-sub">6 capas • 6,371 km al centro</div>
+    </div>
+    <div class="layer-list" id="layerList"></div>
+    <div class="depth-ruler">
+      <div class="ruler-title">Escala de profundidad</div>
+      <div class="ruler-bar">
+        <div class="ruler-marker" id="rulerMarker" style="left:0%"></div>
+      </div>
+      <div class="ruler-labels">
+        <span>0 km</span><span>660</span><span>2,900</span><span>5,150</span><span>6,371</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CENTRO: visor 3D -->
+  <div class="center">
+    <div class="viewer-card">
+      <div class="viewer-header">
+        <div class="viewer-title" id="viewerTitle">—</div>
+        <div class="info-pill pill-red"  id="pillThick"></div>
+        <div class="info-pill pill-blue" id="pillState"></div>
+        <div class="mode-tabs">
+          <button class="mode-tab active" onclick="setMode(this)">Corte</button>
+          <button class="mode-tab"        onclick="setMode(this)">360°</button>
+          <button class="mode-tab"        onclick="setMode(this)">Ondas S</button>
+        </div>
+      </div>
+      <div class="viewer-body" id="viewerBody">
+        <div class="hint-3d">🖱 Arrastra para rotar · Scroll para zoom</div>
+        <div class="viewer-mode-info" id="viewerModeInfo" style="display:none"></div>
+        <div class="overlay-info" id="overlayInfo" style="display:none"></div>
+      </div>
+      <div class="viewer-controls">
+        <div class="ctrl-btn" title="Navegar capa" onclick="navigateLayer(1)">
+          <svg viewBox="0 0 24 24"><path d="M3 12h18M12 3l9 9-9 9"/></svg>
+        </div>
+        <div class="ctrl-btn" title="Zoom +" onclick="zoomCam(-1)">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+        <div class="ctrl-btn" title="Zoom -" onclick="zoomCam(1)">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+        <div class="ctrl-btn" title="Resetear vista" onclick="resetCam()">
+          <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.44"/></svg>
+        </div>
+        <div class="ctrl-sep"></div>
+        <div class="view-modes">
+          <button class="view-mode-btn active" onclick="setViewMode(this)">Corte transversal</button>
+          <button class="view-mode-btn"        onclick="setViewMode(this)">Placas tectónicas</button>
+          <button class="view-mode-btn"        onclick="setViewMode(this)">Terremotos</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-row">
+      <div class="mini-card">
+        <div class="mini-card-title">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          Datos Científicos
+        </div>
+        <div class="gallery-grid"></div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-card-title">
+          <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          Comparar Capas
+        </div>
+        <div class="compare-chips">
+          <div class="chip filled" id="chipA">— Selecciona —</div>
+          <div class="vs-label">VS</div>
+          <div class="chip pickable" id="chipB" onclick="pickCompareB()">⭐ Elegir...</div>
+        </div>
+        <button class="compare-btn" onclick="openComparacion()">Abrir comparación →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL DERECHO: detalle de la capa seleccionada -->
+  <div class="right-panel" id="rightPanel"></div>
+</div>
+
+<!-- Three.js r128 -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+<!-- Módulos de la aplicación -->
+<script src="js/data/capas-data.js?v=2"></script>
+<script src="js/capas-viewer.js?v=2"></script>
+<script src="js/capas-ui.js?v=2"></script>
+
+</body>
+</html>

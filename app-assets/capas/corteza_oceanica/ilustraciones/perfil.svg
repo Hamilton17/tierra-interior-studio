@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320">
+  <defs>
+    <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0077be"/>
+      <stop offset="100%" stop-color="#003f7a"/>
+    </linearGradient>
+    <linearGradient id="basalt_g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a4038"/>
+      <stop offset="100%" stop-color="#2a2018"/>
+    </linearGradient>
+    <linearGradient id="gabbro_g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a3028"/>
+      <stop offset="100%" stop-color="#1a1008"/>
+    </linearGradient>
+    <linearGradient id="magma_g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c85020"/>
+      <stop offset="100%" stop-color="#a03010"/>
+    </linearGradient>
+    <!-- Burbujas en el agua -->
+    <radialGradient id="bubble" cx="30%" cy="30%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.6)"/>
+      <stop offset="100%" stop-color="rgba(100,180,255,0.1)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Fondo oscuro (manto) -->
+  <rect width="480" height="320" fill="#1a0e08"/>
+
+  <!-- Agua oceánica -->
+  <rect x="0" y="0" width="480" height="145" fill="url(#ocean)"/>
+
+  <!-- Rayos de luz en el agua -->
+  <polygon points="160,0 170,0 195,145 182,145" fill="rgba(255,255,255,0.04)"/>
+  <polygon points="260,0 272,0 296,145 281,145" fill="rgba(255,255,255,0.03)"/>
+  <polygon points="360,0 370,0 388,145 376,145" fill="rgba(255,255,255,0.04)"/>
+
+  <!-- Burbujas -->
+  <circle cx="120" cy="80" r="4" fill="url(#bubble)" opacity="0.6"/>
+  <circle cx="200" cy="50" r="3" fill="url(#bubble)" opacity="0.5"/>
+  <circle cx="310" cy="95" r="5" fill="url(#bubble)" opacity="0.4"/>
+  <circle cx="400" cy="60" r="3" fill="url(#bubble)" opacity="0.6"/>
+
+  <!-- DORSAL OCEÁNICA (centro) -->
+  <!-- Elevación dorsal -->
+  <path d="M160,145 Q220,100 240,90 Q260,100 320,145" fill="#5a4838" stroke="none"/>
+  <!-- Cima de la dorsal con grieta -->
+  <path d="M225,100 Q240,88 255,100" fill="#b04020" stroke="none"/>
+
+  <!-- Flujo de magma subiendo por la grieta -->
+  <path d="M236,120 Q238,104 240,93" stroke="#ff6020" stroke-width="3" fill="none" opacity="0.8"/>
+  <path d="M244,120 Q242,104 240,93" stroke="#ff8040" stroke-width="2" fill="none" opacity="0.6"/>
+  <!-- Lava saliendo -->
+  <ellipse cx="240" cy="91" rx="8" ry="5" fill="#ff5010" opacity="0.9"/>
+  <ellipse cx="240" cy="91" rx="4" ry="3" fill="#ffb040" opacity="0.8"/>
+
+  <!-- Pillow lavas (basalto en cojines) alrededor de la dorsal -->
+  <ellipse cx="180" cy="140" rx="25" ry="10" fill="#4a3830"/>
+  <ellipse cx="195" cy="133" rx="18" ry="8" fill="#5a4840"/>
+  <ellipse cx="295" cy="140" rx="25" ry="10" fill="#4a3830"/>
+  <ellipse cx="280" cy="133" rx="18" ry="8" fill="#5a4840"/>
+  <!-- Más pillow lavas a los lados -->
+  <ellipse cx="80" cy="142" rx="30" ry="9" fill="#3a2820"/>
+  <ellipse cx="60" cy="136" rx="20" ry="7" fill="#4a3830"/>
+  <ellipse cx="400" cy="142" rx="30" ry="9" fill="#3a2820"/>
+  <ellipse cx="420" cy="136" rx="20" ry="7" fill="#4a3830"/>
+
+  <!-- Capa basalto superior -->
+  <rect x="0" y="145" width="480" height="50" fill="url(#basalt_g)"/>
+  <!-- Diques verticales en el basalto -->
+  <line x1="236" y1="145" x2="236" y2="195" stroke="#803020" stroke-width="3" opacity="0.7"/>
+  <line x1="244" y1="145" x2="244" y2="195" stroke="#903828" stroke-width="2.5" opacity="0.5"/>
+  <line x1="180" y1="155" x2="182" y2="195" stroke="#5a3020" stroke-width="1.5" opacity="0.4"/>
+  <line x1="300" y1="155" x2="298" y2="195" stroke="#5a3020" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Capa gabro -->
+  <rect x="0" y="195" width="480" height="55" fill="url(#gabbro_g)"/>
+  <!-- Textura gabro -->
+  <circle cx="80" cy="215" r="6" fill="#2a2010" opacity="0.5"/>
+  <circle cx="160" cy="225" r="8" fill="#3a2818" opacity="0.4"/>
+  <circle cx="320" cy="212" r="7" fill="#2a2010" opacity="0.5"/>
+  <circle cx="400" cy="228" r="6" fill="#3a2818" opacity="0.4"/>
+
+  <!-- MOHO -->
+  <line x1="0" y1="250" x2="480" y2="250" stroke="#ff6020" stroke-width="2.5" stroke-dasharray="12,6"/>
+
+  <!-- Manto peridotita -->
+  <rect x="0" y="250" width="480" height="70" fill="url(#magma_g)"/>
+  <!-- Cámara magmática debajo de la dorsal -->
+  <ellipse cx="240" cy="265" rx="55" ry="22" fill="#e06020" opacity="0.6"/>
+  <ellipse cx="240" cy="265" rx="38" ry="14" fill="#ff8040" opacity="0.5"/>
+  <ellipse cx="240" cy="265" rx="18" ry="7" fill="#ffa060" opacity="0.6"/>
+
+  <!-- Etiquetas -->
+  <rect x="4" y="30" width="88" height="14" rx="3" fill="rgba(0,40,100,0.7)"/>
+  <text x="8" y="41" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#80c8ff">Agua Oceánica</text>
+
+  <rect x="4" y="148" width="110" height="14" rx="3" fill="rgba(0,0,0,0.6)"/>
+  <text x="8" y="159" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#d0a880">Basalto / Pillow Lavas</text>
+
+  <rect x="4" y="200" width="60" height="14" rx="3" fill="rgba(0,0,0,0.6)"/>
+  <text x="8" y="211" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#c0a070">Gabro</text>
+
+  <!-- Etiqueta MOHO -->
+  <rect x="148" y="242" width="170" height="16" rx="4" fill="#ff6020" opacity="0.9"/>
+  <text x="155" y="253" font-family="system-ui,sans-serif" font-size="10.5" font-weight="700" fill="white">— Discontinuidad de Moho —</text>
+
+  <rect x="4" y="257" width="80" height="14" rx="3" fill="rgba(180,60,10,0.7)"/>
+  <text x="8" y="268" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#ffe0a0">Manto (Peridotita)</text>
+
+  <!-- Etiqueta dorsal -->
+  <rect x="195" y="68" width="90" height="14" rx="3" fill="rgba(200,80,20,0.85)"/>
+  <text x="199" y="79" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="white">Dorsal Oceánica</text>
+
+  <!-- Flechas de expansión -->
+  <path d="M205,88 L170,88" stroke="white" stroke-width="1.5" marker-end="url(#aw)" opacity="0.7"/>
+  <path d="M275,88 L310,88" stroke="white" stroke-width="1.5" marker-end="url(#aw)" opacity="0.7"/>
+  <text x="155" y="88" font-family="system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.8)">←</text>
+  <text x="315" y="88" font-family="system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.8)">→</text>
+
+  <!-- Escala prof -->
+  <line x1="460" y1="145" x2="460" y2="320" stroke="#888" stroke-width="1.5" opacity="0.6"/>
+  <line x1="455" y1="145" x2="465" y2="145" stroke="#888" stroke-width="1.5"/>
+  <text x="468" y="149" font-family="system-ui,sans-serif" font-size="9" fill="#aaa">0 km</text>
+  <line x1="455" y1="250" x2="465" y2="250" stroke="#ff6020" stroke-width="1.5"/>
+  <text x="468" y="254" font-family="system-ui,sans-serif" font-size="9" fill="#ff6020" font-weight="700">7 km</text>
+
+  <!-- Título -->
+  <rect x="150" y="4" width="178" height="22" rx="5" fill="rgba(0,30,80,0.8)"/>
+  <text x="239" y="18" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="white" text-anchor="middle">Corteza Oceánica</text>
+</svg>

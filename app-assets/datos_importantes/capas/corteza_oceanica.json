@@ -1,0 +1,103 @@
+{
+  "id": "corteza_oceanica",
+
+  "fichas": [
+    {
+      "ico": "📏",
+      "titulo": "Grosor promedio",
+      "valor": "7",
+      "unidad": "km",
+      "contexto": "Mucho más delgada que la continental (35 km). Esa delgadez la hace más densa y es la razón por la que se hunde en la subducción."
+    },
+    {
+      "ico": "⚖️",
+      "titulo": "Densidad",
+      "valor": "3.0",
+      "unidad": "g/cm³",
+      "contexto": "Más densa que la corteza continental (2.7). El 0.3 g/cm³ de diferencia es lo que hace que se hunda bajo los continentes en las zonas de subducción."
+    },
+    {
+      "ico": "🕰️",
+      "titulo": "Edad máxima",
+      "valor": "200",
+      "unidad": "millones de años",
+      "contexto": "La corteza oceánica más antigua tiene ~200 Ma (Pacífico occidental). Es muy 'joven' comparada con la continental (hasta 4,000 Ma). El reciclaje por subducción la destruye constantemente."
+    },
+    {
+      "ico": "🏔️",
+      "titulo": "Dorsal más larga",
+      "valor": "65,000",
+      "unidad": "km",
+      "contexto": "La Dorsal Oceánica Global recorre los fondos de todos los océanos — la cadena montañosa más larga del planeta, completamente submarina."
+    },
+    {
+      "ico": "🌡️",
+      "titulo": "Temperatura en el Moho",
+      "valor": "~200",
+      "unidad": "°C",
+      "contexto": "Más fría que la base de la corteza continental porque es más delgada y el agua oceánica la refrigera. Cerca de las dorsales puede llegar a 1,200 °C."
+    },
+    {
+      "ico": "🧱",
+      "titulo": "Roca predominante",
+      "valor": "Basalto",
+      "unidad": "",
+      "contexto": "Roca volcánica máfica, oscura y densa. Rico en hierro, magnesio y calcio. Sale directamente del manto en las dorsales oceánicas."
+    }
+  ],
+
+  "comparativas": {
+    "descripcion": "La corteza oceánica es la más delgada y la más reciclada. Se forma continuamente en las dorsales y desaparece en las zonas de subducción.",
+    "registros": [
+      { "tipo": "La más joven de las dos cortezas",      "valor": "máx. 200 Ma",     "nota": "La continental llega a 4,000 Ma (Gneiss de Acasta)" },
+      { "tipo": "La más densa de las dos cortezas",      "valor": "3.0 g/cm³",       "nota": "Corteza continental: 2.7 g/cm³" },
+      { "tipo": "La más delgada",                        "valor": "5-10 km",         "nota": "Solo 5 km en las dorsales activas" },
+      { "tipo": "Fosa más profunda",                     "valor": "11,034 m",        "nota": "Fosa de las Marianas, Pacífico occidental" }
+    ]
+  },
+
+  "metodos_estudio": [
+    {
+      "metodo": "Dragado y perforación oceánica",
+      "icon": "⚓",
+      "descripcion": "El Proyecto de Perforación Oceánica Integrado (IODP) ha perforado cientos de sitios en el fondo marino desde 1968, recuperando núcleos de roca que revelan la historia de los océanos."
+    },
+    {
+      "metodo": "Magnetometría del fondo oceánico",
+      "icon": "🧲",
+      "descripcion": "El basalto registra la orientación del campo magnético al solidificarse. Las inversiones magnéticas forman franjas simétricas a ambos lados de las dorsales — la prueba definitiva de la expansión del fondo oceánico (1963)."
+    },
+    {
+      "metodo": "Batimetría por sonar multihaz",
+      "icon": "🔊",
+      "descripcion": "Barcos oceanográficos mapean la topografía del fondo con sonar. Solo ~20% del fondo oceánico ha sido mapeado a alta resolución — la Luna está mejor cartografiada que los océanos terrestres."
+    },
+    {
+      "metodo": "Análisis de ofiolitas",
+      "icon": "🪨",
+      "descripcion": "Las ofiolitas son secciones de corteza oceánica antigua que emergieron a tierra (por colisión tectónica). El Oman Ophiolite expone 600 km de antigua corteza oceánica — el mejor 'corte' disponible."
+    }
+  ],
+
+  "hitos": [
+    { "anio": 1957, "evento": "Marie Tharp mapea por primera vez la Dorsal Mesoatlántica completa, revolucionando la oceanografía" },
+    { "anio": 1960, "evento": "Harry Hess propone la teoría de la expansión del fondo oceánico (sea-floor spreading)" },
+    { "anio": 1963, "evento": "Vine y Matthews explican el patrón magnético simétrico del fondo oceánico — confirmación definitiva de la tectónica de placas" },
+    { "anio": 1977, "evento": "Descubrimiento de las fuentes hidrotermales (chimeneas negras) en la Dorsal del Pacífico Este — ecosistemas sin luz solar" },
+    { "anio": 2012, "evento": "James Cameron desciende al punto más profundo de las Marianas (10,908 m) en el sumergible Deepsea Challenger" }
+  ],
+
+  "analogias": [
+    "La corteza oceánica funciona como una cinta transportadora: se crea en las dorsales (como una fábrica) y se destruye en las fosas de subducción (como un triturador).",
+    "Los anillos magnéticos del fondo oceánico son como los anillos de un árbol: registran la historia del campo magnético y la velocidad de expansión de los océanos.",
+    "Si el Océano Pacífico fuera una lámina de papel, tendría el grosor de 3-4 páginas comparado con su extensión horizontal."
+  ],
+
+  "recursos_naturales": [
+    "Nódulos polimetálicos: bolas de manganeso, cobre, níquel y cobalto en el fondo oceánico (minería submarina en investigación)",
+    "Fuentes hidrotermales: minerales sulfurados ricos en hierro, cobre y zinc",
+    "Gas metano (hidratos de metano): enormes reservas en sedimentos del fondo oceánico",
+    "Pesquerías: el fondo oceánico y las corrientes profundas sostienen las cadenas tróficas marinas",
+    "Energía geotérmica submarina: calor de las dorsales oceánicas (en desarrollo experimental)"
+  ]
+}

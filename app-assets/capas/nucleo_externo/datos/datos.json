@@ -1,0 +1,100 @@
+{
+  "id": "nucleo_externo",
+  "nombre": "Núcleo Externo",
+  "nombre_cientifico": "Núcleo externo fluido (líquido metálico)",
+  "grupo": "Núcleo",
+  "emoji": "💧",
+  "orden": 4,
+  "color_hex": "#e84010",
+
+  "geometria": {
+    "profundidad_min_km": 2900,
+    "profundidad_max_km": 5150,
+    "grosor_promedio_km": 2250,
+    "nota": "Su límite superior fue determinado por Gutenberg (1914) con precisión de ±20 km"
+  },
+
+  "propiedades_fisicas": {
+    "temperatura_min_C": 3700,
+    "temperatura_max_C": 5000,
+    "presion_min_GPa": 136,
+    "presion_max_GPa": 329,
+    "densidad_gcm3": 9.9,
+    "estado_materia": "Líquido metálico",
+    "velocidad_onda_P_km_s": 8.1,
+    "velocidad_onda_S_km_s": 0,
+    "conductividad_electrica_S_m": "6 × 10⁵",
+    "velocidad_flujo_km_año": 30
+  },
+
+  "composicion": {
+    "tipo_roca_principal": "Aleación de hierro-níquel fundida",
+    "clase_roca": "Metal líquido",
+    "minerales": [
+      { "nombre": "Hierro (Fe)",       "formula": "Fe",   "porcentaje": 85, "color": "#603028" },
+      { "nombre": "Níquel (Ni)",       "formula": "Ni",   "porcentaje": 5,  "color": "#4a3030" },
+      { "nombre": "Azufre (S)",        "formula": "S",    "porcentaje": 5,  "color": "#c0a828" },
+      { "nombre": "Oxígeno (O)",       "formula": "O",    "porcentaje": 3,  "color": "#8a1820" },
+      { "nombre": "Otros (H, C, Si)", "formula": "—",    "porcentaje": 2,  "color": "#501818" }
+    ],
+    "elementos_abundantes_pct": [
+      { "elemento": "Hierro",  "simbolo": "Fe", "pct": 85.0 },
+      { "elemento": "Níquel",  "simbolo": "Ni", "pct": 5.0  },
+      { "elemento": "Azufre",  "simbolo": "S",  "pct": 5.0  },
+      { "elemento": "Oxígeno", "simbolo": "O",  "pct": 3.0  },
+      { "elemento": "Carbono", "simbolo": "C",  "pct": 1.0  }
+    ]
+  },
+
+  "descripcion_corta": "Hierro-níquel líquido cuya convección genera el campo magnético que protege toda la vida terrestre.",
+  "descripcion_larga": "El núcleo externo es un océano metálico de hierro y níquel fundido que fluye a velocidades de ~30 km/año. Este movimiento de metal conductor, combinado con la rotación terrestre (efecto Coriolis), genera la dinamo terrestre: el campo magnético que desvía el viento solar y los rayos cósmicos. Sin él, la atmósfera sería erosionada lentamente y la vida desaparecería, como le sucedió a Marte.",
+
+  "descubrimiento_historico": {
+    "nombre_limite": "Zona de sombra sísmica (P y S)",
+    "año": 1914,
+    "cientifico": "Beno Gutenberg",
+    "pais": "Estados Unidos",
+    "metodo": "Las ondas P tienen zona de sombra a 103°-142° del epicentro; las ondas S no lo atraviesan",
+    "curiosidad": "La ausencia de ondas S confirmó que el núcleo externo es líquido, ya que estas ondas no viajan por líquidos"
+  },
+
+  "fenomenos_asociados": [
+    {
+      "nombre": "Dinamo Terrestre",
+      "emoji": "🧲",
+      "tipo": "electromagnetico",
+      "descripcion": "El movimiento convectivo del hierro líquido conductor con la rotación terrestre (efecto Coriolis) genera el campo geomagnético que nos protege del viento solar.",
+      "bg": "linear-gradient(135deg,#fdf4ff,#e879f9)"
+    },
+    {
+      "nombre": "Inversiones Magnéticas",
+      "emoji": "🔄",
+      "tipo": "electromagnetico",
+      "descripcion": "Cada ~200,000-300,000 años el campo magnético terrestre se debilita e invierte sus polos. Los registros están grabados en las rocas volcánicas.",
+      "bg": "linear-gradient(135deg,#fef3c7,#fbbf24)"
+    },
+    {
+      "nombre": "Auroras Boreales",
+      "emoji": "🌌",
+      "tipo": "atmosferico",
+      "descripcion": "El campo geomagnético canaliza las partículas cargadas del viento solar hacia los polos, donde colisionan con la atmósfera produciendo las auroras.",
+      "bg": "linear-gradient(135deg,#ecfdf5,#34d399)"
+    },
+    {
+      "nombre": "Zona de Sombra Sísmica",
+      "emoji": "📡",
+      "tipo": "sismico",
+      "descripcion": "Las ondas sísmicas P se refractan al entrar al núcleo externo más lento, creando una 'sombra' entre 103°-142° del epicentro. Así se detectó el núcleo.",
+      "bg": "linear-gradient(135deg,#f0f9ff,#7dd3fc)"
+    }
+  ],
+
+  "dato_curioso": "El campo magnético del núcleo externo desvía las partículas del viento solar. Sin este escudo invisible, la atmósfera se evaporaría al espacio en millones de años, como le sucedió a Marte que perdió su campo hace ~4,000 millones de años.",
+  "dato_label": "Dato Magnético",
+
+  "quiz": [
+    { "pregunta": "¿Qué fenómeno vital genera el movimiento del núcleo externo?", "respuesta_correcta": "El campo magnético terrestre", "incorrectas": ["Los terremotos", "Las mareas", "El viento solar"] },
+    { "pregunta": "¿Por qué el núcleo externo es líquido si está muy caliente?", "respuesta_correcta": "Su punto de fusión es menor a esa presión (mezcla Fe-Ni-S)", "incorrectas": ["Porque está compuesto de agua", "Porque la presión lo funde", "Por las corrientes sísmicas"] },
+    { "pregunta": "¿Con qué velocidad fluye el hierro líquido del núcleo externo?", "respuesta_correcta": "~30 km por año", "incorrectas": ["1 km por segundo", "1 mm por año", "1,000 km por año"] }
+  ]
+}

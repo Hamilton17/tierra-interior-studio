@@ -1,0 +1,130 @@
+{
+  "id": "ondas_sismicas",
+  "titulo": "Ondas Sísmicas",
+  "subtitulo": "Los rayos X del interior de la Tierra",
+  "emoji": "〰️",
+
+  "fichas": [
+    {
+      "ico": "⚡",
+      "titulo": "Velocidad onda P",
+      "valor": "5–14",
+      "unidad": "km/s",
+      "contexto": "Las ondas P (primarias) son las más rápidas: 6 km/s en la corteza, 8 km/s en el manto, 14 km/s en el núcleo interno sólido. Son las primeras en llegar a los sismógrafos — de ahí su nombre."
+    },
+    {
+      "ico": "🌊",
+      "titulo": "Velocidad onda S",
+      "valor": "3–8",
+      "unidad": "km/s",
+      "contexto": "Las ondas S (secundarias) viajan más lento y SOLO en sólidos. Al llegar al núcleo externo líquido, desaparecen — creando la 'zona de sombra' que demostró que el núcleo externo es líquido."
+    },
+    {
+      "ico": "🌍",
+      "titulo": "Tiempo para cruzar la Tierra",
+      "valor": "~20",
+      "unidad": "minutos",
+      "contexto": "Una onda P tarda ~20 minutos en atravesar el diámetro completo de la Tierra (12,742 km). Eso permite calcular la velocidad del sonido en cada capa del interior — mapeando el planeta sin perforarlo."
+    },
+    {
+      "ico": "📡",
+      "titulo": "Estaciones sísmicas globales",
+      "valor": "+8,000",
+      "unidad": "estaciones",
+      "contexto": "La red GSN (Global Seismic Network) y redes regionales cubren el planeta. Cualquier terremoto de Mw ≥5.5 es registrado por todas las estaciones. El Big Data sísmico permite tomografía 3D del manto."
+    },
+    {
+      "ico": "🔍",
+      "titulo": "Resolución de tomografía",
+      "valor": "50–200",
+      "unidad": "km de resolución",
+      "contexto": "La tomografía sísmica (análoga a un TAC médico pero usando terremotos) puede resolver estructuras de 50–200 km en el manto. Ve las placas subducidas (frías y rápidas) y las plumas (calientes y lentas)."
+    },
+    {
+      "ico": "🪐",
+      "titulo": "Sismología planetaria",
+      "valor": "Marte, Luna",
+      "unidad": "cuerpos explorados",
+      "contexto": "El sismómetro SEIS de InSight en Marte (2018-2022) registró los primeros 'maremotos'. La Luna fue sondeada por sismómetros Apollo 11–16 (1969-1977), revelando su núcleo y manto."
+    }
+  ],
+
+  "proceso": [
+    {
+      "paso": 1,
+      "titulo": "Liberación de energía en el foco",
+      "descripcion": "Cuando dos bloques de roca se rompen o deslizan (falla), la energía acumulada se libera de forma explosiva. Esta ruptura es el hipocentro (foco) — el origen real del terremoto.",
+      "icon": "💥"
+    },
+    {
+      "paso": 2,
+      "titulo": "Propagación de ondas P (compresión)",
+      "descripcion": "Las ondas P comprimen y expanden el material en la dirección de propagación — como el sonido. Viajan en sólidos y líquidos. Son las primeras en llegar, pero causan poco daño.",
+      "icon": "↔️"
+    },
+    {
+      "paso": 3,
+      "titulo": "Propagación de ondas S (cizalla)",
+      "descripcion": "Las ondas S sacuden el material perpendicularmente a su dirección. Son más destructivas que las P. No pueden atravesar líquidos, lo que delató el núcleo externo líquido.",
+      "icon": "〰️"
+    },
+    {
+      "paso": 4,
+      "titulo": "Ondas superficiales (Love y Rayleigh)",
+      "descripcion": "Al llegar a la superficie, generan ondas Love (movimiento horizontal) y Rayleigh (movimiento elíptico). Son las más lentas pero también las más destructivas en los edificios.",
+      "icon": "🌊"
+    }
+  ],
+
+  "tipos_ondas": [
+    {
+      "tipo": "Onda P (Primaria/Compresional)",
+      "velocidad": "5–14 km/s",
+      "medio": "Sólidos y líquidos",
+      "movimiento": "Paralelo a la dirección de propagación",
+      "efecto": "Ligero traqueteo; primeras en llegar"
+    },
+    {
+      "tipo": "Onda S (Secundaria/Cizalla)",
+      "velocidad": "3–8 km/s",
+      "medio": "Solo sólidos",
+      "movimiento": "Perpendicular a la propagación",
+      "efecto": "Sacudida lateral; más destructivas"
+    },
+    {
+      "tipo": "Onda Love (Superficial)",
+      "velocidad": "2–6 km/s",
+      "medio": "Solo en la superficie",
+      "movimiento": "Horizontal, como una serpiente",
+      "efecto": "Muy destructivas para las bases de edificios"
+    },
+    {
+      "tipo": "Onda Rayleigh (Superficial)",
+      "velocidad": "1–5 km/s",
+      "medio": "Solo en la superficie",
+      "movimiento": "Elíptico retrógrado",
+      "efecto": "Mareo y náuseas, daño a estructuras largas"
+    }
+  ],
+
+  "relacion_capas": [
+    { "capa": "Corteza Continental", "rol": "Las ondas se amplifican en sedimentos blandos y se atenúan en roca sólida. Las ciudades en suelo blando sufren más que las construidas en roca" },
+    { "capa": "Manto Superior", "rol": "El salto de velocidad en el Moho (de 6 a 8 km/s) fue la primera evidencia del límite corteza-manto, descubierto por Mohorovičić en 1909" },
+    { "capa": "Núcleo Externo", "rol": "Las ondas S no pasan por él — esto probó que es líquido. Las ondas P se refractan al entrar, creando la 'zona de sombra' entre 103° y 143°" },
+    { "capa": "Núcleo Interno", "rol": "Las ondas P aumentan su velocidad al entrar — evidencia de que es sólido. Las ondas PKIKP atraviesan el núcleo interno con una velocidad de ~11 km/s" }
+  ],
+
+  "analogias": [
+    "Un sismógrafo es como el oído de un médico apoyado en el pecho de la Tierra: escucha los 'latidos sísmicos' y deduce el estado de los órganos internos sin necesidad de operar.",
+    "La zona de sombra sísmica es como el punto ciego del ojo: entre 103° y 143° del epicentro, las ondas S no llegan porque el núcleo externo líquido las bloquea — lo mismo que la fovea en la retina bloquea la visión periférica.",
+    "La tomografía sísmica es el CAT scan de la Tierra: los terremotos emiten rayos que cruzan el planeta, y registrándolos en miles de estaciones podemos reconstruir el interior en 3D, como un scanner médico."
+  ],
+
+  "hitos_ciencia": [
+    { "anio": 1889, "evento": "Ernst von Rebeur-Paschwitz registra por primera vez un terremoto lejano (Japón) desde Potsdam — nacimiento de la sismología global" },
+    { "anio": 1909, "evento": "Andrija Mohorovičić descubre la discontinuidad corteza-manto (Moho) analizando un terremoto de Croacia con velocidades de onda distintas" },
+    { "anio": 1936, "evento": "Inge Lehmann descubre el núcleo interno sólido estudiando la reflexión de ondas P en el interior del núcleo — sin salir de su despacho en Copenhague" },
+    { "anio": 1960, "evento": "El gran terremoto de Chile (Mw 9.5) hace vibrar la Tierra entera durante días — primeras mediciones de los 'modos normales' de la Tierra (resonancias globales)" },
+    { "anio": 1993, "evento": "Primer atlas de tomografía sísmica global en 3D (Grand, van der Hilst) — la Tierra vista por dentro como nunca antes" }
+  ]
+}

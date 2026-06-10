@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320">
+  <defs>
+    <radialGradient id="outer_core" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#ff8020"/>
+      <stop offset="40%" stop-color="#dd4010"/>
+      <stop offset="80%" stop-color="#880010"/>
+      <stop offset="100%" stop-color="#440008"/>
+    </radialGradient>
+    <radialGradient id="inner_glow" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#ffee80"/>
+      <stop offset="60%" stop-color="#ff8020"/>
+      <stop offset="100%" stop-color="#cc4010"/>
+    </radialGradient>
+    <linearGradient id="field_line_n" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60c0ff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#2060a0" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="field_line_s" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#60c0ff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#2060a0" stop-opacity="0.4"/>
+    </linearGradient>
+    <filter id="glow_filter">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Fondo espacial -->
+  <rect width="480" height="320" fill="#050510"/>
+  <!-- Estrellas de fondo -->
+  <circle cx="30"  cy="20"  r="1" fill="white" opacity="0.6"/>
+  <circle cx="90"  cy="45"  r="1" fill="white" opacity="0.5"/>
+  <circle cx="150" cy="15"  r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="350" cy="30"  r="1" fill="white" opacity="0.6"/>
+  <circle cx="420" cy="60"  r="1.5" fill="white" opacity="0.5"/>
+  <circle cx="460" cy="25"  r="1" fill="white" opacity="0.7"/>
+  <circle cx="20"  cy="280" r="1" fill="white" opacity="0.5"/>
+  <circle cx="460" cy="290" r="1.5" fill="white" opacity="0.6"/>
+
+  <!-- CAMPO MAGNÉTICO — Líneas externas (aurora / magnetosfera) -->
+  <!-- Polo norte (arriba) -->
+  <path d="M240,8 Q340,-20 400,100 Q440,170 400,240 Q340,310 240,315" fill="none" stroke="url(#field_line_n)" stroke-width="1.5" opacity="0.5"/>
+  <path d="M240,8 Q360,10 430,120 Q465,175 430,235 Q365,310 240,315" fill="none" stroke="url(#field_line_n)" stroke-width="1.2" opacity="0.35"/>
+  <path d="M240,8 Q290,0 340,60 Q385,120 380,180 Q360,260 240,315" fill="none" stroke="url(#field_line_n)" stroke-width="1" opacity="0.45"/>
+  <!-- Simétricas izquierda -->
+  <path d="M240,8 Q140,-20 80,100 Q40,170 80,240 Q140,310 240,315" fill="none" stroke="url(#field_line_n)" stroke-width="1.5" opacity="0.5"/>
+  <path d="M240,8 Q120,10 50,120 Q15,175 50,235 Q115,310 240,315" fill="none" stroke="url(#field_line_n)" stroke-width="1.2" opacity="0.35"/>
+  <path d="M240,8 Q190,0 140,60 Q95,120 100,180 Q120,260 240,315" fill="none" stroke="url(#field_line_n)" stroke-width="1" opacity="0.45"/>
+
+  <!-- Aurora boreal (polo norte) - efecto glow -->
+  <ellipse cx="240" cy="8" rx="60" ry="12" fill="none" stroke="#40e080" stroke-width="3" opacity="0.35" filter="url(#glow_filter)"/>
+  <ellipse cx="240" cy="315" rx="60" ry="12" fill="none" stroke="#40e080" stroke-width="3" opacity="0.35" filter="url(#glow_filter)"/>
+
+  <!-- SECCIÓN TRANSVERSAL DEL NÚCLEO EXTERNO -->
+  <circle cx="240" cy="162" r="135" fill="url(#outer_core)"/>
+
+  <!-- Flujos de hierro líquido (espirales de convección) -->
+  <!-- Corriente 1 -->
+  <path d="M180,100 Q230,80 270,110 Q310,140 290,180 Q270,220 230,230 Q190,240 165,210 Q140,180 155,145 Q165,120 185,105" fill="none" stroke="#ff9030" stroke-width="2" opacity="0.5"/>
+  <!-- Corriente 2 -->
+  <path d="M200,120 Q240,105 275,130 Q300,155 285,190 Q265,215 230,220 Q195,225 175,195 Q158,165 170,140 Q182,120 200,120" fill="none" stroke="#ffb050" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Torbellinos de hierro líquido -->
+  <path d="M185,130 Q195,115 210,125 Q225,135 220,150 Q215,165 200,162 Q185,159 182,145 Q180,132 185,130" fill="rgba(255,160,40,0.3)" stroke="#ffa030" stroke-width="1.5"/>
+  <path d="M270,145 Q282,130 295,142 Q305,154 298,168 Q290,180 278,176 Q265,172 263,158 Q262,145 270,145" fill="rgba(255,160,40,0.3)" stroke="#ffa030" stroke-width="1.5"/>
+  <path d="M220,185 Q230,170 244,178 Q255,186 252,200 Q248,212 235,210 Q223,208 220,196 Q218,185 220,185" fill="rgba(255,160,40,0.25)" stroke="#ff9020" stroke-width="1.5"/>
+
+  <!-- NÚCLEO INTERNO (esfera brillante interior) -->
+  <circle cx="240" cy="162" r="52" fill="url(#inner_glow)" filter="url(#glow_filter)"/>
+  <circle cx="240" cy="162" r="48" fill="url(#inner_glow)"/>
+  <!-- Brillo especular -->
+  <ellipse cx="225" cy="145" rx="16" ry="10" fill="rgba(255,255,160,0.35)"/>
+
+  <!-- Etiqueta Núcleo Interno -->
+  <rect x="200" y="153" width="80" height="18" rx="4" fill="rgba(0,0,0,0.6)"/>
+  <text x="240" y="162" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#ffe080" text-anchor="middle">Núcleo</text>
+  <text x="240" y="168" font-family="system-ui,sans-serif" font-size="9" fill="#ffc040" text-anchor="middle">Interno</text>
+
+  <!-- ETIQUETAS EXTERNAS -->
+  <!-- N magnético -->
+  <rect x="217" y="-4" width="46" height="18" rx="4" fill="rgba(30,80,200,0.8)"/>
+  <text x="240" y="8" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">N</text>
+
+  <!-- S magnético -->
+  <rect x="217" y="308" width="46" height="18" rx="4" fill="rgba(200,30,30,0.8)"/>
+  <text x="240" y="320" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">S</text>
+
+  <!-- Flecha de rotación del núcleo -->
+  <path d="M100,155 Q105,120 130,105 Q155,90 180,95" fill="none" stroke="#ffd060" stroke-width="2" stroke-dasharray="5,3" opacity="0.8"/>
+  <text x="88" y="150" font-family="system-ui,sans-serif" font-size="9" fill="#ffd060">↺</text>
+  <rect x="58" y="155" width="82" height="22" rx="4" fill="rgba(0,0,0,0.6)"/>
+  <text x="99" y="164" font-family="system-ui,sans-serif" font-size="8.5" font-weight="700" fill="#ffd060" text-anchor="middle">Súper-rotación</text>
+  <text x="99" y="174" font-family="system-ui,sans-serif" font-size="8" fill="#c0a040" text-anchor="middle">~30 km/año</text>
+
+  <!-- Label núcleo externo -->
+  <line x1="382" y1="120" x2="360" y2="138" stroke="rgba(255,200,100,0.7)" stroke-width="1.5"/>
+  <rect x="348" y="106" width="100" height="18" rx="4" fill="rgba(0,0,0,0.65)"/>
+  <text x="352" y="114" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#ff9040">Hierro-Níquel</text>
+  <text x="352" y="122" font-family="system-ui,sans-serif" font-size="8" fill="#d07020">Líquido · ~5,000°C</text>
+
+  <!-- Líneas de campo en el núcleo (internas) -->
+  <path d="M240,110 Q265,130 268,162 Q265,194 240,214" fill="none" stroke="rgba(100,180,255,0.4)" stroke-width="1.5"/>
+  <path d="M240,110 Q215,130 212,162 Q215,194 240,214" fill="none" stroke="rgba(100,180,255,0.4)" stroke-width="1.5"/>
+
+  <!-- Título -->
+  <rect x="120" y="290" width="240" height="22" rx="5" fill="rgba(0,0,0,0.8)"/>
+  <text x="240" y="305" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="white" text-anchor="middle">Núcleo Externo — Dinamo Terrestre</text>
+</svg>

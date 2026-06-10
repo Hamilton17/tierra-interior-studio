@@ -1,0 +1,26 @@
+{
+  "ilustracion": null,
+  "contenido": {
+    "intro": "El Ártico se calienta casi cuatro veces más rápido que el promedio global. Esta amplificación ártica tiene consecuencias que afectan a todo el planeta, no solo a las regiones polares.",
+    "secciones": [
+      {
+        "titulo": "El albedo y el efecto de retroalimentación",
+        "texto": "El hielo blanco refleja hasta el 90% de la radiación solar. Al derretirse, queda expuesto el océano oscuro que absorbe el 94% de la radiación. Esto calienta más el océano, derrite más hielo y acelera el proceso: un bucle de retroalimentación positiva que amplifica el calentamiento inicial."
+      },
+      {
+        "titulo": "La corriente del Atlántico (AMOC)",
+        "texto": "El agua ártica fría y salada se hunde por ser más densa, impulsando la corriente termohalina global (AMOC). El deshielo añade agua dulce que diluye la salinidad, debilitando esta \"bomba de hundimiento\". Una AMOC más débil significaría inviernos más fríos en Europa y alteración de monzones en Asia y África."
+      },
+      {
+        "titulo": "Permafrost y metano",
+        "texto": "El permafrost ártico almacena más carbono del que hay actualmente en la atmósfera. Al descongelarse libera CO₂ y metano (CH₄), que es 80 veces más potente como gas de efecto invernadero en 20 años. Esto podría crear una segunda bomba climática independiente de las emisiones humanas."
+      }
+    ],
+    "hechos": [
+      "El Ártico podría ser libre de hielo en verano antes de 2040",
+      "El nivel del mar sube 3.7 mm/año, en parte por deshielo ártico",
+      "El oso polar tiene 50% de probabilidades de extinción antes de 2100",
+      "El permafrost almacena ~1,500 Gt de carbono (vs ~850 Gt en la atmósfera hoy)"
+    ]
+  }
+}

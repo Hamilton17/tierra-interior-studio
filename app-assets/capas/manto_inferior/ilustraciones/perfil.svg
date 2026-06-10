@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320">
+  <defs>
+    <linearGradient id="deep_bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a1800"/>
+      <stop offset="60%" stop-color="#8a2800"/>
+      <stop offset="100%" stop-color="#c03010"/>
+    </linearGradient>
+    <linearGradient id="wave_p" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffe060" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#ffe060" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#ffa020" stop-opacity="0.9"/>
+      <stop offset="80%" stop-color="#ffe060" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffe060" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="crystal" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#e8c060"/>
+      <stop offset="40%" stop-color="#c09040"/>
+      <stop offset="100%" stop-color="#602010"/>
+    </radialGradient>
+    <radialGradient id="quake" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#ffff80"/>
+      <stop offset="40%" stop-color="#ffaa20"/>
+      <stop offset="100%" stop-color="rgba(255,60,0,0)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Fondo del manto inferior -->
+  <rect width="480" height="320" fill="url(#deep_bg)"/>
+
+  <!-- Textura de roca (bridgmanita) -->
+  <rect x="0" y="0" width="480" height="320" fill="none"/>
+  <!-- Patrón cristalino de fondo -->
+  <g opacity="0.12">
+    <polygon points="40,40 70,20 100,40 100,80 70,100 40,80" fill="#e8c060" stroke="#c09030" stroke-width="0.5"/>
+    <polygon points="130,60 160,40 190,60 190,100 160,120 130,100" fill="#e8c060" stroke="#c09030" stroke-width="0.5"/>
+    <polygon points="220,30 250,10 280,30 280,70 250,90 220,70" fill="#e8c060" stroke="#c09030" stroke-width="0.5"/>
+    <polygon points="310,55 340,35 370,55 370,95 340,115 310,95" fill="#e8c060" stroke="#c09030" stroke-width="0.5"/>
+    <polygon points="40,160 70,140 100,160 100,200 70,220 40,200" fill="#e8c060" stroke="#c09030" stroke-width="0.5"/>
+    <polygon points="150,180 180,160 210,180 210,220 180,240 150,220" fill="#e8c060" stroke="#c09030" stroke-width="0.5"/>
+    <polygon points="280,150 310,130 340,150 340,190 310,210 280,190" fill="#e8c060" stroke="#c09030" stroke-width="0.5"/>
+    <polygon points="380,170 410,150 440,170 440,210 410,230 380,210" fill="#e8c060" stroke="#c09030" stroke-width="0.5"/>
+  </g>
+
+  <!-- EPICENTRO DE TERREMOTO (esquina superior izquierda) -->
+  <circle cx="80" cy="55" r="10" fill="url(#quake)"/>
+  <circle cx="80" cy="55" r="5" fill="#ffff60" opacity="0.9"/>
+  <circle cx="80" cy="55" r="2" fill="white"/>
+
+  <!-- Ondas sísmicas P (círculos concéntricos desde epicentro) -->
+  <circle cx="80" cy="55" r="35"  fill="none" stroke="#ffe060" stroke-width="2.5" opacity="0.75"/>
+  <circle cx="80" cy="55" r="70"  fill="none" stroke="#ffc040" stroke-width="2"   opacity="0.6"/>
+  <circle cx="80" cy="55" r="110" fill="none" stroke="#ff9020" stroke-width="1.8" opacity="0.5"/>
+  <circle cx="80" cy="55" r="155" fill="none" stroke="#e07010" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="80" cy="55" r="200" fill="none" stroke="#c05010" stroke-width="1.2" opacity="0.3"/>
+  <circle cx="80" cy="55" r="260" fill="none" stroke="#a03010" stroke-width="1"   opacity="0.2"/>
+
+  <!-- Ondas S (líneas punteadas, perpendicular a propagación) -->
+  <g opacity="0.5">
+    <path d="M90,70 Q110,78 130,70 Q150,62 170,70 Q190,78 210,70 Q230,62 250,70" stroke="#60a0e0" stroke-width="2" fill="none" stroke-dasharray="6,4"/>
+    <path d="M102,95 Q128,105 154,95 Q180,85 206,95 Q232,105 258,95 Q284,85 310,95" stroke="#5090d0" stroke-width="2" fill="none" stroke-dasharray="6,4"/>
+    <path d="M120,130 Q155,142 190,130 Q225,118 260,130 Q295,142 330,130 Q365,118 400,130" stroke="#4080c0" stroke-width="1.8" fill="none" stroke-dasharray="5,5"/>
+  </g>
+
+  <!-- ESTRUCTURA CRISTALINA BRIDGMANITA (derecha, ampliada) -->
+  <g transform="translate(310,100)">
+    <text x="65" y="-10" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#f0c060" text-anchor="middle">Bridgmanita</text>
+    <text x="65" y="2" font-family="system-ui,sans-serif" font-size="8" fill="#c09040" text-anchor="middle">(MgFe)SiO₃ · hcp</text>
+    <!-- Celda unitaria hexagonal -->
+    <polygon points="65,18 95,34 95,66 65,82 35,66 35,34" fill="none" stroke="#e0a030" stroke-width="2"/>
+    <!-- Átomos Mg -->
+    <circle cx="65" cy="18" r="7" fill="#60b040" stroke="#408020" stroke-width="1.5"/>
+    <text x="65" y="22" font-family="system-ui,sans-serif" font-size="7" fill="white" text-anchor="middle" font-weight="700">Mg</text>
+    <circle cx="95" cy="34" r="7" fill="#60b040" stroke="#408020" stroke-width="1.5"/>
+    <text x="95" y="38" font-family="system-ui,sans-serif" font-size="7" fill="white" text-anchor="middle" font-weight="700">Mg</text>
+    <circle cx="35" cy="34" r="7" fill="#60b040" stroke="#408020" stroke-width="1.5"/>
+    <text x="35" y="38" font-family="system-ui,sans-serif" font-size="7" fill="white" text-anchor="middle" font-weight="700">Mg</text>
+    <!-- Átomos Si -->
+    <circle cx="65" cy="50" r="6" fill="#e0a020" stroke="#c08010" stroke-width="1.5"/>
+    <text x="65" y="54" font-family="system-ui,sans-serif" font-size="7" fill="white" text-anchor="middle" font-weight="700">Si</text>
+    <!-- Átomos Fe -->
+    <circle cx="95" cy="66" r="7" fill="#c03020" stroke="#a01010" stroke-width="1.5"/>
+    <text x="95" y="70" font-family="system-ui,sans-serif" font-size="7" fill="white" text-anchor="middle" font-weight="700">Fe</text>
+    <circle cx="35" cy="66" r="7" fill="#c03020" stroke="#a01010" stroke-width="1.5"/>
+    <text x="35" y="70" font-family="system-ui,sans-serif" font-size="7" fill="white" text-anchor="middle" font-weight="700">Fe</text>
+    <!-- Átomo O central -->
+    <circle cx="65" cy="82" r="8" fill="#4060c0" stroke="#2040a0" stroke-width="1.5"/>
+    <text x="65" y="86" font-family="system-ui,sans-serif" font-size="7" fill="white" text-anchor="middle" font-weight="700">O₃</text>
+    <!-- Enlace Si-O -->
+    <line x1="65" y1="56" x2="65" y2="74" stroke="rgba(255,200,100,0.5)" stroke-width="1.5" stroke-dasharray="3,2"/>
+  </g>
+
+  <!-- CAPA D'' (parte inferior) -->
+  <rect x="0" y="262" width="480" height="28" fill="rgba(255,120,20,0.15)" stroke="none"/>
+  <line x1="0" y1="262" x2="480" y2="262" stroke="#ff8020" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.7"/>
+  <rect x="3" y="266" width="72" height="14" rx="3" fill="rgba(0,0,0,0.5)"/>
+  <text x="7" y="277" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#ffa040">Capa D'' (CMB)</text>
+
+  <!-- Límite inferior (CMB) -->
+  <line x1="0" y1="295" x2="480" y2="295" stroke="#ff4010" stroke-width="2.5" opacity="0.8"/>
+  <rect x="3" y="298" width="126" height="14" rx="3" fill="rgba(0,0,0,0.5)"/>
+  <text x="7" y="309" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#ff8040">← Núcleo (2,900 km)</text>
+
+  <!-- Etiqueta ondas P -->
+  <rect x="82" y="40" width="62" height="14" rx="3" fill="rgba(0,0,0,0.6)"/>
+  <text x="86" y="51" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#ffe060">Ondas P</text>
+
+  <!-- Etiqueta ondas S -->
+  <rect x="195" y="75" width="60" height="14" rx="3" fill="rgba(0,0,0,0.55)"/>
+  <text x="199" y="86" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#80c0f0">Ondas S</text>
+
+  <!-- Indicador presión -->
+  <rect x="3" y="140" width="90" height="30" rx="5" fill="rgba(0,0,0,0.55)"/>
+  <text x="7" y="152" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#f0a040">Presión:</text>
+  <text x="7" y="165" font-family="system-ui,sans-serif" font-size="9" fill="#d08020">24–136 GPa</text>
+
+  <rect x="3" y="176" width="90" height="30" rx="5" fill="rgba(0,0,0,0.55)"/>
+  <text x="7" y="188" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#f09030">Temperatura:</text>
+  <text x="7" y="201" font-family="system-ui,sans-serif" font-size="9" fill="#d07020">1,600–3,700°C</text>
+
+  <!-- Título -->
+  <rect x="134" y="4" width="212" height="22" rx="5" fill="rgba(0,0,0,0.75)"/>
+  <text x="240" y="18" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="white" text-anchor="middle">Manto Inferior — Ondas Sísmicas</text>
+</svg>

@@ -1,0 +1,105 @@
+{
+  "id": "selva_tropical",
+
+  "fichas": [
+    {
+      "ico": "🌡️",
+      "titulo": "Temperatura media",
+      "valor": "25–30",
+      "unidad": "°C",
+      "contexto": "Temperatura estable todo el año, sin estaciones marcadas. La diferencia entre el mes más frío y el más caliente suele ser menor a 5 °C."
+    },
+    {
+      "ico": "💧",
+      "titulo": "Precipitación anual",
+      "valor": ">2,000",
+      "unidad": "mm/año",
+      "contexto": "La Amazonía central recibe hasta 3,500 mm/año. Esta lluvia constante sostiene el dosel y alimenta los ríos más caudalosos del mundo."
+    },
+    {
+      "ico": "🌿",
+      "titulo": "Especies de plantas",
+      "valor": "+40,000",
+      "unidad": "spp.",
+      "contexto": "Solo la Amazonía contiene 40,000 especies vegetales catalogadas. Se estima que hay miles más sin describir."
+    },
+    {
+      "ico": "🌍",
+      "titulo": "Superficie total",
+      "valor": "~6",
+      "unidad": "mill. km²",
+      "contexto": "Las tres grandes regiones de selva tropical (Amazonía, Congo, Sudeste Asiático) suman unos 6 millones de km² — casi la mitad se ha reducido por deforestación."
+    },
+    {
+      "ico": "🦎",
+      "titulo": "Biodiversidad animal",
+      "valor": "~50",
+      "unidad": "% de spp. terrestres",
+      "contexto": "Aun cubriendo el 6% de la superficie, albergan la mitad de las especies terrestres. En un solo árbol pueden vivir más especies de hormigas que en todo el Reino Unido."
+    },
+    {
+      "ico": "☁️",
+      "titulo": "Producción de oxígeno",
+      "valor": "~20",
+      "unidad": "% del total",
+      "contexto": "La Amazonía produce el 20% del O₂ terrestre y recicla tanta agua que genera sus propios 'ríos aéreos' de vapor que generan lluvia en Sudamérica."
+    }
+  ],
+
+  "comparativas": {
+    "descripcion": "La selva tropical es el bioma con mayor biodiversidad, mayor precipitación y mayor producción primaria de todos los biomas terrestres.",
+    "registros": [
+      { "tipo": "Mayor biodiversidad terrestre",          "valor": "~50% de spp. terrestres", "nota": "En el 6% de la superficie del planeta" },
+      { "tipo": "Mayor precipitación promedio",           "valor": ">2,000 mm/año",           "nota": "Seguida por el bosque templado lluvioso (~1,500 mm)" },
+      { "tipo": "Mayor producción primaria neta",        "valor": "~9 Pg C/año",             "nota": "Fija más carbono que cualquier otro bioma" },
+      { "tipo": "Árbol de mayor altura registrada",      "valor": "100.8 m",                 "nota": "Dinizia excelsa, Amazonía (2019)" }
+    ]
+  },
+
+  "metodos_estudio": [
+    {
+      "metodo": "Inventarios florísticos",
+      "icon": "📋",
+      "descripcion": "Parcelas permanentes de 1 ha donde se catalogan, miden y siguen todas las plantas >10 cm de DAP. La red RAINFOR (Amazonía) mantiene >350 parcelas activas desde 1980."
+    },
+    {
+      "metodo": "Teledetección satelital",
+      "icon": "🛰️",
+      "descripcion": "Satélites LANDSAT, Sentinel y MODIS monitorean deforestación en tiempo casi-real. En 2020 alertaron sobre la pérdida de 4.2 millones de ha en la Amazonía brasileña en un solo año."
+    },
+    {
+      "metodo": "Torres de flujo de CO₂ (Eddy Covariance)",
+      "icon": "📡",
+      "descripcion": "Torres de 50–80 m miden el intercambio de CO₂, agua y energía entre el bosque y la atmósfera. Los datos demostraron que la Amazonía oriental se está convirtiendo en fuente neta de CO₂."
+    },
+    {
+      "metodo": "LiDAR aerotransportado",
+      "icon": "✈️",
+      "descripcion": "Láser aerotransportado (LiDAR) mapea la estructura tridimensional del dosel con resolución centimétrica, revelando que hay más carbono del estimado en zonas remotas."
+    }
+  ],
+
+  "hitos": [
+    { "anio": 1832, "evento": "Alexander von Humboldt describe los patrones de biodiversidad tropical en 'Cosmos', sentando bases de la biogeografía moderna" },
+    { "anio": 1858, "evento": "Alfred Russel Wallace publica la Línea de Wallace desde el Archipiélago Malayo — primera demarcación de regiones biogeográficas" },
+    { "anio": 1980, "evento": "Primera gran alerta global sobre la deforestación amazónica. Comenzaba la mayor pérdida de bosque tropical en la historia" },
+    { "anio": 1988, "evento": "Asesinato de Chico Mendes, líder seringueiro, puso la selva amazónica en la agenda política internacional" },
+    { "anio": 2004, "evento": "Brasil lanza el PPCDAM: tasa de deforestación amazónica cayó un 80% entre 2004 y 2012 — mayor éxito de conservación del mundo" },
+    { "anio": 2021, "evento": "Estudios en Science demuestran que partes de la Amazonía oriental ya emiten más CO₂ del que absorben por degradación y clima" }
+  ],
+
+  "analogias": [
+    "La selva tropical es la 'farmacia del mundo': más del 25% de los medicamentos modernos provienen de plantas tropicales, y menos del 1% de las especies han sido evaluadas.",
+    "El dosel selvático actúa como un paraguas gigante: intercepta el 80–90% de la lluvia antes de que llegue al suelo, protegiéndolo de la erosión y recargando los acuíferos lentamente.",
+    "Los 'ríos aéreos' amazónicos transportan más agua que el Amazonas físico: el vapor evapotranspirado viaja hacia el sur, genera lluvia en Brasil central y Argentina — sin ellos, esas regiones serían desérticas."
+  ],
+
+  "servicios_ecosistemicos": [
+    "Regulación climática: absorción de CO₂ y producción de O₂ — 'pulmón del planeta'",
+    "Ciclo del agua: evapotranspiración que genera lluvia en regiones interiores de continentes",
+    "Biodiversidad: banco genético de millones de especies con potencial médico, agrícola e industrial",
+    "Medicamentos: aspirina, quinina, morfina, taxol y miles más derivan de plantas tropicales",
+    "Productos forestales no maderables: caucho, nueces, frutas, resinas, colorantes",
+    "Turismo y bioprospección: fuente de ingresos para comunidades locales"
+  ]
+}

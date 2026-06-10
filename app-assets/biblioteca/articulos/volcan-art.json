@@ -1,0 +1,26 @@
+{
+  "ilustracion": "/app-assets/capas/manto_superior/ilustraciones/perfil.svg",
+  "contenido": {
+    "intro": "Los volcanes son las ventanas más espectaculares al interior de la Tierra. A través de ellos asoma el magma, roca fundida que asciende desde el manto superior bajo la litosfera.",
+    "secciones": [
+      {
+        "titulo": "¿Qué es el magma?",
+        "texto": "El magma es roca parcialmente fundida que se genera cuando las condiciones de presión y temperatura lo permiten. En las dorsales oceánicas, la roca del manto asciende y al bajar la presión se funde. En las zonas de subducción, el agua de la placa sumergida baja el punto de fusión del manto y también produce magma."
+      },
+      {
+        "titulo": "El camino hacia la superficie",
+        "texto": "El magma, al ser menos denso que la roca sólida circundante, tiende a ascender. Se acumula en cámaras magmáticas a 5–50 km de profundidad. Desde allí, si la presión es suficiente, asciende por conductos volcánicos hasta la superficie."
+      },
+      {
+        "titulo": "Tipos de erupciones",
+        "texto": "Las erupciones hawaianas producen flujos de lava fluida y son relativamente tranquilas. Las plinianas (como el Vesubio en 79 d.C.) son explosivas: el magma viscoso atrapa gases que se liberan violentamente. Las subglaciales se producen bajo capas de hielo y crean enormes inundaciones (jökulhlaup)."
+      }
+    ],
+    "hechos": [
+      "Los volcanes se concentran en los bordes de placas tectónicas y puntos calientes",
+      "El supervolcán Yellowstone erupcionó hace 640,000 años",
+      "El volcán Mauna Loa en Hawái es el más grande del mundo por volumen",
+      "La lava puede alcanzar 1,200 °C en su salida a superficie"
+    ]
+  }
+}

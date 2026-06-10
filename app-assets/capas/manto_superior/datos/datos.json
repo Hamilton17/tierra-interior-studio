@@ -1,0 +1,100 @@
+{
+  "id": "manto_superior",
+  "nombre": "Manto Superior",
+  "nombre_cientifico": "Astenosfera y Litosfera inferior",
+  "grupo": "Capas Intermedias",
+  "emoji": "🌋",
+  "orden": 2,
+  "color_hex": "#c4782a",
+
+  "geometria": {
+    "profundidad_min_km": 35,
+    "profundidad_max_km": 660,
+    "grosor_promedio_km": 625,
+    "nota": "Incluye la litosfera inferior (35-100 km, rígida) y la astenosfera (100-660 km, plástica)"
+  },
+
+  "propiedades_fisicas": {
+    "temperatura_min_C": 400,
+    "temperatura_max_C": 1600,
+    "presion_min_GPa": 1,
+    "presion_max_GPa": 24,
+    "densidad_gcm3": 3.4,
+    "estado_materia": "Sólido plástico (astenosfera semiderretida)",
+    "velocidad_onda_P_km_s": 8.0,
+    "velocidad_onda_S_km_s": 4.4,
+    "viscosidad_Pa_s_rango": "10¹⁸ – 10²¹"
+  },
+
+  "composicion": {
+    "tipo_roca_principal": "Peridotita",
+    "clase_roca": "Ígnea ultramáfica",
+    "minerales": [
+      { "nombre": "Olivino",          "formula": "(Mg,Fe)₂SiO₄",                       "porcentaje": 60, "color": "#6a8a30", "dureza_mohs": 6.5 },
+      { "nombre": "Ortopiroxeno",     "formula": "(Mg,Fe)SiO₃",                         "porcentaje": 20, "color": "#3a3020", "dureza_mohs": 5.5 },
+      { "nombre": "Clinopiroxeno",    "formula": "CaMgSi₂O₆",                           "porcentaje": 12, "color": "#282420", "dureza_mohs": 5.5 },
+      { "nombre": "Granada (Piropo)", "formula": "Mg₃Al₂(SiO₄)₃",                      "porcentaje": 5,  "color": "#7a1040", "dureza_mohs": 7.5 },
+      { "nombre": "Espinela",         "formula": "MgAl₂O₄",                             "porcentaje": 3,  "color": "#2a204a", "dureza_mohs": 7.5 }
+    ],
+    "elementos_abundantes_pct": [
+      { "elemento": "Oxígeno",  "simbolo": "O",  "pct": 44.8 },
+      { "elemento": "Magnesio", "simbolo": "Mg", "pct": 22.8 },
+      { "elemento": "Silicio",  "simbolo": "Si", "pct": 21.5 },
+      { "elemento": "Hierro",   "simbolo": "Fe", "pct": 5.8  },
+      { "elemento": "Calcio",   "simbolo": "Ca", "pct": 2.3  },
+      { "elemento": "Aluminio", "simbolo": "Al", "pct": 2.2  }
+    ]
+  },
+
+  "descripcion_corta": "Zona plástica donde flotan las placas tectónicas y ocurre la convección que mueve los continentes.",
+  "descripcion_larga": "El manto superior es la primera zona del manto terrestre y la más directamente responsable de la dinámica superficial. Se divide en la litosfera inferior (rígida, unida a la corteza) y la astenosfera (ligeramente fundida, plástica), donde la temperatura y la presión permiten que las rocas se deformen lentamente. Las corrientes de convección en la astenosfera son el motor que mueve las placas tectónicas.",
+
+  "descubrimiento_historico": {
+    "nombre_limite": "Zona de baja velocidad (LVZ)",
+    "año": 1926,
+    "cientifico": "Beno Gutenberg",
+    "pais": "Alemania / Estados Unidos",
+    "metodo": "Detección de la reducción de velocidad de ondas sísmicas P y S entre 100-200 km de profundidad",
+    "curiosidad": "Esta zona de baja velocidad corresponde a la astenosfera parcialmente fundida"
+  },
+
+  "fenomenos_asociados": [
+    {
+      "nombre": "Convección Mantélica",
+      "emoji": "🌀",
+      "tipo": "termico",
+      "descripcion": "El material caliente del manto asciende, se enfría en la superficie y desciende en ciclos de millones de años. Este movimiento arrastra las placas tectónicas.",
+      "bg": "linear-gradient(135deg,#fef3c7,#fde68a)"
+    },
+    {
+      "nombre": "Plumas Mantélicas",
+      "emoji": "🔥",
+      "tipo": "termico",
+      "descripcion": "Columnas de roca caliente que ascienden desde el límite manto-núcleo. Forman puntos calientes como Hawái e Islandia, independientes de los bordes de placa.",
+      "bg": "linear-gradient(135deg,#fee2e2,#f87171)"
+    },
+    {
+      "nombre": "Transición de Fase",
+      "emoji": "⚡",
+      "tipo": "mineralogico",
+      "descripcion": "A 410 km el olivino se convierte en wadsleíta, y a 660 km en bridgmanita. Estas transiciones afectan la dinámica del manto.",
+      "bg": "linear-gradient(135deg,#ede9fe,#a78bfa)"
+    },
+    {
+      "nombre": "Vulcanismo",
+      "emoji": "🌋",
+      "tipo": "geologico",
+      "descripcion": "La descompresión adiabática del manto superior genera magma que erupciona en volcanes de dorsales y puntos calientes.",
+      "bg": "linear-gradient(135deg,#ffedd5,#fb923c)"
+    }
+  ],
+
+  "dato_curioso": "Las placas tectónicas se mueven a la velocidad con la que crecen tus uñas: 2–10 cm por año. En millones de años es suficiente para abrir océanos enteros y formar el Himalaya.",
+  "dato_label": "Dato Tectónico",
+
+  "quiz": [
+    { "pregunta": "¿Cuál es la roca predominante del manto superior?", "respuesta_correcta": "Peridotita", "incorrectas": ["Granito", "Basalto", "Eclogita"] },
+    { "pregunta": "¿Qué zona del manto permite el movimiento de las placas?", "respuesta_correcta": "Astenosfera", "incorrectas": ["Litosfera", "Mesosfera", "Termosfera"] },
+    { "pregunta": "¿A qué profundidad ocurre la primera transición de fase del olivino?", "respuesta_correcta": "410 km", "incorrectas": ["100 km", "660 km", "1,000 km"] }
+  ]
+}

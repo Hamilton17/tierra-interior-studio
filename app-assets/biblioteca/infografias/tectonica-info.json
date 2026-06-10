@@ -1,0 +1,26 @@
+{
+  "svg": "/app-assets/capas/manto_superior/ilustraciones/perfil.svg",
+  "descripcion": "El manto superior (35–660 km) está en convección lenta: el material caliente asciende, se enfría, y desciende de nuevo. Esta circulación arrastra la litosfera rígida de encima, moviendo las placas tectónicas.",
+  "leyenda": [
+    {
+      "ico": "🔴",
+      "titulo": "Celdas de convección",
+      "texto": "Corrientes circulares de material del manto. Las células ascendentes crean dorsales oceánicas; las descendentes crean zonas de subducción."
+    },
+    {
+      "ico": "🔵",
+      "titulo": "Litosfera",
+      "texto": "La placa rígida (corteza + manto litosférico) que \"flota\" sobre el manto astenosférico. Su grosor varía de 7 km en dorsales a 200 km en cratones."
+    },
+    {
+      "ico": "🟠",
+      "titulo": "Dorsal oceánica",
+      "texto": "Cadena montañosa submarina donde las placas se separan y emerge magma del manto. La Dorsal Mesoatlántica se extiende 16,000 km de polo a polo."
+    },
+    {
+      "ico": "🟡",
+      "titulo": "Zona de subducción",
+      "texto": "Cuando dos placas colisionan, la más densa (oceánica) se hunde bajo la otra. Genera terremotos, volcanes y produce las cordilleras más altas del planeta."
+    }
+  ]
+}

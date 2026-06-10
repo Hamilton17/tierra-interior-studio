@@ -1,0 +1,21 @@
+{
+  "name": "tierra-interior-studio",
+  "version": "1.0.0",
+  "description": "Plataforma educativa 3D interactiva para explorar la Tierra: capas geológicas, biomas, ecosistemas y hábitats.",
+  "scripts": {
+    "start": "npx http-server -p 8080 --cors -c-1",
+    "dev": "npx http-server -p 8080 --cors -c-1 -o /app/index.html"
+  },
+  "keywords": [
+    "educacion", "3d", "three.js", "geologia", "biomas", "ecosistemas",
+    "interactive", "earth", "science", "spanish"
+  ],
+  "author": "Tierra Interior Studio",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

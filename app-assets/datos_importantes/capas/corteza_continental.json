@@ -1,0 +1,104 @@
+{
+  "id": "corteza_continental",
+
+  "fichas": [
+    {
+      "ico": "📏",
+      "titulo": "Grosor máximo",
+      "valor": "70 km",
+      "unidad": "kilómetros",
+      "contexto": "Bajo el Himalaya. Las dos placas que colisionaron apilaron la corteza y crearon raíces profundas que 'cuelgan' en el manto."
+    },
+    {
+      "ico": "📐",
+      "titulo": "Grosor promedio",
+      "valor": "35 km",
+      "unidad": "kilómetros",
+      "contexto": "En áreas continentales estables (cratones). Bajo las dorsales oceánicas puede reducirse a 5 km."
+    },
+    {
+      "ico": "⚖️",
+      "titulo": "Densidad",
+      "valor": "2.7",
+      "unidad": "g/cm³",
+      "contexto": "Más ligera que el manto (3.3 g/cm³). Esa diferencia de densidad es la razón por la que 'flota' y forma los continentes elevados."
+    },
+    {
+      "ico": "🌡️",
+      "titulo": "Rango de temperatura",
+      "valor": "15 – 400",
+      "unidad": "°C",
+      "contexto": "15 °C en superficie; ~400 °C en el Moho (35 km). El gradiente geotérmico promedio es de ~30 °C/km."
+    },
+    {
+      "ico": "🔩",
+      "titulo": "Velocidad onda P",
+      "valor": "6.0",
+      "unidad": "km/s",
+      "contexto": "Las ondas sísmicas P viajan a 6 km/s. En el Moho, saltan bruscamente a ~7.9 km/s — la clave para detectar el límite con el manto."
+    },
+    {
+      "ico": "🌍",
+      "titulo": "Volumen terrestre",
+      "valor": "< 1",
+      "unidad": "% del planeta",
+      "contexto": "Si la Tierra fuera una manzana, la corteza sería más fina que la piel. Sin embargo contiene toda la vida y los recursos que extraemos."
+    }
+  ],
+
+  "comparativas": {
+    "descripcion": "La corteza continental es la capa más delgada, menos densa y más fría de las seis capas. Es la única accesible directamente.",
+    "registros": [
+      { "tipo": "Más delgada de las capas sólidas",      "valor": "35 km promedio",  "nota": "El manto inferior tiene 2,240 km" },
+      { "tipo": "Menos densa de todas las capas",        "valor": "2.7 g/cm³",       "nota": "El núcleo interno llega a 13 g/cm³" },
+      { "tipo": "La única explorada por perforación",    "valor": "12.26 km",        "nota": "Pozo Kola, Rusia — record absoluto (1989)" },
+      { "tipo": "Más antigua en algunas regiones",       "valor": "4,000 Ma",        "nota": "Gneiss de Acasta, Canadá — roca más antigua conocida" }
+    ]
+  },
+
+  "metodos_estudio": [
+    {
+      "metodo": "Perforación directa",
+      "icon": "🔩",
+      "descripcion": "El Superpozo de Kola (Rusia, 1970-1989) llegó a 12,262 m — el más profundo jamás perforado. Descubrieron agua a 12 km y rocas 300 °C más calientes de lo esperado."
+    },
+    {
+      "metodo": "Sísmica de reflexión",
+      "icon": "📡",
+      "descripcion": "Ondas sísmicas artificiales (vibraciones o explosivos) se reflejan en las interfaces entre capas. La red COCORP (EE.UU.) reveló la estructura cortical de América del Norte en detalle."
+    },
+    {
+      "metodo": "Estudio de xenolitos",
+      "icon": "🪨",
+      "descripcion": "Los volcanes traen fragmentos de corteza profunda y manto (xenolitos). Son muestras directas de hasta 50 km de profundidad que jamás podríamos obtener de otra forma."
+    },
+    {
+      "metodo": "Gravimetría",
+      "icon": "🛰️",
+      "descripcion": "Variaciones en la gravedad terrestre medidas por satélites (misión GRACE) revelan diferencias de densidad y grosor cortical bajo los océanos y continentes."
+    }
+  ],
+
+  "hitos": [
+    { "anio": 1909, "evento": "Andrija Mohorovičić descubre el límite corteza-manto (Moho) analizando registros sísmicos del terremoto de Kulpa, Croacia" },
+    { "anio": 1912, "evento": "Alfred Wegener propone la teoría de la deriva continental — que los continentes se mueven" },
+    { "anio": 1970, "evento": "Inicia la perforación del Superpozo de Kola (URSS), proyecto más ambicioso de exploración cortical directa" },
+    { "anio": 1989, "evento": "El Superpozo de Kola alcanza 12.262 km — record absoluto; se detiene por las temperaturas inesperadamente altas" },
+    { "anio": 2005, "evento": "El proyecto IODP intenta perforar el Moho oceánico en el Pacífico Este (corteza oceánica de solo 6 km)" },
+    { "anio": 2014, "evento": "Descubrimiento de agua atrapada en ringwoodita a 660 km — evidencia de agua en el manto (no en la corteza)" }
+  ],
+
+  "analogias": [
+    "Si la Tierra fuera una manzana, la corteza continental sería más fina que la piel de la manzana.",
+    "La isostasia (flotación cortical) funciona exactamente como un iceberg: cuanto más alta es la montaña sobre el nivel del mar, más profunda es su raíz bajo el Moho.",
+    "La corteza flota sobre el manto denso como el aceite flota sobre el agua — por diferencia de densidades, no de temperatura."
+  ],
+
+  "recursos_naturales": [
+    "Minerales metálicos: hierro, cobre, oro, plata, zinc (extraídos mediante minería)",
+    "Combustibles fósiles: petróleo, gas natural, carbón (formados en sedimentos corticales)",
+    "Materiales de construcción: granito, mármol, arcilla, arena",
+    "Agua subterránea: almacenada en acuíferos de roca porosa y fracturada",
+    "Energía geotérmica: calor del gradiente cortical aprovechado en zonas volcánicas"
+  ]
+}

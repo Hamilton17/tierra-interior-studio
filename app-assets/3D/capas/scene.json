@@ -1,0 +1,47 @@
+{
+  "radii": [2.00, 1.92, 1.78, 1.50, 0.95, 0.45],
+
+  "layers": [
+    { "color": "#4a6040", "emissive": "#080c06", "opacity": 0.22, "glowColor": "#6aaa4a" },
+    { "color": "#2a3f58", "emissive": "#060810", "opacity": 0.22, "glowColor": "#3b82f6" },
+    { "color": "#7a2800", "emissive": "#280800", "opacity": 0.60, "glowColor": "#b45309" },
+    { "color": "#bb4400", "emissive": "#5a1800", "opacity": 0.80, "glowColor": "#f97316" },
+    { "color": "#ff7700", "emissive": "#cc3000", "opacity": 0.92, "glowColor": "#ef4444" },
+    { "color": "#ffe040", "emissive": "#ffa000", "opacity": 1.00, "glowColor": "#fcd34d" }
+  ],
+
+  "camera": {
+    "fov": 38,
+    "near": 0.1,
+    "far": 100,
+    "position": [2, 1.2, 5.5]
+  },
+
+  "lights": {
+    "ambient": { "color": "#ffeedd", "intensity": 0.55 },
+    "sun":     { "color": "#ffffff", "intensity": 1.3,  "position": [6, 4, 6]   },
+    "rim":     { "color": "#224488", "intensity": 0.4,  "position": [-5, 0, -3] },
+    "core":    { "color": "#ff8800", "intensity": 3.5,  "distance": 4.5         }
+  },
+
+  "controls": {
+    "minDistance": 3,
+    "maxDistance": 12,
+    "autoRotate": true,
+    "autoRotateSpeed": 0.5,
+    "dampingFactor": 0.06
+  },
+
+  "atmosphere": {
+    "radius": 2.12,
+    "color": "#4488ff",
+    "opacity": 0.07
+  },
+
+  "stars": {
+    "count": 2500,
+    "minRadius": 35,
+    "maxRadius": 50,
+    "size": 0.07
+  }
+}

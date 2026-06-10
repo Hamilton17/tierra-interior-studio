@@ -1,0 +1,102 @@
+{
+  "id": "corteza_oceanica",
+  "nombre": "Corteza Oceánica",
+  "nombre_cientifico": "Sima (Silicio-Magnesio)",
+  "grupo": "Capas Externas",
+  "emoji": "🌊",
+  "orden": 1,
+  "color_hex": "#5a8ab0",
+
+  "geometria": {
+    "profundidad_min_km": 0,
+    "profundidad_max_km": 10,
+    "grosor_promedio_km": 7,
+    "grosor_min_km": 5,
+    "grosor_max_km": 10,
+    "nota": "Cubre el 71% de la superficie. Se crea en dorsales y se destruye en zonas de subducción"
+  },
+
+  "propiedades_fisicas": {
+    "temperatura_min_C": 0,
+    "temperatura_max_C": 250,
+    "presion_min_GPa": 0,
+    "presion_max_GPa": 0.3,
+    "densidad_gcm3": 3.0,
+    "estado_materia": "Sólido rígido",
+    "velocidad_onda_P_km_s": 6.7,
+    "velocidad_onda_S_km_s": 3.8,
+    "edad_maxima_millones_años": 200
+  },
+
+  "composicion": {
+    "tipo_roca_principal": "Basalto",
+    "clase_roca": "Ígnea volcánica",
+    "minerales": [
+      { "nombre": "Plagioclasa cálcica", "formula": "CaAl₂Si₂O₈",              "porcentaje": 50, "color": "#c8c0b8", "dureza_mohs": 6.5 },
+      { "nombre": "Piroxeno (Augita)",   "formula": "Ca(Mg,Fe,Al)(Si,Al)₂O₆",  "porcentaje": 25, "color": "#282420", "dureza_mohs": 6   },
+      { "nombre": "Olivino",             "formula": "(Mg,Fe)₂SiO₄",             "porcentaje": 15, "color": "#7a9a40", "dureza_mohs": 6.5 },
+      { "nombre": "Magnetita",           "formula": "Fe₃O₄",                    "porcentaje": 6,  "color": "#1a1814", "dureza_mohs": 5.5 },
+      { "nombre": "Vidrio volcánico",    "formula": "SiO₂ amorfo",              "porcentaje": 4,  "color": "#3a3830", "dureza_mohs": 5   }
+    ],
+    "elementos_abundantes_pct": [
+      { "elemento": "Oxígeno",  "simbolo": "O",  "pct": 44.4 },
+      { "elemento": "Silicio",  "simbolo": "Si", "pct": 23.0 },
+      { "elemento": "Aluminio", "simbolo": "Al", "pct": 9.2  },
+      { "elemento": "Hierro",   "simbolo": "Fe", "pct": 8.2  },
+      { "elemento": "Calcio",   "simbolo": "Ca", "pct": 7.5  },
+      { "elemento": "Magnesio", "simbolo": "Mg", "pct": 4.4  }
+    ]
+  },
+
+  "descripcion_corta": "Más densa y delgada que la continental. Se crea en dorsales y se destruye en fosas oceánicas.",
+  "descripcion_larga": "La corteza oceánica es más joven, más delgada y más densa que la continental, por eso se hunde bajo ella en las zonas de subducción. Se forma continuamente en las dorsales oceánicas donde el magma emerge y se solidifica como basalto. Toda la corteza oceánica actual tiene menos de 200 millones de años; en contraste, la continental puede tener más de 4,000 millones. Su alta densidad (3.0 g/cm³) hace que cuando colisiona con la continental, siempre se sumerja.",
+
+  "descubrimiento_historico": {
+    "nombre_limite": "Expansión del fondo oceánico",
+    "año": 1960,
+    "cientifico": "Harry Hess",
+    "pais": "Estados Unidos",
+    "metodo": "Estudio de anomalías magnéticas simétricas en el fondo oceánico",
+    "curiosidad": "Las franjas magnéticas del fondo oceánico son como un código de barras que registra la expansión"
+  },
+
+  "fenomenos_asociados": [
+    {
+      "nombre": "Dorsales Oceánicas",
+      "emoji": "🌋",
+      "tipo": "tectónico",
+      "descripcion": "Cadenas montañosas submarinas de 60,000 km donde emerge magma y se forma nueva corteza oceánica a 2–18 cm/año.",
+      "bg": "linear-gradient(135deg,#fee2e2,#fca5a5)"
+    },
+    {
+      "nombre": "Subducción",
+      "emoji": "↘️",
+      "tipo": "tectónico",
+      "descripcion": "La corteza oceánica densa se hunde bajo la continental, generando terremotos profundos y volcanes en la superficie.",
+      "bg": "linear-gradient(135deg,#ede9fe,#a78bfa)"
+    },
+    {
+      "nombre": "Fumarolas Hidrotermales",
+      "emoji": "♨️",
+      "tipo": "quimico",
+      "descripcion": "Agua oceánica penetra la corteza, se calienta a más de 400°C y emerge cargada de minerales, sustentando ecosistemas únicos sin luz solar.",
+      "bg": "linear-gradient(135deg,#d1fae5,#34d399)"
+    },
+    {
+      "nombre": "Magnetismo Fósil",
+      "emoji": "🧲",
+      "tipo": "fisico",
+      "descripcion": "Los minerales de hierro en el basalto registran la orientación del campo magnético al solidificarse, creando un archivo paleomagnético.",
+      "bg": "linear-gradient(135deg,#e0f2fe,#38bdf8)"
+    }
+  ],
+
+  "dato_curioso": "¡La corteza oceánica más antigua tiene apenas ~200 millones de años! Es continuamente reciclada: se crea en dorsales y se destruye en fosas. La continental puede tener más de 4,000 millones de años.",
+  "dato_label": "Dato Tectónico",
+
+  "quiz": [
+    { "pregunta": "¿Cuál es la roca predominante de la corteza oceánica?", "respuesta_correcta": "Basalto", "incorrectas": ["Granito", "Gabro", "Obsidiana"] },
+    { "pregunta": "¿Cuánto puede durar la corteza oceánica antes de ser reciclada?", "respuesta_correcta": "~200 millones de años", "incorrectas": ["4,000 millones de años", "500 millones de años", "50 millones de años"] },
+    { "pregunta": "¿Qué científico propuso la expansión del fondo oceánico?", "respuesta_correcta": "Harry Hess", "incorrectas": ["Alfred Wegener", "Mohorovičić", "Gutenberg"] }
+  ]
+}

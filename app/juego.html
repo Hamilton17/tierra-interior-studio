@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1400">
+<title>Tierra Interior Studio — Hábitats</title>
+<link rel="stylesheet" href="css/global.css">
+<style>
+:root{
+  --bg:#fef7f0;--card:#fff;--border:#e8c8a8;
+  --primary:#c45c1a;--primary-soft:#fff0e6;
+  --navy:#2c0d04;--text:#3d1e0a;--muted:#8a5a3a;
+  --ok:#22c55e;--err:#ef4444;--gold:#f59e0b;
+}
+body{overflow:hidden;height:100vh;display:flex;flex-direction:column;background:#0d1a2e}
+
+/* ── SELECTION ─────────────────────────────────── */
+#selScreen{
+  flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;padding:24px;overflow-y:auto;
+  background:linear-gradient(160deg,#0d1a2e 0%,#1a2e4a 60%,#0d1a2e 100%);
+}
+.sel-header{text-align:center;margin-bottom:32px}
+.sel-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.3);
+  border-radius:20px;padding:5px 16px;font-size:12px;font-weight:700;color:#fbbf24;margin-bottom:16px;
+}
+.sel-title{font-size:36px;font-weight:800;color:#fff;margin-bottom:8px}
+.sel-title span{color:#f59e0b}
+.sel-sub{font-size:14px;color:rgba(255,255,255,.5)}
+.levels-grid{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;max-width:1200px}
+.lcard{
+  width:210px;border-radius:16px;overflow:hidden;cursor:pointer;
+  border:2px solid rgba(255,255,255,.08);
+  transition:transform .2s,border-color .2s,box-shadow .2s;background:#1a2840;flex-shrink:0;
+}
+.lcard:hover{transform:translateY(-6px);border-color:rgba(245,158,11,.5);box-shadow:0 16px 40px rgba(0,0,0,.4)}
+.lcard-img{
+  height:140px;background-size:cover;background-position:center;
+  position:relative;overflow:hidden;display:flex;align-items:flex-end;
+}
+.lcard-img-animals{
+  width:100%;display:flex;justify-content:center;gap:4px;font-size:20px;padding:6px;
+  background:linear-gradient(transparent,rgba(0,0,0,.6));
+}
+.lcard-body{padding:14px}
+.lcard-name{font-size:14px;font-weight:700;color:#fff;margin-bottom:3px}
+.lcard-desc{font-size:10.5px;color:rgba(255,255,255,.45);line-height:1.45;margin-bottom:10px}
+.lcard-foot{display:flex;align-items:center;justify-content:space-between}
+.lcard-best{font-size:10px;color:#f59e0b;font-weight:600}
+.lcard-btn{
+  padding:5px 13px;border-radius:7px;border:none;cursor:pointer;
+  font-size:11.5px;font-weight:700;
+  background:linear-gradient(90deg,#c45c1a,#e64010);color:#fff;transition:opacity .15s;
+}
+.lcard-btn:hover{opacity:.88}
+
+/* ── GAME ────────────────────────────────────────── */
+#gameScreen{flex:1;display:none;flex-direction:column}
+.game-bar{
+  height:46px;background:var(--navy);display:flex;align-items:center;
+  padding:0 16px;gap:12px;flex-shrink:0;
+}
+.g-pill{
+  display:flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);
+  border-radius:20px;padding:3px 11px;font-size:11.5px;font-weight:700;color:#fff;
+}
+.g-dot{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 5px var(--ok)}
+.g-sep{flex:1}
+.g-timer{font-size:21px;font-weight:800;color:#fff;font-variant-numeric:tabular-nums;min-width:56px;text-align:center}
+.g-timer.warn{color:var(--gold);animation:blink .8s infinite}
+.g-timer.crit{color:var(--err);animation:blink .4s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+.g-score{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.10);border-radius:20px;padding:3px 11px}
+.g-score-lbl{font-size:10px;color:rgba(255,255,255,.45);font-weight:600}
+.g-score-num{font-size:16px;font-weight:800;color:var(--gold)}
+.g-prog{display:flex;gap:4px}
+.g-pd{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);transition:all .3s}
+.g-pd.ok{background:var(--ok);box-shadow:0 0 5px var(--ok)}
+.g-btn{
+  display:flex;align-items:center;gap:5px;padding:4px 10px;border-radius:7px;
+  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);
+  color:rgba(255,255,255,.7);font-size:10.5px;font-weight:600;cursor:pointer;transition:background .15s;
+}
+.g-btn:hover{background:rgba(255,255,255,.2)}
+.g-btn svg{width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2.5}
+.game-main{display:flex;flex:1;overflow:hidden}
+
+/* MAP */
+.map-area{flex:1;position:relative;overflow:hidden;background:#0a1520;cursor:default}
+.biome-bg{position:absolute;inset:0;background-size:cover;background-position:center bottom;background-repeat:no-repeat}
+#mapCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+
+/* DROP ZONES — minimal: just a subtle glowing circle, no text */
+.dz-layer{position:absolute;inset:0;pointer-events:none}
+.dz{
+  position:absolute;transform:translate(-50%,-50%);
+  width:56px;height:56px;border-radius:50%;pointer-events:all;
+  display:flex;align-items:center;justify-content:center;
+  border:2px dashed rgba(255,255,255,.35);
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(2px);transition:all .18s;
+}
+.dz:hover,.dz.ov{
+  border-color:var(--gold);border-style:solid;
+  background:rgba(245,158,11,.22);box-shadow:0 0 20px rgba(245,158,11,.55);
+  transform:translate(-50%,-50%) scale(1.18);
+}
+.dz.placed{border:none;background:transparent;pointer-events:none}
+.dz-ico{font-size:18px;line-height:1}
+.dz-ck{
+  position:absolute;top:-6px;right:-6px;width:16px;height:16px;border-radius:50%;
+  background:var(--ok);display:none;align-items:center;justify-content:center;
+  font-size:9px;color:#fff;box-shadow:0 2px 5px rgba(0,0,0,.4);
+}
+.dz.placed .dz-ck{display:flex}
+
+/* Rotate hint that appears when hovering a placed animal */
+.rot-hint{
+  position:absolute;bottom:8px;left:50%;transform:translateX(-50%);
+  background:rgba(0,0,0,.52);color:#fff;font-size:10px;font-weight:600;
+  padding:4px 10px;border-radius:20px;pointer-events:none;
+  opacity:0;transition:opacity .2s;white-space:nowrap;
+}
+.rot-hint.show{opacity:1}
+
+/* END */
+.end-ov{
+  position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+  background:rgba(5,12,25,.78);backdrop-filter:blur(8px);z-index:30;flex-direction:column;
+}
+.end-ov.show{display:flex}
+.end-card{background:var(--card);border-radius:20px;padding:28px 40px;text-align:center;
+  box-shadow:0 20px 56px rgba(0,0,0,.5);max-width:380px;}
+.end-icon{font-size:50px;margin-bottom:4px;display:block}
+.end-title{font-size:21px;font-weight:800;color:var(--navy);margin-bottom:5px}
+.end-sub{font-size:12.5px;color:var(--muted);margin-bottom:14px;line-height:1.6}
+.end-pts{font-size:36px;font-weight:800;color:var(--gold)}
+.end-pts-lbl{font-size:10.5px;color:var(--muted);margin-bottom:16px}
+.end-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.btn-end-p{
+  display:inline-flex;align-items:center;gap:6px;padding:10px 20px;
+  background:linear-gradient(90deg,#c45c1a,#e64010);color:#fff;
+  border-radius:8px;font-size:12.5px;font-weight:700;border:none;cursor:pointer;transition:opacity .15s;
+}
+.btn-end-p:hover{opacity:.9}
+.btn-end-s{
+  display:inline-flex;align-items:center;gap:6px;padding:10px 16px;
+  background:var(--bg);color:var(--primary);border:1.5px solid var(--border);
+  border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;
+}
+.btn-end-s:hover{border-color:var(--primary)}
+
+/* PANEL */
+.game-panel{
+  width:260px;flex-shrink:0;display:flex;flex-direction:column;
+  border-left:1.5px solid var(--border);background:var(--bg);overflow:hidden;
+}
+.panel-head{padding:11px 13px 9px;border-bottom:1px solid var(--border);flex-shrink:0}
+.panel-title{font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:2px}
+.panel-sub{font-size:10px;color:var(--muted)}
+.cards-list{flex:1;overflow-y:auto;padding:9px;display:flex;flex-direction:column;gap:7px}
+.cards-list::-webkit-scrollbar{width:3px}
+.cards-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.acard{
+  display:flex;align-items:center;gap:9px;padding:9px 10px;
+  border-radius:9px;border:1.5px solid var(--border);background:var(--card);
+  cursor:grab;user-select:none;position:relative;
+  transition:border-color .15s,box-shadow .15s,opacity .2s,transform .12s;
+}
+.acard:hover{border-color:var(--primary);box-shadow:0 3px 10px rgba(196,92,26,.14);transform:translateY(-1px)}
+.acard.dragging{opacity:.4;transform:scale(.96)}
+.acard.placed{opacity:.38;pointer-events:none}
+.acard.placed::after{
+  content:'✓';position:absolute;right:9px;top:50%;transform:translateY(-50%);
+  width:17px;height:17px;border-radius:50%;background:var(--ok);
+  display:flex;align-items:center;justify-content:center;font-size:9.5px;color:#fff;
+}
+.acard-ico{
+  width:48px;height:48px;border-radius:9px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;
+}
+.acard-ico img{width:100%;height:100%;object-fit:cover}
+.acard-body{min-width:0;flex:1}
+.acard-name{font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:1px}
+.acard-desc{font-size:10px;color:var(--muted);line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.acard-hint{font-size:9.5px;color:var(--primary);margin-top:2px;font-weight:600}
+
+.toast{
+  position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(65px);
+  background:var(--navy);color:#fff;padding:8px 16px;border-radius:8px;
+  font-size:12px;font-weight:600;box-shadow:0 5px 18px rgba(0,0,0,.35);
+  transition:transform .26s cubic-bezier(.34,1.56,.64,1);z-index:300;pointer-events:none;
+}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast.ok{background:#15803d}
+.toast.err{background:#b91c1c}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <div class="brand-icon">🌍</div>
+    <div><div class="brand-name">Tierra Interior Studio</div><div class="brand-sub">Geología y Estructura del Planeta</div></div>
+  </a>
+  <a class="nav-btn" href="capas.html"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Explorador</a>
+  <a class="nav-btn" href="ecosistemas.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg>Ecosistemas</a>
+  <a class="nav-btn" href="biblioteca.html"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Biblioteca</a>
+  <a class="nav-btn" href="cuaderno.html"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Cuaderno</a>
+  <a class="nav-btn active" href="juego.html"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M6 12h4M8 10v4"/><circle cx="16" cy="12" r="1" fill="currentColor"/><circle cx="18" cy="10" r="1" fill="currentColor"/></svg>Hábitats</a>
+</div>
+
+<!-- SELECTION -->
+<div id="selScreen">
+  <div class="sel-header">
+    <div class="sel-badge">🎮 Juego Educativo · 5 Biomas</div>
+    <h1 class="sel-title">Coloca cada especie en su <span>hábitat</span></h1>
+    <p class="sel-sub">Arrastra los animales del panel al mapa correcto · 4 minutos · Modelos 3D</p>
+  </div>
+  <div class="levels-grid" id="levelsGrid"></div>
+</div>
+
+<!-- GAME -->
+<div id="gameScreen">
+  <div class="game-bar">
+    <div class="g-pill"><div class="g-dot"></div><span id="gLevelName">—</span></div>
+    <div style="display:flex;align-items:center;gap:5px">
+      <span style="font-size:10px;color:rgba(255,255,255,.4);font-weight:600">COLOCADOS</span>
+      <div class="g-prog" id="gProg"></div>
+    </div>
+    <div class="g-sep"></div>
+    <span style="font-size:14px">⏱</span>
+    <div class="g-timer" id="gTimer">4:00</div>
+    <div class="g-score"><span class="g-score-lbl">PTS</span><span class="g-score-num" id="gScore">0</span></div>
+    <button class="g-btn" onclick="goToSelection()"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Niveles</button>
+    <button class="g-btn" onclick="resetLevel()"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-.49-8.49"/></svg>Reiniciar</button>
+  </div>
+  <div class="game-main">
+    <div class="map-area" id="mapArea">
+      <div class="biome-bg" id="biomeBg"></div>
+      <canvas id="mapCanvas"></canvas>
+      <div class="dz-layer" id="dzLayer"></div>
+      <div class="rot-hint" id="rotHint">← Arrastra para rotar →</div>
+      <div class="end-ov" id="endOv">
+        <div class="end-card">
+          <span class="end-icon" id="endIcon">🏆</span>
+          <div class="end-title" id="endTitle"></div>
+          <div class="end-sub"   id="endSub"></div>
+          <div class="end-pts"   id="endPts"></div>
+          <div class="end-pts-lbl">puntos finales</div>
+          <div class="end-btns">
+            <button class="btn-end-p" id="btnNext" onclick="nextLevel()">Siguiente →</button>
+            <button class="btn-end-s" onclick="goToSelection()">Ver todos los niveles</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="game-panel">
+      <div class="panel-head">
+        <div class="panel-title" id="panelTitle">Animales del bioma</div>
+        <div class="panel-sub">Arrastra cada animal a su zona en el mapa</div>
+      </div>
+      <div class="cards-list" id="cardsList"></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script>
+// ══════════════════════════════════════════════════════════
+//  LEVELS
+//  scaleH  = target height in Three.js units (≈ real proportional size)
+//  yOffset = metres above ground (birds, hanging animals, water creatures)
+//  zones   = screen positions spread across depth so animals appear at
+//            different distances — higher on screen = farther away/smaller
+// ══════════════════════════════════════════════════════════
+const B='/app-assets/3D/animales';
+const LEVELS={
+  sabana:{
+    id:'sabana',title:'Sabana Africana',emoji:'🌾',
+    desc:'La gran llanura de África donde conviven las especies más emblemáticas.',
+    fondo:`${B}/sabana/fondo.png`,
+    animals:{
+      // Real heights: Jirafa 5.5m, León 1.2m, Elefante 3.5m, Cebra 1.4m
+      // Scaled proportionally within game units (Elefante = 1.0 reference)
+      jirafa:  {name:'Jirafa',           emoji:'🦒',thumb:`${B}/sabana/jirafa.png`,   bg:'linear-gradient(135deg,#fef3c7,#fde68a)',glb:`${B}/sabana/jirafa.glb`,   desc:'El animal terrestre más alto.',  hint:'Vive cerca de acacias.',   zoneIcon:'🌳', scaleH:1.57, yOffset:0},
+      leon:    {name:'León',             emoji:'🦁',thumb:`${B}/sabana/leon.png`,     bg:'linear-gradient(135deg,#fef3c7,#fcd34d)',glb:`${B}/sabana/leon.glb`,     desc:'El rey de la sabana africana.', hint:'Caza en llanura abierta.', zoneIcon:'🌾', scaleH:0.34, yOffset:0},
+      elefante:{name:'Elefante Africano',emoji:'🐘',thumb:`${B}/sabana/elefante.png`, bg:'linear-gradient(135deg,#e2e8f0,#cbd5e1)',glb:`${B}/sabana/elefante.glb`, desc:'El mayor animal terrestre.',    hint:'Siempre cerca del agua.',  zoneIcon:'💧', scaleH:1.00, yOffset:0},
+      cebra:   {name:'Cebra',            emoji:'🦓',thumb:`${B}/sabana/cebra.png`,    bg:'linear-gradient(135deg,#f1f5f9,#e2e8f0)',glb:`${B}/sabana/cebra.glb`,    desc:'Sus rayas son únicas.',         hint:'Pasta en grandes manadas.',zoneIcon:'🌿', scaleH:0.40, yOffset:0},
+    },
+    // Zones at different depths: closer (higher top%) = appears larger
+    // jirafa: far-left far-back (top 66%); leon: mid close; elefante: center mid; cebra: right mid-far
+    zones:{
+      jirafa:  {left:'13%', top:'66%'},   // far → jirafa appears distant but tall
+      leon:    {left:'34%', top:'79%'},   // close → lion fills ground level
+      elefante:{left:'56%', top:'73%'},   // mid
+      cebra:   {left:'79%', top:'70%'},   // mid-far right
+    },
+  },
+  selva:{
+    id:'selva',title:'Selva Tropical',emoji:'🌿',
+    desc:'La jungla más densa del planeta. Hogar del 50% de las especies.',
+    fondo:`${B}/selva_tropical/fondo.png`,
+    animals:{
+      // Guacamayo small bird high in canopy, Jaguar cat on ground,
+      // Rana Dardo tiny frog on forest floor, Perezoso hanging from branch
+      guacamayo: {name:'Guacamayo Escarlata',emoji:'🦜',thumb:`${B}/selva_tropical/guacamayo.png`, bg:'linear-gradient(135deg,#fee2e2,#fca5a5)',glb:`${B}/selva_tropical/guacamayo.glb`, desc:'Las plumas más vívidas.',       hint:'Anida en el dosel.',       zoneIcon:'🌳', scaleH:0.40, groundAlign:false, camDist:4.5},
+      jaguar:    {name:'Jaguar',             emoji:'🐆',thumb:`${B}/selva_tropical/jaguar.png`,    bg:'linear-gradient(135deg,#fef3c7,#d97706)',glb:`${B}/selva_tropical/jaguar.glb`,    desc:'El felino más grande de América.',hint:'Acecha en el sotobosque.',zoneIcon:'🌿', scaleH:0.60},
+      rana_dardo:{name:'Rana Dardo',         emoji:'🐸',thumb:`${B}/selva_tropical/rana_dardo.png`,bg:'linear-gradient(135deg,#d1fae5,#6ee7b7)',glb:`${B}/selva_tropical/rana_dardo.glb`,desc:'Colores vivos = peligro.',      hint:'Vive junto a ríos.',       zoneIcon:'💧', scaleH:0.28},
+      perezoso:  {name:'Perezoso',           emoji:'🦥',thumb:`${B}/selva_tropical/perezoso.png`,  bg:'linear-gradient(135deg,#e7e5e4,#d6d3d1)',glb:`${B}/selva_tropical/perezoso.glb`,  desc:'40 m al día… ¡solo!',          hint:'Cuelga de las lianas.',    zoneIcon:'🌱', scaleH:0.38, groundAlign:false, camDist:3.8},
+    },
+    zones:{
+      guacamayo: {left:'18%', top:'28%'},  // upper canopy — appears at exact screen pos via camDist
+      jaguar:    {left:'42%', top:'78%'},  // ground level close
+      rana_dardo:{left:'61%', top:'82%'},  // very close ground
+      perezoso:  {left:'79%', top:'40%'},  // elevated branch — appears at exact screen pos via camDist
+    },
+  },
+  polar:{
+    id:'polar',title:'Polar / Ártico',emoji:'🧊',
+    desc:'El extremo del planeta. −70 °C y vida increíblemente adaptada.',
+    fondo:`${B}/polar/fondo.png`,
+    animals:{
+      // Pingüino small, Oso polar large, Foca medium, Ballena huge in water
+      pinguino: {name:'Pingüino Emperador', emoji:'🐧',thumb:`${B}/polar/pinguino.png`, bg:'linear-gradient(135deg,#e0e7ff,#c7d2fe)',glb:`${B}/polar/pinguino.glb`, desc:'Aguanta −70 °C incubando.',     hint:'Colonias en el hielo.',    zoneIcon:'❄️', scaleH:0.33, yOffset:0},
+      oso_polar:{name:'Oso Polar',          emoji:'🐻',thumb:`${B}/polar/oso_polar.png`,bg:'linear-gradient(135deg,#f0fdf4,#dcfce7)',glb:`${B}/polar/oso_polar.glb`,desc:'Mayor carnívoro terrestre.',    hint:'Recorre la tundra nevada.', zoneIcon:'⛄', scaleH:0.72, yOffset:0},
+      foca:     {name:'Foca de Groenlandia',emoji:'🦭',thumb:`${B}/polar/foca.png`,     bg:'linear-gradient(135deg,#f8fafc,#e2e8f0)',glb:`${B}/polar/foca.glb`,     desc:'Nada 30 km/h bajo el hielo.',  hint:'Descansa en costas rocosas.',zoneIcon:'🪨', scaleH:0.42, yOffset:0},
+      ballena:  {name:'Ballena Boreal',     emoji:'🐳',thumb:`${B}/polar/ballena.png`,  bg:'linear-gradient(135deg,#e0f2fe,#bae6fd)',glb:`${B}/polar/ballena.glb`,  desc:'Vive más de 200 años.',        hint:'Migra por el Ártico.',     zoneIcon:'🌊', scaleH:0.52, groundAlign:false, camDist:6.0},
+    },
+    zones:{
+      pinguino: {left:'10%', top:'80%'},   // far-left rocky ice
+      oso_polar:{left:'32%', top:'75%'},   // center-left large ice floe
+      foca:     {left:'76%', top:'77%'},   // far-right ice shelf
+      ballena:  {left:'54%', top:'60%'},   // center water channel
+    },
+  },
+  oceano:{
+    id:'oceano',title:'Océano Profundo',emoji:'🌊',
+    desc:'El 95% del océano no ha sido explorado. Vida extraordinaria.',
+    fondo:`${B}/oceano/fondo.png`,
+    animals:{
+      // Ballena azul huge, Tiburón large, Calamar medium, Pez payaso tiny
+      ballena_azul:{name:'Ballena Azul',   emoji:'🐋',thumb:`${B}/oceano/ballena_azul.png`, bg:'linear-gradient(135deg,#dbeafe,#93c5fd)',glb:`${B}/oceano/ballena_azul.glb`, desc:'El ser más grande que existió.', hint:'Aguas abiertas profundas.',zoneIcon:'💧', scaleH:0.82, groundAlign:false, camDist:6.5},
+      tiburon:     {name:'Tiburón Blanco', emoji:'🦈',thumb:`${B}/oceano/tiburon_blanco.png`,bg:'linear-gradient(135deg,#e2e8f0,#94a3b8)',glb:`${B}/oceano/tiburon_blanco.glb`, desc:'Perfecto cazador 450 Ma.',     hint:'Patrulla arrecifes.',      zoneIcon:'🐚', scaleH:0.85, groundAlign:false, camDist:3.8},
+      calamar:     {name:'Calamar Gigante',emoji:'🦑',thumb:`${B}/oceano/calamar.png`,       bg:'linear-gradient(135deg,#fdf4ff,#e9d5ff)',glb:`${B}/oceano/calamar.glb`,       desc:'Ojos de 30 cm. El abismo.',    hint:'Zona hadal/abismal.',      zoneIcon:'🌑', scaleH:0.65, groundAlign:false, camDist:3.2},
+      pez_payaso:  {name:'Pez Payaso',     emoji:'🐠',thumb:`${B}/oceano/pez_payaso.png`,    bg:'linear-gradient(135deg,#fff7ed,#fed7aa)',glb:`${B}/oceano/pez_payaso.glb`,    desc:'Inmune al veneno de anémona.', hint:'Vive entre corales.',      zoneIcon:'🪸', scaleH:0.22, groundAlign:false, camDist:2.5},
+    },
+    zones:{
+      ballena_azul:{left:'16%', top:'45%'}, // far-left upper water
+      tiburon:     {left:'44%', top:'60%'}, // center mid-water
+      calamar:     {left:'67%', top:'74%'}, // center-right deeper
+      pez_payaso:  {left:'86%', top:'82%'}, // far-right coral floor
+    },
+  },
+  desierto:{
+    id:'desierto',title:'Desierto de Sonora',emoji:'🏜️',
+    desc:'Más de 50 °C al sol. Solo los más adaptados sobreviven.',
+    fondo:`${B}/desierto/fondo.png`,
+    animals:{
+      // Dromedario large, Lagarto small, Escorpión tiny, Zorro medium
+      dromedario:  {name:'Dromedario',         emoji:'🐪',thumb:`${B}/desierto/dromedario.png`,  bg:'linear-gradient(135deg,#fef9c3,#fde68a)',glb:`${B}/desierto/dromedario.glb`,  desc:'2 semanas sin agua.',           hint:'Recorre las dunas.',       zoneIcon:'🏜️', scaleH:0.80, yOffset:0},
+      lagarto:     {name:'Lagarto Heloderma',  emoji:'🦎',thumb:`${B}/desierto/lagarto.png`,     bg:'linear-gradient(135deg,#d1fae5,#6ee7b7)',glb:`${B}/desierto/lagarto.glb`,     desc:'Lagarto venenoso del desierto.',hint:'Se refugia entre rocas.',  zoneIcon:'🪨', scaleH:0.22, yOffset:0},
+      escorpion:   {name:'Escorpión',          emoji:'🦂',thumb:`${B}/desierto/escorpion.png`,   bg:'linear-gradient(135deg,#fef3c7,#f59e0b)',glb:`${B}/desierto/escorpion.glb`,   desc:'Resiste el calor extremo.',     hint:'Activo de noche.',         zoneIcon:'🌙', scaleH:0.20},
+      zorro_fennec:{name:'Zorro del Desierto', emoji:'🦊',thumb:`${B}/desierto/zorro_fennec.png`,bg:'linear-gradient(135deg,#fef3c7,#fcd34d)',glb:`${B}/desierto/zorro_fennec.glb`,desc:'Orejas para disipar el calor.', hint:'Activo al amanecer.',      zoneIcon:'🌵', scaleH:0.28, yOffset:0},
+    },
+    zones:{
+      dromedario:  {left:'40%', top:'70%'},  // center, mid-far
+      lagarto:     {left:'70%', top:'81%'},  // right, close
+      escorpion:   {left:'55%', top:'85%'},  // very close center — tiny
+      zorro_fennec:{left:'18%', top:'75%'},  // left mid
+    },
+  },
+};
+const LVL_ORDER=['sabana','selva','polar','oceano','desierto'];
+
+// ══════════════════════════════════════════════════════════
+//  STATE
+// ══════════════════════════════════════════════════════════
+let curId=null,curLv=null;
+let placed={},score=0,secs=240,timerId=null,active=true,dragKey=null;
+let mScene,mCamera,mRenderer,mClock;
+let mMixers={},mModels={},mZones={},mRAF=null;
+
+// ══════════════════════════════════════════════════════════
+//  SELECTION
+// ══════════════════════════════════════════════════════════
+function renderSelection(){
+  const g=document.getElementById('levelsGrid'); g.innerHTML='';
+  LVL_ORDER.forEach(id=>{
+    const lv=LEVELS[id],best=getBest(id);
+    const em=Object.values(lv.animals).map(a=>a.emoji).join(' ');
+    const d=document.createElement('div'); d.className='lcard';
+    d.innerHTML=`
+      <div class="lcard-img" style="background-image:url('${lv.fondo}')">
+        <div class="lcard-img-animals">${em}</div>
+      </div>
+      <div class="lcard-body">
+        <div class="lcard-name">${lv.emoji} ${lv.title}</div>
+        <div class="lcard-desc">${lv.desc}</div>
+        <div class="lcard-foot">
+          <span class="lcard-best">${best?'★ '+best+' pts':'—'}</span>
+          <button class="lcard-btn">▶ Jugar</button>
+        </div>
+      </div>`;
+    d.onclick=()=>startLevel(id); g.appendChild(d);
+  });
+}
+function getBest(id){try{return(JSON.parse(localStorage.getItem('tis_sc')||'{}')[id]||{}).best||0}catch{return 0}}
+function saveBest(id,pts){try{const d=JSON.parse(localStorage.getItem('tis_sc')||'{}');if(!d[id]||pts>d[id].best)d[id]={best:pts};localStorage.setItem('tis_sc',JSON.stringify(d))}catch{}}
+
+// ══════════════════════════════════════════════════════════
+//  START / STOP
+// ══════════════════════════════════════════════════════════
+function startLevel(id){
+  curId=id; curLv=LEVELS[id];
+  document.getElementById('selScreen').style.display='none';
+  document.getElementById('gameScreen').style.display='flex';
+  placed={}; score=0; secs=240; active=true;
+  clearInterval(timerId);
+  document.getElementById('gLevelName').textContent=curLv.emoji+' '+curLv.title;
+  document.getElementById('gScore').textContent='0';
+  document.getElementById('gTimer').textContent='4:00';
+  document.getElementById('gTimer').className='g-timer';
+  document.getElementById('gProg').innerHTML=Object.keys(curLv.animals).map((_,i)=>`<div class="g-pd" id="gpd${i}"></div>`).join('');
+  document.getElementById('panelTitle').textContent='Animales: '+curLv.title;
+  document.getElementById('endOv').classList.remove('show');
+  document.getElementById('btnNext').style.display='';
+  document.getElementById('biomeBg').style.backgroundImage=`url('${curLv.fondo}')`;
+  buildDropZones();
+  cleanupThree();
+  initThree();
+  renderCards();
+  startTimer();
+}
+function goToSelection(){clearInterval(timerId);active=false;cleanupThree();document.getElementById('gameScreen').style.display='none';document.getElementById('selScreen').style.display='flex';renderSelection();}
+function resetLevel(){cleanupThree();startLevel(curId);}
+function nextLevel(){startLevel(LVL_ORDER[(LVL_ORDER.indexOf(curId)+1)%LVL_ORDER.length]);}
+
+// ══════════════════════════════════════════════════════════
+//  DROP ZONES (minimal — icon only, no text label)
+// ══════════════════════════════════════════════════════════
+function buildDropZones(){
+  document.getElementById('dzLayer').innerHTML='';
+  Object.entries(curLv.zones).forEach(([key,z])=>{
+    const a=curLv.animals[key];
+    const div=document.createElement('div');
+    div.className='dz'; div.id=`dz_${key}`;
+    div.style.left=z.left; div.style.top=z.top;
+    div.setAttribute('ondragover', `dzOver(event,'${key}')`);
+    div.setAttribute('ondragleave',`dzLeave('${key}')`);
+    div.setAttribute('ondrop',     `dzDrop(event,'${key}')`);
+    // Only icon + checkmark, no text label
+    div.innerHTML=`<div class="dz-ico">${a.zoneIcon}</div><div class="dz-ck">✓</div>`;
+    document.getElementById('dzLayer').appendChild(div);
+  });
+}
+
+// ══════════════════════════════════════════════════════════
+//  THREE.JS
+// ══════════════════════════════════════════════════════════
+const _rc=new THREE.Raycaster();
+const _gnd=new THREE.Plane(new THREE.Vector3(0,1,0),0);
+
+function initThree(){
+  const canvas=document.getElementById('mapCanvas');
+  const ma=document.getElementById('mapArea');
+  const W=ma.clientWidth, H=ma.clientHeight;
+
+  mScene=new THREE.Scene();
+  mRenderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+  mRenderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  mRenderer.setSize(W,H);
+  mRenderer.outputEncoding=THREE.sRGBEncoding;
+
+  mCamera=new THREE.PerspectiveCamera(50,W/H,0.05,200);
+  mCamera.position.set(0,1.5,6);
+  mCamera.lookAt(0,0,0);
+
+  mScene.add(new THREE.AmbientLight(0xfff4e0,0.88));
+  const sun=new THREE.DirectionalLight(0xffe8b0,2.2);
+  sun.position.set(4,8,3); mScene.add(sun);
+  mScene.add(new THREE.HemisphereLight(0x88ccff,0x886644,0.45));
+
+  mClock=new THREE.Clock(); mMixers={}; mModels={}; mZones={};
+
+  Object.keys(curLv.zones).forEach(k=>{
+    const g=makeRing(); mScene.add(g); mZones[k]=g;
+    if(curLv.animals[k]?.groundAlign===false) g.visible=false;
+  });
+
+  new ResizeObserver(()=>{
+    const W2=ma.clientWidth,H2=ma.clientHeight;
+    mRenderer.setSize(W2,H2);
+    mCamera.aspect=W2/H2;
+    mCamera.updateProjectionMatrix();
+    positionRings();
+  }).observe(ma);
+
+  const loop=()=>{
+    mRAF=requestAnimationFrame(loop);
+    const dt=Math.min(mClock.getDelta(),0.05);
+    const t=performance.now()/1000;
+    Object.entries(mZones).forEach(([k,g],i)=>{
+      if(!placed[k]&&g.visible) g.children[0].material.opacity=0.38+0.2*Math.sin(t*2.4+i*1.1);
+    });
+    Object.values(mModels).forEach(obj=>{
+      if(obj._it<1){obj._it=Math.min(obj._it+dt*1.6,1);obj.scale.setScalar(Math.max(0,eobk(obj._it)*obj._ts));}
+    });
+    Object.values(mMixers).forEach(mx=>mx.update(dt));
+    mRenderer.render(mScene,mCamera);
+  };
+  loop();
+  requestAnimationFrame(positionRings);
+  setupRotation(ma);
+}
+
+function makeRing(){
+  const r=new THREE.Mesh(new THREE.RingGeometry(0.42,0.62,32),
+    new THREE.MeshBasicMaterial({color:0xf5c030,transparent:true,opacity:.42,side:THREE.DoubleSide,depthWrite:false}));
+  r.rotation.x=-Math.PI/2; r.position.y=0.02;
+  const f=new THREE.Mesh(new THREE.CircleGeometry(0.42,32),
+    new THREE.MeshBasicMaterial({color:0xf5c030,transparent:true,opacity:.07,side:THREE.DoubleSide,depthWrite:false}));
+  f.rotation.x=-Math.PI/2; f.position.y=0.01;
+  const g=new THREE.Group(); g.add(r,f); return g;
+}
+
+function dzNDC(key){
+  const ma=document.getElementById('mapArea').getBoundingClientRect();
+  const el=document.getElementById(`dz_${key}`); if(!el) return null;
+  const r=el.getBoundingClientRect();
+  return{x:((r.left+r.width/2-ma.left)/ma.width)*2-1,
+         y:-(((r.top+r.height/2-ma.top)/ma.height)*2-1)};
+}
+function ndcToGround(ndc){
+  if(!mCamera) return null;
+  _rc.setFromCamera(ndc,mCamera);
+  const hit=new THREE.Vector3();
+  return _rc.ray.intersectPlane(_gnd,hit)?hit.clone():null;
+}
+
+function positionRings(){
+  if(!mCamera) return;
+  Object.keys(curLv.zones).forEach(k=>{
+    if(curLv.animals[k]?.groundAlign===false) return;
+    const ndc=dzNDC(k); if(!ndc||!mZones[k]) return;
+    const wp=ndcToGround(ndc); if(!wp) return;
+    mZones[k].position.set(wp.x, 0.01, wp.z);
+  });
+}
+
+function placeAnimal3D(key){
+  const ndc=dzNDC(key); if(!ndc) return;
+  const animalData=curLv.animals[key];
+  const isElevated=animalData.groundAlign===false;
+
+  // Elevated/floating animals: fire ray from camera to camDist — animal appears
+  // exactly at the drop zone's screen position, no yOffset disconnect.
+  // Ground animals: raycast to y=0 plane (correct X,Z for floor placement).
+  let wp;
+  if(isElevated){
+    if(!mCamera) return;
+    _rc.setFromCamera(ndc,mCamera);
+    const dir=_rc.ray.direction.clone().normalize();
+    wp=new THREE.Vector3().copy(mCamera.position).addScaledVector(dir,animalData.camDist||4.0);
+  } else {
+    wp=ndcToGround(ndc); if(!wp) return;
+  }
+
+  if(mZones[key]) mZones[key].visible=false;
+
+  new THREE.GLTFLoader().load(animalData.glb, gltf=>{
+    const model=gltf.scene;
+
+    const b1=new THREE.Box3().setFromObject(model);
+    const sc=(animalData.scaleH||0.5)/(b1.getSize(new THREE.Vector3()).y||1);
+    model.scale.setScalar(sc);
+
+    const b2=new THREE.Box3().setFromObject(model);
+    const c2=b2.getCenter(new THREE.Vector3());
+
+    if(isElevated){
+      // Place base at wp.y (camera-ray height at camDist)
+      model.position.set(wp.x-c2.x, wp.y-b2.min.y, wp.z-c2.z);
+    } else {
+      // Ground: base always at y=0
+      model.position.set(wp.x-c2.x, -b2.min.y, wp.z-c2.z);
+    }
+
+    model.lookAt(mCamera.position.x, model.position.y, mCamera.position.z);
+    model._it=0; model._ts=sc;
+    model.scale.setScalar(0);
+    mScene.add(model); mModels[key]=model;
+
+    if(gltf.animations?.length){
+      const mx=new THREE.AnimationMixer(model); mMixers[key]=mx;
+      (THREE.AnimationClip.findByName(gltf.animations,'idle')||gltf.animations[0]) && mx.clipAction(THREE.AnimationClip.findByName(gltf.animations,'idle')||gltf.animations[0]).play();
+    }
+
+    if(!isElevated){
+      const sd=new THREE.Mesh(new THREE.CircleGeometry(0.3,20),
+        new THREE.MeshBasicMaterial({color:0,transparent:true,opacity:.18,depthWrite:false}));
+      sd.rotation.x=-Math.PI/2; sd.position.set(wp.x,0.004,wp.z); mScene.add(sd);
+    }
+  },undefined,()=>console.warn('[GLB not ready]',key));
+}
+
+// ── Rotation: drag on a placed animal to rotate it ──
+function setupRotation(ma){
+  let selModel=null, prevX=0, dragging=false;
+  let hoverT=0;
+  const hint=document.getElementById('rotHint');
+
+  ma.addEventListener('mousedown',e=>{
+    if(dragKey||e.target.closest('.dz,.end-ov')) return;
+    const rect=ma.getBoundingClientRect();
+    const nx=((e.clientX-rect.left)/rect.width)*2-1;
+    const ny=-(((e.clientY-rect.top)/rect.height)*2-1);
+    _rc.setFromCamera({x:nx,y:ny},mCamera);
+    const meshes=[]; Object.values(mModels).forEach(m=>m.traverse(o=>{if(o.isMesh)meshes.push(o);}));
+    const hits=_rc.intersectObjects(meshes);
+    if(hits.length){
+      selModel=findParentModel(hits[0].object);
+      prevX=e.clientX; dragging=true;
+      ma.style.cursor='grabbing';
+      e.stopPropagation();
+    }
+  });
+
+  ma.addEventListener('mousemove',e=>{
+    if(dragging&&selModel){
+      selModel.rotation.y+=(e.clientX-prevX)*0.013;
+      prevX=e.clientX; return;
+    }
+    // Hover detection (throttled to ~20fps)
+    const now=Date.now();
+    if(now-hoverT<50) return; hoverT=now;
+    const rect=ma.getBoundingClientRect();
+    const nx=((e.clientX-rect.left)/rect.width)*2-1;
+    const ny=-(((e.clientY-rect.top)/rect.height)*2-1);
+    _rc.setFromCamera({x:nx,y:ny},mCamera);
+    const meshes=[]; Object.values(mModels).forEach(m=>m.traverse(o=>{if(o.isMesh)meshes.push(o);}));
+    const hits=_rc.intersectObjects(meshes);
+    if(hits.length){
+      ma.style.cursor='grab';
+      hint.classList.add('show');
+    } else {
+      ma.style.cursor='';
+      hint.classList.remove('show');
+    }
+  });
+
+  ['mouseup','mouseleave'].forEach(ev=>ma.addEventListener(ev,()=>{
+    dragging=false; selModel=null; ma.style.cursor='';
+  }));
+}
+
+function findParentModel(obj){
+  for(const m of Object.values(mModels)){
+    let o=obj; while(o){if(o===m)return m; o=o.parent;}
+  }
+  return null;
+}
+
+function cleanupThree(){
+  if(mRAF){cancelAnimationFrame(mRAF);mRAF=null;}
+  if(mRenderer){mRenderer.dispose();mRenderer=null;}
+  Object.values(mMixers).forEach(mx=>mx.stopAllAction());
+  mMixers={}; mModels={}; mZones={};
+  mScene=null; mCamera=null; mClock=null;
+}
+function eobk(t){const c=2.70158;return 1+c*Math.pow(t-1,3)+(c-1)*Math.pow(t-1,2);}
+
+// ══════════════════════════════════════════════════════════
+//  DRAG & DROP
+// ══════════════════════════════════════════════════════════
+function onDragStart(e,key){
+  if(placed[key]){e.preventDefault();return;}
+  dragKey=key; e.dataTransfer.setData('ak',key); e.dataTransfer.effectAllowed='move';
+  document.getElementById(`card_${key}`)?.classList.add('dragging');
+}
+function onDragEnd(key){
+  dragKey=null;
+  document.getElementById(`card_${key}`)?.classList.remove('dragging');
+  Object.keys(curLv.zones).forEach(k=>document.getElementById(`dz_${k}`)?.classList.remove('ov'));
+}
+function dzOver(e,k){e.preventDefault();e.dataTransfer.dropEffect='move';document.getElementById(`dz_${k}`)?.classList.add('ov');}
+function dzLeave(k){document.getElementById(`dz_${k}`)?.classList.remove('ov');}
+function dzDrop(e,zoneKey){
+  e.preventDefault();
+  const key=e.dataTransfer.getData('ak')||dragKey;
+  if(!key||!active) return;
+  document.getElementById(`dz_${zoneKey}`)?.classList.remove('ov');
+  document.getElementById(`card_${key}`)?.classList.remove('dragging');
+  dragKey=null;
+  if(key===zoneKey){
+    placed[key]=true; score+=100; refreshScore(); refreshProgress();
+    document.getElementById(`card_${key}`)?.classList.add('placed');
+    document.getElementById(`dz_${zoneKey}`)?.classList.add('placed');
+    placeAnimal3D(key);
+    toast(`¡Correcto! ${curLv.animals[key].name} 🎉`,'ok');
+    if(Object.keys(placed).length===Object.keys(curLv.animals).length) setTimeout(showWin,900);
+  } else {
+    score=Math.max(0,score-10); refreshScore();
+    const dz=document.getElementById(`dz_${zoneKey}`);
+    if(dz){dz.style.background='rgba(239,68,68,.28)';setTimeout(()=>dz.style.background='',500);}
+    toast(`Zona incorrecta para ${curLv.animals[key]?.name||key}`,'err');
+  }
+}
+
+// ══════════════════════════════════════════════════════════
+//  TIMER
+// ══════════════════════════════════════════════════════════
+function startTimer(){
+  timerId=setInterval(()=>{
+    if(!active) return; secs--;
+    const m=Math.floor(secs/60),s=secs%60;
+    const el=document.getElementById('gTimer');
+    el.textContent=`${m}:${s.toString().padStart(2,'0')}`;
+    el.className='g-timer'+(secs<=30?' crit':secs<=60?' warn':'');
+    if(secs<=0){clearInterval(timerId);showLose();}
+  },1000);
+}
+
+// ══════════════════════════════════════════════════════════
+//  WIN / LOSE
+// ══════════════════════════════════════════════════════════
+function showWin(){
+  active=false; clearInterval(timerId);
+  const bonus=secs*2; score+=bonus; refreshScore(); saveBest(curId,score);
+  const nxt=LVL_ORDER[(LVL_ORDER.indexOf(curId)+1)%LVL_ORDER.length];
+  document.getElementById('endIcon').textContent='🏆';
+  document.getElementById('endTitle').textContent='¡Nivel completado!';
+  document.getElementById('endSub').textContent=`+${bonus} pts bonus por tiempo · ¡Excelente!`;
+  document.getElementById('endPts').textContent=score;
+  document.getElementById('btnNext').textContent=`${LEVELS[nxt].emoji} ${LEVELS[nxt].title} →`;
+  document.getElementById('endOv').classList.add('show');
+}
+function showLose(){
+  active=false;
+  document.getElementById('endIcon').textContent='⏰';
+  document.getElementById('endTitle').textContent='¡Tiempo agotado!';
+  document.getElementById('endSub').textContent=`Colocaste ${Object.keys(placed).length}/${Object.keys(curLv.animals).length} animales.`;
+  document.getElementById('endPts').textContent=score;
+  document.getElementById('btnNext').style.display='none';
+  document.getElementById('endOv').classList.add('show');
+}
+
+// ══════════════════════════════════════════════════════════
+//  UI
+// ══════════════════════════════════════════════════════════
+function refreshScore(){document.getElementById('gScore').textContent=score;}
+function refreshProgress(){
+  const keys=Object.keys(curLv.animals);
+  Object.keys(placed).forEach(k=>document.getElementById(`gpd${keys.indexOf(k)}`)?.classList.add('ok'));
+}
+function renderCards(){
+  const list=document.getElementById('cardsList'); list.innerHTML='';
+  Object.entries(curLv.animals).forEach(([key,d])=>{
+    const div=document.createElement('div');
+    div.className='acard'+(placed[key]?' placed':'');
+    div.id=`card_${key}`; div.draggable=!placed[key];
+    div.setAttribute('ondragstart',`onDragStart(event,'${key}')`);
+    div.setAttribute('ondragend',  `onDragEnd('${key}')`);
+    const thumb=d.thumb?`<img src="${d.thumb}" alt="${d.name}">`:`<span>${d.emoji}</span>`;
+    div.innerHTML=`
+      <div class="acard-ico" style="background:${d.bg}">${thumb}</div>
+      <div class="acard-body">
+        <div class="acard-name">${d.name}</div>
+        <div class="acard-desc">${d.desc}</div>
+        <div class="acard-hint">💡 ${d.hint}</div>
+      </div>`;
+    list.appendChild(div);
+  });
+}
+let _tt;
+function toast(msg,type=''){
+  const el=document.getElementById('toast');
+  el.className=`toast show ${type}`; el.textContent=msg;
+  clearTimeout(_tt); _tt=setTimeout(()=>el.classList.remove('show'),2400);
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  renderSelection();
+  const lvl=new URLSearchParams(location.search).get('level');
+  if(lvl && LEVELS[lvl]) setTimeout(()=>startLevel(lvl),80);
+});
+</script>
+</body>
+</html>

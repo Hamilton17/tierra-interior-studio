@@ -1,0 +1,96 @@
+{
+  "id": "manto_inferior",
+
+  "fichas": [
+    {
+      "ico": "📏",
+      "titulo": "Grosor",
+      "valor": "2,240",
+      "unidad": "km",
+      "contexto": "La capa más gruesa de la Tierra. Desde 660 km hasta 2,900 km (límite con el núcleo externo, discontinuidad de Gutenberg)."
+    },
+    {
+      "ico": "🌡️",
+      "titulo": "Temperatura",
+      "valor": "1,400 – 3,700",
+      "unidad": "°C",
+      "contexto": "1,400 °C en el tope (660 km) y ~3,700 °C en la base (2,900 km). El gradiente geotérmico aquí es mucho más suave que en la corteza."
+    },
+    {
+      "ico": "⚡",
+      "titulo": "Presión",
+      "valor": "24 – 136",
+      "unidad": "GPa",
+      "contexto": "Presiones colosales: 24 GPa equivalen a 240,000 atmósferas. A 136 GPa (base del manto), los minerales se han transformado en perovskita de Mg-Si."
+    },
+    {
+      "ico": "🔮",
+      "titulo": "Mineral dominante",
+      "valor": "Bridgmanita",
+      "unidad": "MgSiO₃",
+      "contexto": "La bridgmanita (antes llamada perovskita de Mg) es probablemente el mineral más abundante del planeta. Solo estable a >24 GPa — jamás se encuentra en superficie."
+    },
+    {
+      "ico": "🌍",
+      "titulo": "Volumen terrestre",
+      "valor": "38",
+      "unidad": "% del planeta",
+      "contexto": "El manto inferior solo es el 38% del volumen de la Tierra, pero representa el 49% de su masa. Es la capa más masiva."
+    },
+    {
+      "ico": "⏱️",
+      "titulo": "Tiempo de circulación",
+      "valor": "~100 – 200",
+      "unidad": "millones de años",
+      "contexto": "Una 'corriente' de convección en el manto inferior tarda entre 100 y 200 millones de años en completar un ciclo completo."
+    }
+  ],
+
+  "comparativas": {
+    "descripcion": "El manto inferior es la capa más gruesa y masiva del planeta. Sus corrientes de convección, aunque extremadamente lentas, son la fuerza motriz de toda la tectónica de placas.",
+    "registros": [
+      { "tipo": "Capa más gruesa",                        "valor": "2,240 km",        "nota": "Más que la distancia Madrid-Moscú" },
+      { "tipo": "Capa más masiva",                        "valor": "~49% masa Tierra", "nota": "Pesa más que todas las demás capas juntas" },
+      { "tipo": "Presión máxima del manto",               "valor": "136 GPa",         "nota": "1,360,000 atmósferas en la base" },
+      { "tipo": "La zona D'' (D-doble prima)",            "valor": "200-300 km",       "nota": "Zona de transición manto-núcleo, con estructura compleja" }
+    ]
+  },
+
+  "metodos_estudio": [
+    {
+      "metodo": "Tomografía sísmica de alta resolución",
+      "icon": "🔬",
+      "descripcion": "Las 'losas' de corteza oceánica subducida se visualizan como zonas frías (azul) que penetran hasta el fondo del manto inferior. Las plumas calientes (rojo) ascienden desde la base. Resolución moderna: ~20-50 km."
+    },
+    {
+      "metodo": "Celdas de yunque de diamante (DAC)",
+      "icon": "💎",
+      "descripcion": "En el laboratorio se comprimen muestras a 150 GPa calentándolas con láser (hasta 5,000 K) para replicar condiciones del manto inferior. Descubrimiento de bridgmanita en 2014 (previamente hipotética)."
+    },
+    {
+      "metodo": "Análisis de ondas sísmicas PKP y PKIKP",
+      "icon": "📡",
+      "descripcion": "Ondas P que atraviesan el núcleo revelan la estructura del manto inferior en su base. La 'zona ultra-baja velocidad' (ULVZ) en D'' sugiere material parcialmente fundido en contacto con el núcleo líquido."
+    }
+  ],
+
+  "hitos": [
+    { "anio": 1926, "evento": "Beno Gutenberg define la discontinuidad corteza-manto inferior y descubre el núcleo externo líquido" },
+    { "anio": 1952, "evento": "Francis Birch propone la composición mineralógica del manto inferior basada en experimentos de alta presión" },
+    { "anio": 1974, "evento": "Akimoto y Akaogi confirman la transformación de espinela a perovskita a 660 km (inicio del manto inferior)" },
+    { "anio": 2004, "evento": "Tomografía sísmica muestra que las placas subducidas llegan hasta el límite manto-núcleo (a 2,900 km)" },
+    { "anio": 2014, "evento": "Tschauner et al. confirman la bridgmanita (perovskita de Mg) en un meteorito chondrítico — prueba de su existencia" }
+  ],
+
+  "analogias": [
+    "El manto inferior es como la 'miel de piedra': fluye, pero tan lentamente que un ciclo de convección tarda más que la existencia de los dinosaurios.",
+    "Las placas tectónicas que se hunden (subducción) son como cubos de hielo que caen al fondo de un vaso de miel espesísima — se hunden, pero tardando millones de años.",
+    "La bridgmanita del manto inferior es el mineral más abundante de la Tierra, pero nadie lo ha visto en superficie. Solo existe bajo presiones que destruirían cualquier equipo de perforación."
+  ],
+
+  "recursos_naturales": [
+    "Calor interno: el manto inferior es el principal reservorio del calor interno de la Tierra (calor radiogénico + residual de formación)",
+    "Plumas del manto: traen materiales del manto profundo a superficie, formando puntos calientes (Hawái, Islandia, Yellowstone)",
+    "No se explotan recursos directos — completamente inaccesible con tecnología actual"
+  ]
+}

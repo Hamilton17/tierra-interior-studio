@@ -1,0 +1,109 @@
+{
+  "id": "placas_tectonicas",
+  "titulo": "Placas Tectónicas",
+  "subtitulo": "El rompecabezas dinámico de la litosfera terrestre",
+  "emoji": "🌍",
+
+  "fichas": [
+    {
+      "ico": "🌍",
+      "titulo": "Número de placas principales",
+      "valor": "7",
+      "unidad": "placas mayores",
+      "contexto": "Pacífica, Norteamericana, Sudamericana, Africana, Euroasiática, Indo-Australiana y Antártica. Más ~15 placas menores (Caribe, Filipina, Arábiga...). Juntas cubren toda la litosfera."
+    },
+    {
+      "ico": "⏱️",
+      "titulo": "Velocidad de movimiento",
+      "valor": "1–17",
+      "unidad": "cm/año",
+      "contexto": "La placa del Pacífico (la más rápida) se mueve 17 cm/año hacia el noroeste. La placa Euroasiática (la más lenta) avanza ~2 cm/año. En 10 Ma, la distancia acumulada es de 170–1,700 km."
+    },
+    {
+      "ico": "📏",
+      "titulo": "Grosor de la litosfera",
+      "valor": "70–250",
+      "unidad": "km",
+      "contexto": "La litosfera oceánica tiene 70–100 km; la continental puede superar 250 km bajo los cratones. Esta diferencia de grosor afecta a qué placa se hunde en una colisión (la oceánica, más densa)."
+    },
+    {
+      "ico": "🔄",
+      "titulo": "Ciclo de Wilson",
+      "valor": "~500",
+      "unidad": "millones de años",
+      "contexto": "Los océanos se abren, se expanden y se cierran en ciclos de ~500 Ma. El océano Atlántico lleva 200 Ma abriéndose y en el futuro volverá a cerrarse cuando la subducción lo consuma."
+    },
+    {
+      "ico": "🌊",
+      "titulo": "Tasa de creación de corteza",
+      "valor": "~16",
+      "unidad": "km²/año",
+      "contexto": "Las dorsales oceánicas crean ~16 km² de nueva corteza oceánica cada año. Las zonas de subducción destruyen exactamente la misma cantidad — el equilibrio se mantiene desde hace 4,000 Ma."
+    },
+    {
+      "ico": "🏔️",
+      "titulo": "Montañas formadas por colisión",
+      "valor": "Himalaya: 50",
+      "unidad": "Ma en formación",
+      "contexto": "India y Asia llevan 50 Ma colisionando. Los Himalayas crecen ~5 mm/año. La erosión los desgasta a la misma velocidad — un equilibrio dinámico que regula el CO₂ atmosférico a largo plazo."
+    }
+  ],
+
+  "proceso": [
+    {
+      "paso": 1,
+      "titulo": "Rifting (apertura)",
+      "descripcion": "El calor del manto adelgaza la litosfera, que se fractura y separa. Se forma un rift (como el Valle del Rift Africano, futuro océano). Las primeras erupciones basálticas crean nueva corteza oceánica.",
+      "icon": "↔️"
+    },
+    {
+      "paso": 2,
+      "titulo": "Dorsales oceánicas (expansión)",
+      "descripcion": "El fondo marino se expande simétricamente desde la dorsal central. El magma llena el hueco. Las franjas de polaridad magnética invertida a ambos lados de la dorsal son el registro de este proceso.",
+      "icon": "🌊"
+    },
+    {
+      "paso": 3,
+      "titulo": "Subducción (descenso)",
+      "descripcion": "La corteza oceánica, al enfriarse y densificarse, se hunde bajo la continental. La fricción genera terremotos, el agua liberada funde la roca, generando volcanes en la placa superior.",
+      "icon": "⬇️"
+    },
+    {
+      "paso": 4,
+      "titulo": "Colisión continental (orogenia)",
+      "descripcion": "Cuando dos continentes colisionan (ninguno se hunde porque ambos son ligeros), se pliegan y apilan formando cordilleras. Los Alpes, Himalayas y Apalaches son colisiones en distintas etapas.",
+      "icon": "🏔️"
+    }
+  ],
+
+  "relacion_capas": [
+    { "capa": "Corteza Continental", "rol": "Forma el 'pasajero' de las placas continentales — demasiado ligera para subducir, se apila en colisiones formando montañas" },
+    { "capa": "Corteza Oceánica", "rol": "Se crea en dorsales y se destruye en zonas de subducción. Su densidad progresiva con la edad es la fuerza 'slab pull' que arrastra las placas" },
+    { "capa": "Manto Superior", "rol": "La astenosfera (manto parcialmente fundido) es la 'capa de deslizamiento' sobre la que se mueven las placas" },
+    { "capa": "Manto Inferior", "rol": "Absorbe las placas subducidas (slabs fríos) que se detectan en tomografía sísmica hasta 660–2,900 km de profundidad" }
+  ],
+
+  "placas_principales": [
+    { "nombre": "Pacífica",       "tipo": "Oceánica",     "area_km2": "103,300,000", "velocidad": "7–11 cm/año NO",  "limite": "Anillo de fuego" },
+    { "nombre": "Norteamericana", "tipo": "Mixta",        "area_km2": "75,900,000",  "velocidad": "2.3 cm/año SO",   "limite": "Falla de San Andrés" },
+    { "nombre": "Euroasiática",   "tipo": "Continental",  "area_km2": "67,800,000",  "velocidad": "2.1 cm/año NE",   "limite": "Himalaya (S), Dorsales (O)" },
+    { "nombre": "Africana",       "tipo": "Continental",  "area_km2": "61,300,000",  "velocidad": "2.15 cm/año NE",  "limite": "Valle del Rift (interior)" },
+    { "nombre": "Indo-Australiana","tipo": "Mixta",       "area_km2": "58,900,000",  "velocidad": "6–7 cm/año NE",   "limite": "Himalaya (N), Java (S)" },
+    { "nombre": "Sudamericana",   "tipo": "Continental",  "area_km2": "43,600,000",  "velocidad": "3 cm/año O",      "limite": "Andes (O), Cordillera del Atlántico (E)" },
+    { "nombre": "Antártica",      "tipo": "Mixta",        "area_km2": "60,900,000",  "velocidad": "1–1.5 cm/año",    "limite": "Rodea toda la Antártida" }
+  ],
+
+  "analogias": [
+    "Las placas tectónicas son como piezas de un rompecabezas en movimiento lento: encajan perfectamente si las juntamos — Wegener notó que África y Sudamérica se acoplaban como piezas de un puzzle.",
+    "La subducción es como meter el borde de un mantel bajo la mesa: la parte que se mete (corteza oceánica) se consume y desaparece; la que queda sobre la mesa (continente) forma arrugas (montañas).",
+    "El Atlántico es como una cicatriz que se abre: hace 180 Ma era un río; hoy mide 9,000 km. En 100 Ma más tendrá 11,000 km — hasta que la subducción empiece a cerrar el ciclo."
+  ],
+
+  "hitos_ciencia": [
+    { "anio": 1912, "evento": "Alfred Wegener propone la 'Deriva Continental': todos los continentes formaron Pangea y se separaron" },
+    { "anio": 1929, "evento": "Arthur Holmes propone la convección del manto como mecanismo para la deriva — ignorado durante 30 años" },
+    { "anio": 1963, "evento": "Vine y Matthews descubren las anomalías magnéticas simétricas del fondo oceánico — prueba irrefutable de la expansión del fondo marino" },
+    { "anio": 1965, "evento": "Tuzo Wilson propone las 'fallas transformantes' y el concepto de placas rígidas — nace la Tectónica de Placas como teoría unificada" },
+    { "anio": 1968, "evento": "La Tectónica de Placas es aceptada como el paradigma unificador de las Ciencias de la Tierra — la revolución más grande de la geología" }
+  ]
+}

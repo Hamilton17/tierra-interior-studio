@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1400">
+<title>Tierra Interior Studio — Biblioteca</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#f0f4ff;--card:#fff;--border:#c8d5f0;
+  --primary:#2a5cb8;--primary-soft:#edf2ff;--primary-d:#1a3c88;
+  --navy:#0a1230;--text:#1a2040;--muted:#4a5880;
+  --r:10px;--r-lg:16px;
+  --sh:0 2px 8px rgba(42,92,184,.08);--sh-lg:0 6px 28px rgba(42,92,184,.12);
+}
+body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:13px;min-width:1200px;min-height:100vh;display:flex;flex-direction:column}
+.topbar{height:58px;background:var(--card);border-bottom:1.5px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:16px;box-shadow:0 1px 6px rgba(42,92,184,.07);flex-shrink:0}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto;text-decoration:none}
+.brand-icon{width:36px;height:36px;background:linear-gradient(135deg,#c45c1a,#e64010);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.brand-name{font-size:15px;font-weight:700;color:#2c0d04}.brand-sub{font-size:11px;color:#8a5a3a}
+.nav-btn{display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:8px;border:none;background:none;font-size:12.5px;font-weight:600;color:var(--muted);cursor:pointer;text-decoration:none;transition:background .15s,color .15s}
+.nav-btn:hover{background:var(--primary-soft);color:var(--primary)}
+.nav-btn.active{background:var(--primary-soft);color:var(--primary)}
+.nav-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
+.content{flex:1;display:grid;grid-template-columns:240px 1fr;overflow:hidden;min-height:0}
+.lib-nav{background:var(--card);border-right:1.5px solid var(--border);display:flex;flex-direction:column;padding:16px 12px;gap:2px;overflow-y:auto}
+.lib-nav-title{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;padding:10px 8px 4px}
+.lib-nav-item{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;cursor:pointer;font-size:12.5px;font-weight:600;color:var(--muted);transition:all .15s;border:none;background:none;width:100%;text-align:left}
+.lib-nav-item:hover{background:var(--primary-soft);color:var(--primary)}
+.lib-nav-item.active{background:var(--primary-soft);color:var(--primary)}
+.nav-count{margin-left:auto;font-size:10px;background:var(--bg);border-radius:20px;padding:1px 7px;color:var(--muted)}
+.lib-main{display:flex;flex-direction:column;overflow:hidden;min-height:0}
+.lib-header{background:var(--card);border-bottom:1.5px solid var(--border);padding:14px 20px;display:flex;align-items:center;gap:14px;flex-shrink:0}
+.lib-search{flex:1;max-width:340px;display:flex;align-items:center;gap:8px;background:var(--bg);border:1.5px solid var(--border);border-radius:8px;padding:7px 12px}
+.lib-search svg{width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2;flex-shrink:0}
+.lib-search input{border:none;background:none;font-size:12.5px;color:var(--text);outline:none;width:100%}
+.lib-search input::placeholder{color:var(--muted)}
+.filter-chips{display:flex;gap:6px;flex-wrap:wrap}
+.fchip{padding:5px 12px;border-radius:20px;border:1.5px solid var(--border);background:var(--card);font-size:11px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .15s}
+.fchip.active{border-color:var(--primary);background:var(--primary-soft);color:var(--primary)}
+.fchip:hover:not(.active){background:var(--bg)}
+.lib-grid{flex:1;overflow-y:auto;padding:20px}
+.lib-grid::-webkit-scrollbar{width:4px}.lib-grid::-webkit-scrollbar-track{background:transparent}.lib-grid::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+.grid-section-title{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;margin-top:4px}
+.articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:28px}
+.article-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--r-lg);overflow:hidden;cursor:pointer;transition:box-shadow .2s,transform .2s,border-color .2s}
+.article-card:hover{box-shadow:var(--sh-lg);transform:translateY(-2px);border-color:var(--primary)}
+.article-thumb{height:120px;display:flex;align-items:center;justify-content:center;font-size:48px}
+.article-body{padding:14px}
+.article-cat{font-size:10px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+.article-title{font-size:13.5px;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:6px}
+.article-excerpt{font-size:11.5px;color:var(--muted);line-height:1.55;margin-bottom:10px}
+.article-meta{display:flex;align-items:center;gap:8px;font-size:10.5px;color:var(--muted)}
+.article-type{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px}
+.type-art{background:#e0e7ff;color:#3730a3}
+.type-vid{background:#fee2e2;color:#991b1b}
+.type-info{background:#fef3c7;color:#92400e}
+.type-quiz{background:#d1fae5;color:#065f46}
+.no-results{text-align:center;padding:60px 20px;color:var(--muted);font-size:14px}
+
+/* ── MODAL ──────────────────────────────────────────────────── */
+.modal-overlay{position:fixed;inset:0;background:rgba(10,18,48,.55);z-index:1000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(3px)}
+.modal-overlay.open{display:flex}
+.modal-box{background:var(--card);border-radius:20px;width:min(820px,94vw);max-height:88vh;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.25);overflow:hidden;position:relative}
+.modal-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border:none;background:var(--bg);border-radius:50%;font-size:14px;cursor:pointer;z-index:10;color:var(--muted);display:flex;align-items:center;justify-content:center;transition:background .15s}
+.modal-close:hover{background:var(--border)}
+.modal-scroll{overflow-y:auto;flex:1;padding:28px 30px}
+.modal-scroll::-webkit-scrollbar{width:4px}.modal-scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+
+/* ── ARTÍCULO ────────────────────────────────────────────────── */
+.art-cat-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.06em;background:var(--primary-soft);padding:3px 10px;border-radius:20px;margin-bottom:12px}
+.art-title{font-size:22px;font-weight:800;color:var(--navy);line-height:1.25;margin-bottom:8px}
+.art-meta{display:flex;gap:14px;font-size:11px;color:var(--muted);margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.art-illustration{width:100%;border-radius:12px;margin-bottom:20px;overflow:hidden;background:#111418;display:flex;align-items:center;justify-content:center}
+.art-illustration img{width:100%;height:auto;max-height:220px;object-fit:contain;display:block}
+.art-illustration-fallback{font-size:60px;height:180px;display:flex;align-items:center;justify-content:center}
+.art-body h3{font-size:14px;font-weight:700;color:var(--navy);margin:18px 0 8px}
+.art-body p{font-size:13px;color:var(--text);line-height:1.7;margin-bottom:14px}
+.art-body ul{margin:8px 0 14px 20px}
+.art-body li{font-size:13px;color:var(--text);line-height:1.7;margin-bottom:4px}
+.art-facts{background:var(--primary-soft);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-top:20px}
+.art-facts h4{font-size:12px;font-weight:700;color:var(--primary);margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em}
+.fact-item{display:flex;gap:8px;margin-bottom:6px;font-size:12px;color:var(--navy)}
+.fact-item::before{content:"•";color:var(--primary);flex-shrink:0}
+
+/* ── VIDEO YOUTUBE ───────────────────────────────────────────── */
+.vid-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;background:#000;margin-bottom:18px}
+.vid-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:14px}
+.vid-key-points{background:var(--bg);border-radius:12px;padding:14px 18px}
+.vid-key-points h4{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.vid-point{font-size:12.5px;color:var(--text);padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px}
+.vid-point:last-child{border:none}
+.vid-point::before{content:"▸";color:var(--primary);flex-shrink:0}
+
+/* ── INFOGRAFÍA ──────────────────────────────────────────────── */
+.info-header{margin-bottom:18px}
+.info-title{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.info-sub{font-size:12px;color:var(--muted);line-height:1.55}
+.info-svg-wrap{background:#111418;border-radius:14px;overflow:hidden;margin-bottom:18px;display:flex;align-items:center;justify-content:center}
+.info-svg-wrap img{width:100%;height:auto;display:block}
+.info-leyenda{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.info-leyenda-item{background:var(--bg);border-radius:10px;padding:12px 14px;border:1px solid var(--border)}
+.info-leyenda-item .legend-title{font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.info-leyenda-item p{font-size:11px;color:var(--muted);line-height:1.5}
+
+/* ── QUIZ ────────────────────────────────────────────────────── */
+.quiz-header{text-align:center;margin-bottom:24px}
+.quiz-title{font-size:19px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.quiz-desc{font-size:12px;color:var(--muted)}
+.quiz-progress-wrap{margin-bottom:20px}
+.quiz-progress-bar-bg{height:5px;background:var(--bg);border-radius:10px;overflow:hidden;margin-bottom:8px}
+.quiz-progress-bar{height:100%;background:linear-gradient(90deg,var(--primary),#4a8af0);border-radius:10px;transition:width .4s}
+.quiz-progress-label{font-size:11px;color:var(--muted);text-align:right}
+.quiz-q-num{font-size:10px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.quiz-question{font-size:15px;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:18px}
+.quiz-illustration{width:100%;border-radius:10px;overflow:hidden;background:#111418;margin-bottom:16px;display:flex;align-items:center;justify-content:center}
+.quiz-illustration img{max-height:160px;width:100%;object-fit:contain;display:block}
+.quiz-opts{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.quiz-opt{padding:12px 16px;border:1.5px solid var(--border);border-radius:10px;background:var(--card);font-size:13px;font-weight:600;color:var(--text);cursor:pointer;text-align:left;transition:all .15s}
+.quiz-opt:hover:not(:disabled){border-color:var(--primary);background:var(--primary-soft);color:var(--primary)}
+.quiz-opt.correct{border-color:#059669;background:#d1fae5;color:#065f46}
+.quiz-opt.wrong{border-color:#dc2626;background:#fee2e2;color:#991b1b}
+.quiz-opt:disabled{cursor:default}
+.quiz-feedback-box{padding:10px 14px;border-radius:10px;font-size:12.5px;font-weight:600;margin-bottom:16px;display:none}
+.quiz-feedback-box.correct{background:#d1fae5;color:#065f46;display:block}
+.quiz-feedback-box.wrong{background:#fee2e2;color:#991b1b;display:block}
+.quiz-next-btn{width:100%;padding:11px;background:linear-gradient(90deg,var(--primary),#4a8af0);border:none;border-radius:10px;color:#fff;font-size:13px;font-weight:700;cursor:pointer;display:none;transition:opacity .15s}
+.quiz-next-btn:hover{opacity:.9}
+.quiz-result{text-align:center;padding:20px}
+.quiz-result-score{font-size:52px;font-weight:800;color:var(--primary);margin-bottom:6px}
+.quiz-result-label{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.quiz-result-sub{font-size:13px;color:var(--muted);margin-bottom:22px}
+.quiz-retry-btn{padding:10px 28px;background:var(--primary);border:none;border-radius:10px;color:#fff;font-size:13px;font-weight:700;cursor:pointer}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <div class="brand-icon">🌍</div>
+    <div><div class="brand-name">Tierra Interior Studio</div><div class="brand-sub">Geología y Estructura del Planeta</div></div>
+  </a>
+  <a class="nav-btn" href="capas.html"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Explorador</a>
+  <a class="nav-btn" href="ecosistemas.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg>Ecosistemas</a>
+  <a class="nav-btn active" href="biblioteca.html"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Biblioteca</a>
+  <a class="nav-btn" href="cuaderno.html"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Cuaderno</a>
+  <a class="nav-btn" href="juego.html"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M6 12h4M8 10v4"/><circle cx="16" cy="12" r="1" fill="currentColor"/><circle cx="18" cy="10" r="1" fill="currentColor"/></svg>Hábitats</a>
+</div>
+
+<div class="content">
+  <nav class="lib-nav">
+    <div class="lib-nav-title">Temas</div>
+    <button class="lib-nav-item active" onclick="filterNav(this,'todos')">📚 Todos los recursos <span class="nav-count" id="countTodos">12</span></button>
+    <div class="lib-nav-title" style="margin-top:4px">Geología</div>
+    <button class="lib-nav-item" onclick="filterNav(this,'vulcanismo')">🌋 Vulcanismo <span class="nav-count">2</span></button>
+    <button class="lib-nav-item" onclick="filterNav(this,'tectonica')">🌊 Tectónica <span class="nav-count">3</span></button>
+    <button class="lib-nav-item" onclick="filterNav(this,'sismos')">⚡ Sismos <span class="nav-count">2</span></button>
+    <button class="lib-nav-item" onclick="filterNav(this,'interior')">🔥 Interior terrestre <span class="nav-count">3</span></button>
+    <div class="lib-nav-title" style="margin-top:4px">Ecosistemas</div>
+    <button class="lib-nav-item" onclick="filterNav(this,'selvas')">🌿 Selvas tropicales <span class="nav-count">1</span></button>
+    <button class="lib-nav-item" onclick="filterNav(this,'polares')">❄️ Regiones polares <span class="nav-count">1</span></button>
+    <div class="lib-nav-title" style="margin-top:4px">Tipo</div>
+    <button class="lib-nav-item" onclick="filterNav(this,'articulo')">📄 Artículos <span class="nav-count">4</span></button>
+    <button class="lib-nav-item" onclick="filterNav(this,'video')">🎬 Videos <span class="nav-count">3</span></button>
+    <button class="lib-nav-item" onclick="filterNav(this,'infografia')">📊 Infografías <span class="nav-count">3</span></button>
+    <button class="lib-nav-item" onclick="filterNav(this,'quiz')">🧪 Quizzes <span class="nav-count">2</span></button>
+  </nav>
+
+  <div class="lib-main">
+    <div class="lib-header">
+      <div class="lib-search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" placeholder="Buscar en la biblioteca..." oninput="filterSearch(this.value)">
+      </div>
+      <div class="filter-chips">
+        <div class="fchip active" onclick="filterChip(this,'todos')">Todos</div>
+        <div class="fchip" onclick="filterChip(this,'articulo')">Artículos</div>
+        <div class="fchip" onclick="filterChip(this,'video')">Videos</div>
+        <div class="fchip" onclick="filterChip(this,'infografia')">Infografías</div>
+        <div class="fchip" onclick="filterChip(this,'quiz')">Quizzes</div>
+      </div>
+    </div>
+    <div class="lib-grid" id="libGrid"></div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="recursoModal" onclick="handleModalClick(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-scroll" id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════════════════
+   DATOS — cargados desde app-assets/biblioteca/
+════════════════════════════════════════════════════════════ */
+let RECURSOS = [];
+const _detailCache = {};
+const _subdir = { articulo:'articulos', video:'videos', infografia:'infografias', quiz:'quizzes' };
+
+fetch('/app-assets/biblioteca/index.json')
+  .then(r => r.json())
+  .then(data => { RECURSOS = data; renderGrid(); })
+  .catch(() => {
+    document.getElementById('libGrid').innerHTML =
+      '<div class="no-results">Error al cargar la biblioteca. Verifica que el servidor está activo (iniciar-servidor.bat).</div>';
+  });
+
+/* ── (contenido movido a app-assets/biblioteca/{tipo}/{id}.json) ── */
+
+/* ════════════════════════════════════════════════════════════
+   ESTADO Y FILTROS
+════════════════════════════════════════════════════════════ */
+let filtroActivo = 'todos';
+let busqueda     = '';
+let quizState    = null;
+
+function filteredData() {
+  return RECURSOS.filter(r => {
+    const matchTipo = filtroActivo === 'todos' || r.tipo === filtroActivo || r.tema === filtroActivo;
+    if (!matchTipo) return false;
+    if (!busqueda) return true;
+    const q = busqueda.toLowerCase();
+    return r.titulo.toLowerCase().includes(q) || r.extracto.toLowerCase().includes(q) || r.cat.toLowerCase().includes(q);
+  });
+}
+
+function renderGrid() {
+  const data = filteredData();
+  const destacados = data.filter(r => r.destacado);
+  const resto      = data.filter(r => !r.destacado);
+  let html = '';
+  if (!data.length) {
+    html = '<div class="no-results">No se encontraron recursos para esta búsqueda.</div>';
+  } else {
+    if (destacados.length) {
+      html += `<div class="grid-section-title">Destacados</div><div class="articles-grid">${destacados.map(cardHTML).join('')}</div>`;
+    }
+    if (resto.length) {
+      html += `<div class="grid-section-title">Más recursos</div><div class="articles-grid">${resto.map(cardHTML).join('')}</div>`;
+    }
+  }
+  document.getElementById('libGrid').innerHTML = html;
+}
+
+function cardHTML(r) {
+  const typeBadge = {articulo:'type-art', video:'type-vid', infografia:'type-info', quiz:'type-quiz'};
+  const typeLabel = {articulo:'📄 Artículo', video:'🎬 Video interactivo', infografia:'📊 Infografía', quiz:'🧪 Quiz'};
+  return `<div class="article-card" onclick="openRecurso('${r.id}')">
+    <div class="article-thumb" style="background:${r.thumb.bg}">${r.thumb.emoji}</div>
+    <div class="article-body">
+      <div class="article-cat">${r.cat}</div>
+      <div class="article-title">${r.titulo}</div>
+      <div class="article-excerpt">${r.extracto}</div>
+      <div class="article-meta">
+        <span class="article-type ${typeBadge[r.tipo]}">${typeLabel[r.tipo]}</span>
+        <span>${r.tiempo}</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+function filterChip(el, tipo) {
+  document.querySelectorAll('.fchip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  filtroActivo = tipo;
+  renderGrid();
+}
+
+function filterNav(el, key) {
+  document.querySelectorAll('.lib-nav-item').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  filtroActivo = key;
+  renderGrid();
+}
+
+function filterSearch(val) {
+  busqueda = val;
+  renderGrid();
+}
+
+/* ════════════════════════════════════════════════════════════
+   MODAL — ABRIR / CERRAR
+════════════════════════════════════════════════════════════ */
+async function openRecurso(id) {
+  const meta = RECURSOS.find(x => x.id === id);
+  if (!meta) return;
+  const mc = document.getElementById('modalContent');
+  mc.innerHTML = '<div style="padding:60px;text-align:center;color:var(--muted)">Cargando...</div>';
+  document.getElementById('recursoModal').classList.add('open');
+  if (!_detailCache[id]) {
+    try {
+      const res = await fetch(`/app-assets/biblioteca/${_subdir[meta.tipo]}/${id}.json`);
+      _detailCache[id] = await res.json();
+    } catch(e) {
+      mc.innerHTML = '<div style="padding:60px;text-align:center;color:#991b1b">Error al cargar el contenido.</div>';
+      return;
+    }
+  }
+  const r = { ...meta, ..._detailCache[id] };
+  if (r.tipo === 'articulo')   mc.innerHTML = buildArticulo(r);
+  if (r.tipo === 'video')      mc.innerHTML = buildVideo(r);
+  if (r.tipo === 'infografia') mc.innerHTML = buildInfografia(r);
+  if (r.tipo === 'quiz')       { mc.innerHTML = buildQuiz(r); initQuiz(r); }
+  mc.scrollTop = 0;
+}
+
+function closeModal() {
+  document.getElementById('recursoModal').classList.remove('open');
+  quizState = null;
+}
+
+function handleModalClick(e) {
+  if (e.target === e.currentTarget) closeModal();
+}
+
+/* ════════════════════════════════════════════════════════════
+   ARTÍCULO
+════════════════════════════════════════════════════════════ */
+function buildArticulo(r) {
+  const secs = r.contenido.secciones.map(s => `<h3>${s.titulo}</h3><p>${s.texto}</p>`).join('');
+  const hechos = r.contenido.hechos.map(h => `<div class="fact-item">${h}</div>`).join('');
+  const ilus = r.ilustracion
+    ? `<div class="art-illustration"><img src="${r.ilustracion}" alt="${r.titulo}" onerror="this.parentElement.innerHTML='<div class=art-illustration-fallback>${r.thumb.emoji}</div>'"></div>`
+    : `<div class="art-illustration-fallback" style="font-size:60px;text-align:center;padding:20px">${r.thumb.emoji}</div>`;
+  return `
+  <div class="art-cat-badge">${r.cat}</div>
+  <div class="art-title">${r.titulo}</div>
+  <div class="art-meta">
+    <span>📄 Artículo</span>
+    <span>⏱ ${r.tiempo}</span>
+  </div>
+  ${ilus}
+  <div class="art-body">
+    <p><strong>${r.contenido.intro}</strong></p>
+    ${secs}
+    <div class="art-facts">
+      <h4>💡 Datos clave</h4>
+      ${hechos}
+    </div>
+  </div>`;
+}
+
+/* ════════════════════════════════════════════════════════════
+   VIDEO YOUTUBE
+════════════════════════════════════════════════════════════ */
+function buildVideo(r) {
+  const puntos = r.puntos.map(p => `<div class="vid-point">${p}</div>`).join('');
+  return `
+  <div class="art-cat-badge">${r.cat}</div>
+  <div class="art-title">${r.titulo}</div>
+  <div class="art-meta"><span>🎬 Video</span><span>⏱ ${r.tiempo}</span></div>
+  <div class="vid-wrap">
+    <iframe src="https://www.youtube.com/embed/${r.videoId}?rel=0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+  <div class="vid-key-points"><h4>Puntos clave</h4>${puntos}</div>`;
+}
+
+/* ════════════════════════════════════════════════════════════
+   INFOGRAFÍA
+════════════════════════════════════════════════════════════ */
+function buildInfografia(r) {
+  const leyenda = r.leyenda.map(l => `
+  <div class="info-leyenda-item">
+    <div class="legend-title">${l.ico} ${l.titulo}</div>
+    <p>${l.texto}</p>
+  </div>`).join('');
+  return `
+  <div class="info-header">
+    <div class="art-cat-badge">${r.cat}</div>
+    <div class="info-title">${r.titulo}</div>
+    <div class="info-sub">${r.descripcion}</div>
+  </div>
+  <div class="info-svg-wrap">
+    <img src="${r.svg}" alt="${r.titulo}" style="width:100%;display:block" onerror="this.parentElement.innerHTML='<div style=padding:40px;text-align:center;font-size:60px>${r.thumb.emoji}</div>'">
+  </div>
+  <div class="info-leyenda">${leyenda}</div>`;
+}
+
+/* ════════════════════════════════════════════════════════════
+   QUIZ
+════════════════════════════════════════════════════════════ */
+function buildQuiz(r) {
+  return `
+  <div class="quiz-header">
+    <div class="art-cat-badge">${r.cat}</div>
+    <div class="quiz-title">${r.titulo}</div>
+    <div class="quiz-desc">${r.preguntas.length} preguntas · pon a prueba tus conocimientos</div>
+  </div>
+  <div class="quiz-progress-wrap">
+    <div class="quiz-progress-bar-bg"><div class="quiz-progress-bar" id="qProgressBar" style="width:0%"></div></div>
+    <div class="quiz-progress-label" id="qProgressLabel">0 / ${r.preguntas.length}</div>
+  </div>
+  ${r.ilustracion ? `<div class="quiz-illustration"><img src="${r.ilustracion}" alt="" onerror="this.parentElement.style.display='none'"></div>` : ''}
+  <div id="quizBody"></div>`;
+}
+
+function initQuiz(r) {
+  quizState = { rec: r, idx: 0, score: 0, answered: false };
+  renderQuestion();
+}
+
+function renderQuestion() {
+  if (!quizState) return;
+  const { rec, idx } = quizState;
+  const total = rec.preguntas.length;
+  const q     = rec.preguntas[idx];
+  const pct   = Math.round((idx / total) * 100);
+  document.getElementById('qProgressBar').style.width   = pct + '%';
+  document.getElementById('qProgressLabel').textContent = `${idx} / ${total}`;
+  quizState.answered = false;
+  document.getElementById('quizBody').innerHTML = `
+  <div class="quiz-q-num">Pregunta ${idx+1} de ${total}</div>
+  <div class="quiz-question">${q.q}</div>
+  <div class="quiz-opts" id="qOpts">
+    ${q.ops.map((op, i) => `<button class="quiz-opt" onclick="answerQuiz(${i})">${op}</button>`).join('')}
+  </div>
+  <div class="quiz-feedback-box" id="qFeedback"></div>
+  <button class="quiz-next-btn" id="qNext" onclick="nextQuestion()">
+    ${idx < total - 1 ? 'Siguiente pregunta →' : 'Ver resultado →'}
+  </button>`;
+}
+
+function answerQuiz(sel) {
+  if (!quizState || quizState.answered) return;
+  quizState.answered = true;
+  const q     = quizState.rec.preguntas[quizState.idx];
+  const isOk  = sel === q.r;
+  if (isOk) quizState.score++;
+  const opts  = document.querySelectorAll('.quiz-opt');
+  opts.forEach((b, i) => {
+    b.disabled = true;
+    if (i === q.r) b.classList.add('correct');
+    if (i === sel && !isOk) b.classList.add('wrong');
+  });
+  const fb = document.getElementById('qFeedback');
+  fb.className = 'quiz-feedback-box ' + (isOk ? 'correct' : 'wrong');
+  fb.textContent = isOk ? '✓ ¡Correcto!' : `✗ La respuesta correcta era: "${q.ops[q.r]}"`;
+  document.getElementById('qNext').style.display = 'block';
+}
+
+function nextQuestion() {
+  if (!quizState) return;
+  quizState.idx++;
+  const total = quizState.rec.preguntas.length;
+  if (quizState.idx >= total) {
+    showQuizResult();
+  } else {
+    renderQuestion();
+  }
+}
+
+function showQuizResult() {
+  const { score, rec } = quizState;
+  const total = rec.preguntas.length;
+  const pct   = Math.round((score / total) * 100);
+  const msg   = pct >= 80 ? '¡Excelente! Dominas el tema.' : pct >= 50 ? 'Buen trabajo. Sigue aprendiendo.' : 'Sigue practicando, lo lograrás.';
+  document.getElementById('qProgressBar').style.width   = '100%';
+  document.getElementById('qProgressLabel').textContent = `${total} / ${total}`;
+  document.getElementById('quizBody').innerHTML = `
+  <div class="quiz-result">
+    <div class="quiz-result-score">${score}/${total}</div>
+    <div class="quiz-result-label">${pct}% de aciertos</div>
+    <div class="quiz-result-sub">${msg}</div>
+    <button class="quiz-retry-btn" onclick="initQuiz(quizState.rec)">🔄 Intentar de nuevo</button>
+  </div>`;
+  quizState.answered = false;
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>

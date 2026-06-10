@@ -1,0 +1,102 @@
+{
+  "id": "corteza_continental",
+  "nombre": "Corteza Continental",
+  "nombre_cientifico": "Sial (Silicio-Aluminio)",
+  "grupo": "Capas Externas",
+  "emoji": "🏔️",
+  "orden": 0,
+  "color_hex": "#8b9e6a",
+
+  "geometria": {
+    "profundidad_min_km": 0,
+    "profundidad_max_km": 35,
+    "grosor_promedio_km": 35,
+    "grosor_min_km": 5,
+    "grosor_max_km": 70,
+    "nota": "Grosor máximo bajo el Himalaya (~70 km); mínimo bajo dorsales oceánicas (~5 km)"
+  },
+
+  "propiedades_fisicas": {
+    "temperatura_min_C": 15,
+    "temperatura_max_C": 400,
+    "presion_min_GPa": 0,
+    "presion_max_GPa": 1.0,
+    "densidad_gcm3": 2.7,
+    "estado_materia": "Sólido rígido",
+    "velocidad_onda_P_km_s": 6.0,
+    "velocidad_onda_S_km_s": 3.5,
+    "modulo_elastico_GPa": 75
+  },
+
+  "composicion": {
+    "tipo_roca_principal": "Granito",
+    "clase_roca": "Ígnea plutónica",
+    "minerales": [
+      { "nombre": "Feldespato potásico", "formula": "KAlSi₃O₈",               "porcentaje": 31, "color": "#f0c8a0", "dureza_mohs": 6   },
+      { "nombre": "Plagioclasa",         "formula": "NaAlSi₃O₈–CaAl₂Si₂O₈",  "porcentaje": 28, "color": "#e8e0d8", "dureza_mohs": 6.5 },
+      { "nombre": "Cuarzo",              "formula": "SiO₂",                   "porcentaje": 25, "color": "#f5f0e8", "dureza_mohs": 7   },
+      { "nombre": "Biotita",             "formula": "K(Mg,Fe)₃AlSi₃O₁₀(OH)₂","porcentaje": 10, "color": "#2a1e0c", "dureza_mohs": 2.5 },
+      { "nombre": "Hornblenda",          "formula": "Ca-Na-Mg-Fe-Al silicato", "porcentaje": 6,  "color": "#1a1510", "dureza_mohs": 5.5 }
+    ],
+    "elementos_abundantes_pct": [
+      { "elemento": "Oxígeno",  "simbolo": "O",  "pct": 46.6 },
+      { "elemento": "Silicio",  "simbolo": "Si", "pct": 27.7 },
+      { "elemento": "Aluminio", "simbolo": "Al", "pct": 8.1  },
+      { "elemento": "Hierro",   "simbolo": "Fe", "pct": 5.0  },
+      { "elemento": "Calcio",   "simbolo": "Ca", "pct": 3.6  },
+      { "elemento": "Sodio",    "simbolo": "Na", "pct": 2.8  }
+    ]
+  },
+
+  "descripcion_corta": "La capa más superficial. Sostiene todos los continentes y hace posible la vida.",
+  "descripcion_larga": "La corteza continental es la capa exterior de nuestro planeta que conocemos mejor, aunque representa menos del 1% de su volumen total. Está compuesta principalmente de granito, más ligero que las rocas del manto, lo que le permite flotar sobre él por isostasia. Su grosor varía enormemente: apenas 5-10 km bajo las dorsales oceánicas, pero superando los 70 km bajo cadenas montañosas jóvenes como el Himalaya. Es la única capa directamente accesible para la exploración humana.",
+
+  "descubrimiento_historico": {
+    "nombre_limite": "Discontinuidad de Mohorovičić (Moho)",
+    "año": 1909,
+    "cientifico": "Andrija Mohorovičić",
+    "pais": "Croacia",
+    "metodo": "Análisis de la diferencia en velocidad de ondas sísmicas tras el terremoto de Kulpa (1909)",
+    "curiosidad": "El límite corteza-manto lleva su apellido abreviado: «Moho»"
+  },
+
+  "fenomenos_asociados": [
+    {
+      "nombre": "Tectónica de Placas",
+      "emoji": "🧩",
+      "tipo": "geologico",
+      "descripcion": "La corteza se divide en ~15 placas rígidas que flotan y se desplazan sobre la astenosfera del manto superior a 2–10 cm por año.",
+      "bg": "linear-gradient(135deg,#d1fae5,#6ee7b7)"
+    },
+    {
+      "nombre": "Isostasia",
+      "emoji": "⚖️",
+      "tipo": "fisico",
+      "descripcion": "La corteza flota sobre el manto como un iceberg en el agua. Las zonas más altas tienen 'raíces' más profundas que las sostienen.",
+      "bg": "linear-gradient(135deg,#e0f2fe,#7dd3fc)"
+    },
+    {
+      "nombre": "Ciclo de Rocas",
+      "emoji": "♻️",
+      "tipo": "geologico",
+      "descripcion": "Las rocas de la corteza se transforman continuamente entre ígneas, sedimentarias y metamórficas mediante calor, presión y erosión.",
+      "bg": "linear-gradient(135deg,#fef9c3,#fde047)"
+    },
+    {
+      "nombre": "Erosión y Sedimentación",
+      "emoji": "🏜️",
+      "tipo": "superficial",
+      "descripcion": "Agua, viento y hielo desintegran la corteza y depositan sedimentos que forman nuevas rocas sedimentarias.",
+      "bg": "linear-gradient(135deg,#fef3c7,#f59e0b)"
+    }
+  ],
+
+  "dato_curioso": "¡La corteza continental puede superar los 70 km de grosor bajo el Himalaya! Sus raíces se hunden en el manto como icebergs. Donde las montañas son más altas, la raíz de granito es más profunda.",
+  "dato_label": "Dato Geológico",
+
+  "quiz": [
+    { "pregunta": "¿Cuál es la roca más común de la corteza continental?", "respuesta_correcta": "Granito", "incorrectas": ["Basalto", "Caliza", "Esquisto"] },
+    { "pregunta": "¿Qué discontinuidad separa la corteza del manto?", "respuesta_correcta": "Discontinuidad de Mohorovičić", "incorrectas": ["Discontinuidad de Gutenberg", "Discontinuidad de Lehmann", "Discontinuidad de Conrad"] },
+    { "pregunta": "¿Cuánto representa la corteza del volumen total de la Tierra?", "respuesta_correcta": "Menos del 1%", "incorrectas": ["10%", "5%", "25%"] }
+  ]
+}

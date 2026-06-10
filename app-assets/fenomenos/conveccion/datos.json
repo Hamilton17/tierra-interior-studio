@@ -1,0 +1,98 @@
+{
+  "id": "conveccion",
+  "titulo": "Convección del Manto",
+  "subtitulo": "El motor térmico que mueve los continentes",
+  "emoji": "🌀",
+
+  "fichas": [
+    {
+      "ico": "🌡️",
+      "titulo": "Gradiente de temperatura",
+      "valor": "~3,000",
+      "unidad": "°C (núcleo→corteza)",
+      "contexto": "El núcleo irradia calor hacia arriba: 5,000 °C en la base del manto vs. ~1,000 °C en el tope. Esta diferencia es el motor de la convección — igual que el agua hirviendo en una olla."
+    },
+    {
+      "ico": "⏱️",
+      "titulo": "Velocidad de circulación",
+      "valor": "1–10",
+      "unidad": "cm/año",
+      "contexto": "Extremadamente lento en términos humanos — en un año, el material rocoso del manto avanza menos que el crecimiento de una uña. Pero en escala geológica, ha movido los continentes miles de kilómetros."
+    },
+    {
+      "ico": "🔄",
+      "titulo": "Tiempo de un ciclo",
+      "valor": "~200",
+      "unidad": "millones de años",
+      "contexto": "Un 'ciclo de convección' completo — ascenso, deriva lateral, descenso — tarda unos 200 Ma. La roca caliente sube en las dorsales, se enfría y densa, y desciende en las zonas de subducción."
+    },
+    {
+      "ico": "📏",
+      "titulo": "Espesor del manto",
+      "valor": "2,890",
+      "unidad": "km",
+      "contexto": "El manto tiene casi 3,000 km de espesor. La convección opera en todo ese volumen, con posibles células de convección de escala pequeña (manto superior) y gran escala (manto completo)."
+    },
+    {
+      "ico": "⚡",
+      "titulo": "Potencia disipada",
+      "valor": "~44",
+      "unidad": "TW",
+      "contexto": "La Tierra pierde 44 teravatios de calor interno. Un 80% escapa por el océano via los sistemas de dorsales. Esa energía es 2,600 veces la potencia de toda la electricidad generada por la humanidad."
+    },
+    {
+      "ico": "🌋",
+      "titulo": "Hotspots activos",
+      "valor": "~40–50",
+      "unidad": "plumas mantélicas",
+      "contexto": "Las 'plumas del manto' son columnas de material muy caliente que ascienden desde la base del manto. Crean hotspots como Hawái, Islandia y las Galápagos — volcanes alejados de los bordes de placa."
+    }
+  ],
+
+  "proceso": [
+    {
+      "paso": 1,
+      "titulo": "Calentamiento basal",
+      "descripcion": "El núcleo externo líquido (5,000 °C) calienta la base del manto. El material rocoso se calienta, se dilata y se vuelve menos denso — comienza a ascender.",
+      "icon": "🔥"
+    },
+    {
+      "paso": 2,
+      "titulo": "Ascenso del material caliente",
+      "descripcion": "La roca caliente y menos densa sube lentamente (cm/año) bajo la corteza. En las dorsales oceánicas, este material se acumula y genera erupciones basálticas que crean nueva corteza oceánica.",
+      "icon": "⬆️"
+    },
+    {
+      "paso": 3,
+      "titulo": "Desplazamiento lateral",
+      "descripcion": "Al chocar con la base de la litosfera rígida, el material fluye horizontalmente. Es esta corriente lateral la que 'arrastra' las placas tectónicas en su movimiento.",
+      "icon": "↔️"
+    },
+    {
+      "paso": 4,
+      "titulo": "Enfriamiento y descenso",
+      "descripcion": "La corteza oceánica se enfría y densifica con la distancia a la dorsal. Cuando es más densa que el manto subyacente, se hunde (subducción). El material frío desciende de vuelta al manto.",
+      "icon": "⬇️"
+    }
+  ],
+
+  "relacion_capas": [
+    { "capa": "Manto Superior", "rol": "Zona de convección activa — el material aquí tiene comportamiento plástico (astenosfera) que permite la deformación lenta" },
+    { "capa": "Manto Inferior", "rol": "Posiblemente convecc convecta de forma independiente del superior, con celdas de gran escala que mueven material entre la CMB y los 660 km" },
+    { "capa": "Núcleo Externo", "rol": "Fuente de calor primaria — el calor del núcleo es lo que alimenta la convección del manto" },
+    { "capa": "Corteza Oceánica", "rol": "El producto de la convección: las dorsales donde el material asciende crean nueva corteza; las zonas de subducción donde desciende la destruyen" }
+  ],
+
+  "analogias": [
+    "La convección del manto es exactamente como el agua hirviendo en una olla: el fondo caliente genera burbujas que suben, la superficie fría empuja el agua caliente hacia los lados y hacia abajo.",
+    "Las placas tectónicas son como la tapa flotante de esa olla: son arrastradas por las corrientes de convección internas, no al revés — las placas no 'flotan' activamente, son pasajeras de un sistema mayor.",
+    "Una pluma mantélica es como el mechero que calienta un punto fijo de la olla: genera una corriente de material caliente que sube siempre al mismo lugar — por eso Hawái forma una cadena de islas mientras la placa pacífica se mueve sobre ella."
+  ],
+
+  "hitos_ciencia": [
+    { "anio": 1928, "evento": "Arthur Holmes propone por primera vez la convección del manto como mecanismo para la deriva continental de Wegener" },
+    { "anio": 1963, "evento": "Tuzo Wilson explica la cadena de islas Hawái-Emperor con el concepto de 'punto caliente' — pluma mantélica fija bajo una placa móvil" },
+    { "anio": 1991, "evento": "El modelo 'whole-mantle convection' (convección de manto completo) vs. 'layered convection' (dos capas independientes) sigue siendo debate activo" },
+    { "anio": 2000, "evento": "Tomografía sísmica 3D del manto revela la estructura de las plumas, los slabs (corteza subducida fría) y las celdas de convección con resolución sin precedentes" }
+  ]
+}

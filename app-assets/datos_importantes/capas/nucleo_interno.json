@@ -1,0 +1,96 @@
+{
+  "id": "nucleo_interno",
+
+  "fichas": [
+    {
+      "ico": "📏",
+      "titulo": "Radio",
+      "valor": "1,221",
+      "unidad": "km",
+      "contexto": "Casi exactamente el tamaño de la Luna (1,737 km). Una esfera sólida de hierro-níquel del tamaño de la Luna, encerrada dentro de la Tierra."
+    },
+    {
+      "ico": "🌡️",
+      "titulo": "Temperatura central",
+      "valor": "5,400 – 6,000",
+      "unidad": "°C",
+      "contexto": "La temperatura más alta de la Tierra. Comparable a la superficie del Sol (5,500 °C). A pesar de este calor, la presión colosal mantiene el hierro sólido."
+    },
+    {
+      "ico": "⚡",
+      "titulo": "Presión central",
+      "valor": "360",
+      "unidad": "GPa",
+      "contexto": "3,600,000 atmósferas. La presión más alta de la Tierra. Esta presión eleva el punto de fusión del hierro por encima de su temperatura — la razón por la que es sólido."
+    },
+    {
+      "ico": "⚖️",
+      "titulo": "Densidad",
+      "valor": "12 – 13",
+      "unidad": "g/cm³",
+      "contexto": "5 veces más denso que el granito de la corteza (2.7 g/cm³). Una esfera de hierro bajo esta presión es increíblemente compacta — los átomos casi se tocan."
+    },
+    {
+      "ico": "🔄",
+      "titulo": "Rotación diferencial",
+      "valor": "0.3 – 0.5",
+      "unidad": "°/año más que la corteza",
+      "contexto": "El núcleo interno gira ligeramente más rápido que la corteza. En un siglo habría dado casi media vuelta extra. Detectado midiendo diferencias en tiempos de llegada de ondas sísmicas PKIKP."
+    },
+    {
+      "ico": "🕰️",
+      "titulo": "Edad",
+      "valor": "500 – 1,000",
+      "unidad": "millones de años",
+      "contexto": "El núcleo interno es relativamente joven. Se solidificó gradualmente a medida que la Tierra se enfriaba. Antes de eso, todo el núcleo era líquido — y el campo magnético era más débil."
+    }
+  ],
+
+  "comparativas": {
+    "descripcion": "El punto más extremo del sistema solar rocoso: la mayor temperatura, la mayor presión, y el objeto más denso de la Tierra. Una esfera sólida de hierro del tamaño de la Luna.",
+    "registros": [
+      { "tipo": "Mayor presión de la Tierra",             "valor": "360 GPa",          "nota": "3.6 millones de atmósferas" },
+      { "tipo": "Mayor temperatura de la Tierra",        "valor": "~5,400-6,000 °C",  "nota": "Similar a la superficie del Sol" },
+      { "tipo": "Mayor densidad de las capas",           "valor": "12-13 g/cm³",      "nota": "5 veces más denso que la corteza" },
+      { "tipo": "Tamaño comparable",                     "valor": "Radio 1,221 km",   "nota": "Similar a la Luna (radio 1,737 km)" }
+    ]
+  },
+
+  "metodos_estudio": [
+    {
+      "metodo": "Ondas PKIKP (P que atraviesan el núcleo interno)",
+      "icon": "📡",
+      "descripcion": "Ondas P que penetran el núcleo externo Y el interno. Viajan más rápido en dirección paralela al eje de rotación terrestre que en dirección ecuatorial — revelando que el núcleo interno está compuesto de cristales de hierro HCP alineados como un único cristal gigante."
+    },
+    {
+      "metodo": "Análisis de anisotropía sísmica",
+      "icon": "🔬",
+      "descripcion": "La diferencia de velocidad (~4%) entre ejes axial y ecuatorial en el núcleo interno indica que los cristales de Fe hexagonal compacto (ε-Fe) están orientados preferencialmente. Reveló en los años 80 que el núcleo interno tiene estructura cristalina ordenada."
+    },
+    {
+      "metodo": "Experimentos de shock en hierro",
+      "icon": "💥",
+      "descripcion": "Disparando proyectiles de alta velocidad contra muestras de Fe, los científicos replican las condiciones de temperatura y presión del núcleo interno durante microsegundos. Permiten medir propiedades del ε-Fe que de otra forma son imposibles de estudiar."
+    }
+  ],
+
+  "hitos": [
+    { "anio": 1936, "evento": "Inge Lehmann descubre el núcleo interno analizando anomalías en ondas PKIKP — una de las mayores contribuciones individuales a la geofísica del siglo XX" },
+    { "anio": 1970, "evento": "Birch confirma que el núcleo interno es hierro sólido hexagonal compacto (ε-Fe) bajo las condiciones de presión y temperatura del centro de la Tierra" },
+    { "anio": 1987, "evento": "Morelli et al. descubren la anisotropía sísmica del núcleo interno — los cristales de hierro están alineados" },
+    { "anio": 1996, "evento": "Evidencias de súper-rotación del núcleo interno: gira ~0.3-0.5°/año más rápido que la corteza" },
+    { "anio": 2023, "evento": "Un estudio sugiere que el núcleo interno puede haber REVERTIDO su sentido de rotación diferencial — generando debate en la comunidad geofísica" }
+  ],
+
+  "analogias": [
+    "El núcleo interno es sólido no porque esté frío (está a 5,400 °C), sino porque la presión de 360 GPa eleva su punto de fusión por encima de esa temperatura. Es como comprimir tanto un gas que se hace sólido — la presión gana.",
+    "Si el núcleo interno fuera un cubo de hielo, la presión que lo mantiene sólido sería 3.6 millones de veces mayor que la del hielo en tu congelador.",
+    "La súper-rotación del núcleo interno es como una peonza dentro de otra peonza: ambas giran pero a velocidades ligeramente distintas, sin que nadie las 'empuje' directamente — la física electromagnética del hierro líquido del núcleo externo actúa como motor."
+  ],
+
+  "recursos_naturales": [
+    "No explotable: la temperatura, presión y profundidad son absolutamente incompatibles con cualquier tecnología existente o previsible",
+    "Investigación fundamental: comprender el núcleo interno es clave para entender el origen del campo magnético, la historia térmica de la Tierra y la formación planetaria",
+    "Modelos para astrofísica: el núcleo interno sirve de modelo para estudiar el interior de exoplanetas y planetas del sistema solar"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "ilustracion": null,
+  "contenido": {
+    "intro": "La selva amazónica cubre 5.5 millones de km² y produce el 20% del oxígeno terrestre. Es el mayor reservorio de biodiversidad del planeta y un regulador climático imprescindible cuya pérdida tendría consecuencias globales irreversibles.",
+    "secciones": [
+      {
+        "titulo": "El ciclo del agua amazónico",
+        "texto": "La selva transpira billones de litros de agua diariamente, creando \"ríos voladores\" de humedad atmosférica que llevan lluvias a regiones alejadas, incluyendo el sudeste de Brasil y parte de Argentina. La deforestación interrumpe este ciclo, causando sequías en regiones que parecen no tener relación con la Amazonía."
+      },
+      {
+        "titulo": "Carbono almacenado",
+        "texto": "La biomasa amazónica almacena ~150–200 Gt de carbono, equivalente a 15-20 años de emisiones globales actuales. Pero la deforestación y los incendios convierten el bosque en emisor neto: ya hay regiones del este amazónico que emiten más CO₂ del que absorben."
+      },
+      {
+        "titulo": "El punto de inflexión (tipping point)",
+        "texto": "Los científicos estiman que si se pierde entre el 20% y el 25% de la cubierta original, la selva entra en un proceso de sabanización irreversible: menos lluvia → más sequía → más incendios → menos selva. Ya se ha perdido ~20%. Estamos en el umbral."
+      }
+    ],
+    "hechos": [
+      "La Amazonía alberga ~400 especies de árboles por hectárea (un bosque europeo tiene 5–10)",
+      "10% de toda la biodiversidad del planeta en 5.5 millones de km²",
+      "El río Amazonas descarga el 20% de toda el agua dulce que llega a los océanos",
+      "Se pierden ~10,000 km² de bosque por año (cifra de 2023)"
+    ]
+  }
+}

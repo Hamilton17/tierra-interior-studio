@@ -1,0 +1,97 @@
+{
+  "id": "manto_superior",
+
+  "fichas": [
+    {
+      "ico": "📏",
+      "titulo": "Grosor",
+      "valor": "625",
+      "unidad": "km",
+      "contexto": "Desde el Moho (~35 km) hasta la discontinuidad de 660 km. Incluye la litosfera sólida y la astenosfera plástica."
+    },
+    {
+      "ico": "🌡️",
+      "titulo": "Temperatura",
+      "valor": "300 – 1,400",
+      "unidad": "°C",
+      "contexto": "La parte superior (litosfera) es más fría y rígida. La astenosfera (~100-200 km) alcanza 1,400 °C y es suficientemente blanda para fluir lentamente."
+    },
+    {
+      "ico": "⚡",
+      "titulo": "Presión",
+      "valor": "1 – 24",
+      "unidad": "GPa",
+      "contexto": "La presión aumenta de ~0.3 GPa (Moho) a 24 GPa (660 km). A 24 GPa el olivino se transforma en espinela de Mg — la discontinuidad de 660 km."
+    },
+    {
+      "ico": "🔮",
+      "titulo": "Mineral dominante",
+      "valor": "Olivino",
+      "unidad": "(Mg,Fe)₂SiO₄",
+      "contexto": "El mineral más abundante del manto superior. Verde oliva, denso. A 400 km se convierte en wadsleyita; a 520 km en ringwoodita."
+    },
+    {
+      "ico": "🌊",
+      "titulo": "Velocidad de convección",
+      "valor": "2 – 10",
+      "unidad": "cm/año",
+      "contexto": "Las corrientes de convección del manto mueven las placas tectónicas a esta velocidad — equivalente a la velocidad de crecimiento de las uñas humanas."
+    },
+    {
+      "ico": "💧",
+      "titulo": "Agua almacenada",
+      "valor": "~1",
+      "unidad": "océano",
+      "contexto": "La ringwoodita del manto de transición (410-660 km) puede almacenar tanta agua como todos los océanos de la superficie. Descubierto en 2014."
+    }
+  ],
+
+  "comparativas": {
+    "descripcion": "El motor de la tectónica de placas. La convección del manto superior es la fuerza que mueve los continentes, abre los océanos y forma las montañas.",
+    "registros": [
+      { "tipo": "Velocidad de convección",                "valor": "2-10 cm/año",     "nota": "Más lenta que el flujo del vidrio pero mueve continentes" },
+      { "tipo": "Viscosidad (astenosfera)",               "valor": "~10²¹ Pa·s",      "nota": "10^21 veces más viscosa que el agua" },
+      { "tipo": "Zona de mayor actividad volcánica",      "valor": "Dorsales / Puntos calientes", "nota": "Origen en plumas del manto superior" },
+      { "tipo": "Primera capa sin acceso directo",        "valor": "35 km",           "nota": "Jamás alcanzada por perforación humana" }
+    ]
+  },
+
+  "metodos_estudio": [
+    {
+      "metodo": "Tomografía sísmica",
+      "icon": "🔬",
+      "descripcion": "Usando miles de terremotos y sismógrafos globales, los científicos crean imágenes 3D del manto. Las zonas frías (subducción) aparecen azules; las calientes (plumas), rojas. Resolución actual: ~50-100 km."
+    },
+    {
+      "metodo": "Experimentos de alta presión (células de yunque de diamante)",
+      "icon": "💎",
+      "descripcion": "Se comprimen muestras de minerales entre dos diamantes hasta replicar presiones del manto (hasta 300 GPa). Permite estudiar transformaciones mineralógicas sin tener que acceder físicamente al manto."
+    },
+    {
+      "metodo": "Peridotitas y xenolitos de kimberlitas",
+      "icon": "🪨",
+      "descripcion": "Las kimberlitas (chimeneas volcánicas) traen muestras del manto superior a 200 km de profundidad. Los diamantes son xentolitos naturales cristalizados en el manto. ¡Cada diamante es una muestra directa del manto!"
+    }
+  ],
+
+  "hitos": [
+    { "anio": 1926, "evento": "Harold Jeffreys confirma que el manto es sólido (no líquido) mediante análisis de ondas S" },
+    { "anio": 1926, "evento": "Beno Gutenberg descubre la zona de baja velocidad (astenosfera) a 100-200 km" },
+    { "anio": 1960, "evento": "La teoría de la expansión del fondo oceánico confirma la convección del manto" },
+    { "anio": 2014, "evento": "Descubrimiento de agua en ringwoodita (manto de transición) — potencial 'océano interno' en la Tierra" },
+    { "anio": 2017, "evento": "Tomografía sísmica muestra una 'montaña' en el límite manto-núcleo de altura comparable al Everest" }
+  ],
+
+  "analogias": [
+    "El manto superior funciona como el relleno de una olla de lava: sólido a escalas de tiempo cortas (décadas), pero fluye lentamente cuando se aplica calor y tiempo geológico (millones de años).",
+    "Las placas tectónicas sobre el manto son como bloques de hielo flotando sobre agua muy espesa — pueden deslizarse lentamente aunque el 'agua' parezca sólida.",
+    "La velocidad de convección del manto (2-10 cm/año) es exactamente la velocidad a la que crecen las uñas de los dedos. En un año, el Atlántico se amplía lo que crece tu uña."
+  ],
+
+  "recursos_naturales": [
+    "Diamantes: cristalizados en el manto a 150-200 km de profundidad, traídos a superficie por kimberlitas",
+    "Peridotitas: rocas del manto usado en construcción y refractarios industriales",
+    "Calor geotérmico: la convección del manto calienta la corteza y puede aprovecharse como energía",
+    "Metales del manto: el magma que sube del manto forma yacimientos de cobre, níquel, cromo"
+  ]
+}

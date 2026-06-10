@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1400">
+<title>Tierra Interior Studio — Cuaderno</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#fdf8ff;--card:#fff;--border:#e0d0f0;
+  --primary:#7c3aed;--primary-soft:#f5f0ff;--primary-d:#5b21b6;
+  --navy:#1a0a2e;--text:#2d1a48;--muted:#6b5880;
+  --danger:#ef4444;--danger-soft:#fef2f2;
+  --r:10px;--r-lg:16px;
+  --sh:0 2px 8px rgba(124,58,237,.08);--sh-lg:0 6px 28px rgba(124,58,237,.12);
+}
+body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:13px;min-width:1200px;height:100vh;overflow:hidden;display:flex;flex-direction:column}
+
+/* ── TOPBAR ─────────────────────────────────────────────── */
+.topbar{height:58px;background:var(--card);border-bottom:1.5px solid var(--border);display:flex;align-items:center;padding:0 20px;gap:16px;box-shadow:0 1px 6px rgba(124,58,237,.07);flex-shrink:0}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto;text-decoration:none}
+.brand-icon{width:36px;height:36px;background:linear-gradient(135deg,#c45c1a,#e64010);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.brand-name{font-size:15px;font-weight:700;color:#2c0d04}.brand-sub{font-size:11px;color:#8a5a3a}
+.nav-btn{display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:8px;border:none;background:none;font-size:12.5px;font-weight:600;color:var(--muted);cursor:pointer;text-decoration:none;transition:background .15s,color .15s}
+.nav-btn:hover{background:var(--primary-soft);color:var(--primary)}
+.nav-btn.active{background:var(--primary-soft);color:var(--primary)}
+.nav-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
+
+/* ── LAYOUT ─────────────────────────────────────────────── */
+.main{display:grid;grid-template-columns:280px 1fr;flex:1;overflow:hidden;min-height:0}
+
+/* ── SIDEBAR ────────────────────────────────────────────── */
+.notes-sidebar{background:var(--card);border-right:1.5px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+.sidebar-header{padding:12px 14px 10px;border-bottom:1px solid var(--border);flex-shrink:0}
+.sidebar-top{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.sidebar-title{font-size:13px;font-weight:700;color:var(--navy);margin-right:auto}
+.note-count{font-size:11px;color:var(--muted);background:var(--primary-soft);padding:2px 8px;border-radius:20px}
+.new-note-btn{display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:7px;background:var(--primary);color:#fff;border:none;font-size:11px;font-weight:700;cursor:pointer;transition:opacity .15s;flex-shrink:0}
+.new-note-btn:hover{opacity:.88}
+.new-note-btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.5}
+
+.search-box{position:relative}
+.search-input{width:100%;padding:7px 10px 7px 30px;border:1.5px solid var(--border);border-radius:8px;font-size:12px;color:var(--text);background:var(--bg);outline:none;transition:border-color .15s}
+.search-input:focus{border-color:var(--primary)}
+.search-input::placeholder{color:var(--muted)}
+.search-ico{position:absolute;left:9px;top:50%;transform:translateY(-50%);width:13px;height:13px;stroke:var(--muted);fill:none;stroke-width:2;pointer-events:none}
+
+.tag-filter{padding:8px 14px 6px;border-bottom:1px solid var(--border);display:flex;gap:5px;flex-wrap:wrap;flex-shrink:0}
+.filter-chip{padding:3px 9px;border-radius:20px;border:1.5px solid var(--border);font-size:10.5px;font-weight:600;cursor:pointer;transition:all .15s;background:var(--card);color:var(--muted)}
+.filter-chip:hover{border-color:var(--primary);color:var(--primary)}
+.filter-chip.on{background:var(--primary-soft);border-color:var(--primary);color:var(--primary)}
+.filter-chip.on.geo{background:#ffe4e6;border-color:#f43f5e;color:#9f1239}
+.filter-chip.on.eco{background:#d1fae5;border-color:#10b981;color:#065f46}
+.filter-chip.on.gen{background:#e0e7ff;border-color:#6366f1;color:#3730a3}
+
+.notes-list{flex:1;overflow-y:auto;padding:8px}
+.notes-list::-webkit-scrollbar{width:3px}.notes-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+
+.note-item{padding:10px 12px;border-radius:9px;cursor:pointer;margin-bottom:4px;border:1.5px solid transparent;transition:all .15s;position:relative}
+.note-item:hover{background:var(--primary-soft);border-color:var(--border)}
+.note-item.active{background:var(--primary-soft);border-color:var(--primary)}
+.note-item:hover .note-delete{opacity:1}
+.note-title{font-size:12.5px;font-weight:600;color:var(--navy);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:22px}
+.note-preview{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.5}
+.note-meta{display:flex;align-items:center;gap:6px;margin-top:5px}
+.note-date{font-size:10px;color:var(--muted)}
+.note-tag{display:inline-block;font-size:9.5px;font-weight:600;padding:1px 7px;border-radius:20px;margin-left:auto}
+.tag-geo{background:#ffe4e6;color:#9f1239}
+.tag-eco{background:#d1fae5;color:#065f46}
+.tag-gen{background:#e0e7ff;color:#3730a3}
+.note-delete{position:absolute;top:8px;right:8px;width:20px;height:20px;border-radius:5px;border:none;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .15s,background .15s;color:var(--muted)}
+.note-delete:hover{background:var(--danger-soft);color:var(--danger)}
+.note-delete svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2}
+
+.empty-list{padding:32px 16px;text-align:center;color:var(--muted)}
+.empty-list-ico{font-size:32px;margin-bottom:10px}
+.empty-list p{font-size:11.5px;line-height:1.6}
+
+/* ── EDITOR ─────────────────────────────────────────────── */
+.note-editor{display:flex;flex-direction:column;overflow:hidden;min-height:0}
+
+.editor-toolbar{background:var(--card);border-bottom:1.5px solid var(--border);padding:9px 20px;display:flex;align-items:center;gap:6px;flex-shrink:0;flex-wrap:wrap}
+.editor-title-row{display:flex;align-items:center;gap:8px;width:100%;padding:0 20px 8px;border-bottom:1px solid var(--border);background:var(--card)}
+.editor-title-input{flex:1;font-size:17px;font-weight:700;color:var(--navy);border:none;background:none;outline:none;padding:10px 0 2px}
+.editor-title-input::placeholder{color:var(--muted);font-weight:400;font-size:15px}
+
+.toolbar-sep{width:1px;height:20px;background:var(--border);margin:0 2px}
+.tb-btn{width:28px;height:28px;border-radius:6px;border:none;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:background .15s,color .15s;font-size:11px;font-weight:700}
+.tb-btn:hover{background:var(--primary-soft);color:var(--primary)}
+.tb-btn.active-fmt{background:var(--primary-soft);color:var(--primary)}
+.tb-btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2}
+.tb-btn-text{font-family:"Segoe UI",sans-serif}
+
+.save-status{font-size:10.5px;color:var(--muted);margin-left:auto;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.save-dot{width:7px;height:7px;border-radius:50%;background:#d1d5db;transition:background .3s}
+.save-dot.saved{background:#22c55e}
+.save-dot.unsaved{background:#f59e0b}
+
+.delete-note-btn{display:flex;align-items:center;gap:4px;padding:5px 10px;border-radius:7px;background:none;border:1.5px solid transparent;color:var(--muted);font-size:11px;font-weight:600;cursor:pointer;transition:all .15s}
+.delete-note-btn:hover{background:var(--danger-soft);border-color:#fca5a5;color:var(--danger)}
+.delete-note-btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2}
+
+.editor-body{flex:1;overflow-y:auto;padding:28px 36px}
+.editor-body::-webkit-scrollbar{width:4px}.editor-body::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+.editor-content{min-height:400px;outline:none;font-size:14px;line-height:1.8;color:var(--text);max-width:780px}
+.editor-content:empty:before{content:attr(data-placeholder);color:var(--muted);pointer-events:none;font-size:14px}
+.editor-content h2{font-size:20px;font-weight:700;color:var(--navy);margin:24px 0 10px;border-bottom:2px solid var(--border);padding-bottom:6px}
+.editor-content h2:first-child{margin-top:0}
+.editor-content h3{font-size:15px;font-weight:700;color:var(--navy);margin:18px 0 8px}
+.editor-content p{margin-bottom:12px}
+.editor-content strong{font-weight:700;color:var(--navy)}
+.editor-content em{font-style:italic;color:var(--text)}
+.editor-content u{text-decoration:underline}
+.editor-content ul{padding-left:22px;margin-bottom:12px}
+.editor-content ol{padding-left:22px;margin-bottom:12px}
+.editor-content li{margin-bottom:5px}
+.editor-content blockquote{border-left:3px solid var(--primary);padding:8px 14px;color:var(--muted);margin:14px 0;background:var(--primary-soft);border-radius:0 8px 8px 0;font-style:italic}
+.editor-content hr{border:none;border-top:2px solid var(--border);margin:20px 0}
+.editor-content mark{background:#fef9c3;padding:0 3px;border-radius:3px}
+
+.note-chip-bar{background:var(--card);border-top:1.5px solid var(--border);padding:10px 20px;display:flex;align-items:center;gap:8px;flex-shrink:0}
+.chip-label{font-size:11px;color:var(--muted);font-weight:600;white-space:nowrap}
+.chip-tag{padding:3px 10px;border-radius:20px;border:1.5px solid var(--border);font-size:11px;font-weight:600;cursor:pointer;transition:all .15s;background:var(--card)}
+.chip-tag:hover{border-color:var(--primary);color:var(--primary)}
+.chip-tag.on.geo{background:#ffe4e6;border-color:#f43f5e;color:#9f1239}
+.chip-tag.on.eco{background:#d1fae5;border-color:#10b981;color:#065f46}
+.chip-tag.on.gen{background:#e0e7ff;border-color:#6366f1;color:#3730a3}
+.word-count{margin-left:auto;font-size:11px;color:var(--muted);white-space:nowrap}
+
+/* ── EMPTY EDITOR STATE ─────────────────────────────────── */
+.empty-editor{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--muted)}
+.empty-editor-ico{font-size:48px;opacity:.5}
+.empty-editor h3{font-size:16px;font-weight:700;color:var(--navy)}
+.empty-editor p{font-size:12.5px;text-align:center;max-width:300px;line-height:1.6}
+.empty-editor-btn{display:flex;align-items:center;gap:6px;padding:8px 18px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-size:12.5px;font-weight:700;cursor:pointer;transition:opacity .15s}
+.empty-editor-btn:hover{opacity:.88}
+.empty-editor-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5}
+
+/* ── MODAL CONFIRM ──────────────────────────────────────── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(3px);z-index:900;display:none;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal-box{background:var(--card);border-radius:var(--r-lg);padding:28px 32px;width:360px;box-shadow:var(--sh-lg);border:1.5px solid var(--border)}
+.modal-box h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.modal-box p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:20px}
+.modal-actions{display:flex;gap:10px;justify-content:flex-end}
+.modal-cancel{padding:7px 16px;border-radius:8px;border:1.5px solid var(--border);background:var(--card);font-size:12px;font-weight:600;cursor:pointer;color:var(--muted)}
+.modal-cancel:hover{border-color:var(--primary);color:var(--primary)}
+.modal-confirm{padding:7px 16px;border-radius:8px;border:none;background:var(--danger);color:#fff;font-size:12px;font-weight:700;cursor:pointer;transition:opacity .15s}
+.modal-confirm:hover{opacity:.88}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <div class="brand-icon">🌍</div>
+    <div><div class="brand-name">Tierra Interior Studio</div><div class="brand-sub">Geología y Estructura del Planeta</div></div>
+  </a>
+  <a class="nav-btn" href="capas.html"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Explorador</a>
+  <a class="nav-btn" href="ecosistemas.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg>Ecosistemas</a>
+  <a class="nav-btn" href="biblioteca.html"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Biblioteca</a>
+  <a class="nav-btn active" href="cuaderno.html"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Cuaderno</a>
+  <a class="nav-btn" href="juego.html"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M6 12h4M8 10v4"/><circle cx="16" cy="12" r="1" fill="currentColor"/><circle cx="18" cy="10" r="1" fill="currentColor"/></svg>Hábitats</a>
+</div>
+
+<div class="main">
+
+  <!-- ── SIDEBAR ──────────────────────────────────────── -->
+  <div class="notes-sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-top">
+        <div class="sidebar-title">Mis notas</div>
+        <span class="note-count" id="noteCount">0 notas</span>
+        <button class="new-note-btn" onclick="newNote()">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Nueva
+        </button>
+      </div>
+      <div class="search-box">
+        <svg class="search-ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input class="search-input" id="searchInput" type="text" placeholder="Buscar notas…" oninput="renderList()">
+      </div>
+    </div>
+    <div class="tag-filter">
+      <span class="filter-chip on" data-filter="all" onclick="setFilter('all',this)">Todas</span>
+      <span class="filter-chip geo" data-filter="geo" onclick="setFilter('geo',this)">🌋 Geología</span>
+      <span class="filter-chip eco" data-filter="eco" onclick="setFilter('eco',this)">🌿 Ecosistemas</span>
+      <span class="filter-chip gen" data-filter="gen" onclick="setFilter('gen',this)">📚 General</span>
+    </div>
+    <div class="notes-list" id="notesList"></div>
+  </div>
+
+  <!-- ── EDITOR ──────────────────────────────────────── -->
+  <div class="note-editor" id="noteEditor">
+
+    <!-- Empty state (shown when no note is open) -->
+    <div class="empty-editor" id="emptyEditor">
+      <div class="empty-editor-ico">📓</div>
+      <h3>Tu cuaderno de estudio</h3>
+      <p>Crea notas sobre capas geológicas, biomas o cualquier tema de interés. Se guardan automáticamente.</p>
+      <button class="empty-editor-btn" onclick="newNote()">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Crear primera nota
+      </button>
+    </div>
+
+    <!-- Editor (hidden until a note is open) -->
+    <div id="editorPanel" style="display:none;flex-direction:column;flex:1;overflow:hidden;min-height:0">
+      <div class="editor-title-row">
+        <input class="editor-title-input" id="noteTitle" type="text" placeholder="Título de la nota…" oninput="onEdit()">
+      </div>
+      <div class="editor-toolbar">
+        <button class="tb-btn tb-btn-text" title="Título H2" onclick="fmt('formatBlock','h2')"><b>H2</b></button>
+        <button class="tb-btn tb-btn-text" title="Subtítulo H3" onclick="fmt('formatBlock','h3')"><b>H3</b></button>
+        <div class="toolbar-sep"></div>
+        <button class="tb-btn" title="Negrita (Ctrl+B)" onclick="fmt('bold')"><svg viewBox="0 0 24 24"><path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/><path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/></svg></button>
+        <button class="tb-btn" title="Cursiva (Ctrl+I)" onclick="fmt('italic')"><svg viewBox="0 0 24 24"><line x1="19" y1="4" x2="10" y2="4"/><line x1="14" y1="20" x2="5" y2="20"/><line x1="15" y1="4" x2="9" y2="20"/></svg></button>
+        <button class="tb-btn" title="Subrayado (Ctrl+U)" onclick="fmt('underline')"><svg viewBox="0 0 24 24"><path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"/><line x1="4" y1="21" x2="20" y2="21"/></svg></button>
+        <button class="tb-btn" title="Resaltado" onclick="fmt('hiliteColor','#fef9c3')"><svg viewBox="0 0 24 24"><path d="M9 11l-1 9 4-3 4 3-1-9"/><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></button>
+        <div class="toolbar-sep"></div>
+        <button class="tb-btn" title="Lista (·)" onclick="fmt('insertUnorderedList')"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></button>
+        <button class="tb-btn" title="Lista numerada" onclick="fmt('insertOrderedList')"><svg viewBox="0 0 24 24"><line x1="10" y1="6" x2="21" y2="6"/><line x1="10" y1="12" x2="21" y2="12"/><line x1="10" y1="18" x2="21" y2="18"/><path d="M4 6h1v4"/><path d="M4 10h2"/><path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></button>
+        <button class="tb-btn" title="Cita" onclick="fmt('formatBlock','blockquote')"><svg viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg></button>
+        <button class="tb-btn" title="Línea separadora" onclick="insertHr()"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="toolbar-sep"></div>
+        <button class="tb-btn" title="Quitar formato" onclick="fmt('removeFormat')"><svg viewBox="0 0 24 24"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><line x1="13" y1="4" x2="11" y2="20"/><line x1="3" y1="3" x2="21" y2="21"/></svg></button>
+        <div class="save-status">
+          <div class="save-dot" id="saveDot"></div>
+          <span id="saveLabel">Guardado</span>
+        </div>
+        <button class="delete-note-btn" onclick="confirmDelete()" title="Eliminar nota">
+          <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+          Eliminar
+        </button>
+      </div>
+
+      <div class="editor-body">
+        <div class="editor-content" id="editorContent" contenteditable="true"
+          data-placeholder="Escribe aquí tu nota… Usa los botones de la barra para dar formato."
+          oninput="onEdit()"></div>
+      </div>
+
+      <div class="note-chip-bar">
+        <span class="chip-label">Etiqueta:</span>
+        <span class="chip-tag geo" id="chipGeo" onclick="setTag('geo')">🌋 Geología</span>
+        <span class="chip-tag eco" id="chipEco" onclick="setTag('eco')">🌿 Ecosistemas</span>
+        <span class="chip-tag gen" id="chipGen" onclick="setTag('gen')">📚 General</span>
+        <span class="word-count" id="wordCount">0 palabras</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MODAL CONFIRMAR ELIMINAR ───────────────────────── -->
+<div class="modal-overlay" id="deleteModal">
+  <div class="modal-box">
+    <h3>¿Eliminar esta nota?</h3>
+    <p>Esta acción no se puede deshacer. La nota se eliminará permanentemente de tu cuaderno.</p>
+    <div class="modal-actions">
+      <button class="modal-cancel" onclick="closeModal()">Cancelar</button>
+      <button class="modal-confirm" onclick="deleteNote()">Sí, eliminar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── STORAGE ──────────────────────────────────────────── */
+const STORAGE_KEY = 'tierraInterior_notes_v2';
+
+function loadNotes() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+  catch { return []; }
+}
+
+function saveNotes() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(NOTES));
+}
+
+/* ── STATE ─────────────────────────────────────────────── */
+let NOTES = loadNotes();
+let activeId = null;
+let currentFilter = 'all';
+let saveTimer = null;
+
+/* Seed de ejemplo si no hay notas */
+if (NOTES.length === 0) {
+  NOTES = [
+    {
+      id: 1,
+      title: 'Notas sobre el Manto Inferior',
+      content: '<h2>Manto Inferior</h2><p>El <strong>manto inferior</strong> es la capa más gruesa de la Tierra, extendiéndose desde los 660 hasta los 2,900 km de profundidad.</p><h3>Características clave</h3><ul><li>Temperatura: 1,400 – 3,700 °C</li><li>Estado: roca viscosa (sólida pero fluye bajo presión)</li><li>Grosor: 2,240 km — la capa más gruesa</li><li>Composición: silicatos de magnesio y hierro</li></ul><blockquote>La convección mantélica es el motor que mueve las placas tectónicas.</blockquote><p>Esto explica por qué los terremotos y volcanes se concentran en los bordes de placa.</p>',
+      tag: 'geo',
+      created: Date.now() - 86400000 * 2,
+      modified: Date.now() - 3600000
+    },
+    {
+      id: 2,
+      title: 'Biomas tropicales',
+      content: '<h2>Selva Tropical</h2><p>Las <strong>selvas tropicales</strong> cubren solo el 6% de la superficie terrestre pero albergan el 50% de las especies conocidas.</p><h3>Características</h3><ul><li>Temperatura: 25–30 °C estable todo el año</li><li>Precipitación: &gt;2,000 mm/año</li><li>Biodiversidad extrema: +40,000 spp. de plantas</li></ul>',
+      tag: 'eco',
+      created: Date.now() - 86400000,
+      modified: Date.now() - 86400000
+    },
+    {
+      id: 3,
+      title: 'Placas tectónicas — resumen',
+      content: '<h2>Tectónica de Placas</h2><p>La litosfera está dividida en <strong>7 placas principales</strong> y ~15 menores que se mueven a 1–17 cm/año.</p><h3>Tipos de bordes</h3><ul><li><strong>Divergente:</strong> las placas se separan → dorsales oceánicas</li><li><strong>Convergente:</strong> se acercan → subducción y montañas</li><li><strong>Transformante:</strong> se deslizan → fallas como San Andrés</li></ul>',
+      tag: 'geo',
+      created: Date.now() - 86400000 * 3,
+      modified: Date.now() - 86400000 * 2
+    }
+  ];
+  saveNotes();
+}
+
+/* ── UTILIDADES ─────────────────────────────────────────── */
+function formatDate(ts) {
+  const diff = Date.now() - ts;
+  if (diff < 60000) return 'Ahora';
+  if (diff < 3600000) return `${Math.floor(diff/60000)} min`;
+  if (diff < 86400000) return 'Hoy';
+  if (diff < 172800000) return 'Ayer';
+  return new Date(ts).toLocaleDateString('es-ES', {day:'numeric', month:'short'});
+}
+
+function tagLabel(tag) {
+  return tag === 'geo' ? '🌋 Geología' : tag === 'eco' ? '🌿 Ecosistemas' : '📚 General';
+}
+
+function plainText(html) {
+  const d = document.createElement('div');
+  d.innerHTML = html;
+  return d.innerText.trim();
+}
+
+/* ── RENDER LISTA ───────────────────────────────────────── */
+function renderList() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const list = document.getElementById('notesList');
+
+  const filtered = NOTES.filter(n => {
+    const matchTag = currentFilter === 'all' || n.tag === currentFilter;
+    const matchQ = !q || n.title.toLowerCase().includes(q) || plainText(n.content).toLowerCase().includes(q);
+    return matchTag && matchQ;
+  }).sort((a,b) => b.modified - a.modified);
+
+  document.getElementById('noteCount').textContent =
+    `${NOTES.length} nota${NOTES.length !== 1 ? 's' : ''}`;
+
+  if (filtered.length === 0) {
+    list.innerHTML = `<div class="empty-list"><div class="empty-list-ico">🔍</div><p>${q ? 'No hay resultados para <strong>"'+q+'"</strong>' : 'No hay notas en esta categoría'}</p></div>`;
+    return;
+  }
+
+  list.innerHTML = filtered.map(n => `
+    <div class="note-item${n.id === activeId ? ' active' : ''}" onclick="openNote(${n.id})">
+      <div class="note-title">${escHtml(n.title || 'Sin título')}</div>
+      <div class="note-preview">${escHtml(plainText(n.content).slice(0, 70)) || '—'}</div>
+      <div class="note-meta">
+        <span class="note-date">${formatDate(n.modified)}</span>
+        <span class="note-tag tag-${n.tag}">${tagLabel(n.tag)}</span>
+      </div>
+      <button class="note-delete" onclick="confirmDeleteId(${n.id}, event)" title="Eliminar">
+        <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+      </button>
+    </div>`).join('');
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+/* ── ABRIR NOTA ─────────────────────────────────────────── */
+function openNote(id) {
+  const n = NOTES.find(x => x.id === id);
+  if (!n) return;
+  activeId = id;
+
+  document.getElementById('emptyEditor').style.display = 'none';
+  const panel = document.getElementById('editorPanel');
+  panel.style.display = 'flex';
+
+  document.getElementById('noteTitle').value = n.title || '';
+  document.getElementById('editorContent').innerHTML = n.content || '';
+
+  // Actualizar chips de etiqueta
+  ['geo','eco','gen'].forEach(t => {
+    document.getElementById('chip'+t.charAt(0).toUpperCase()+t.slice(1))
+      .classList.toggle('on', n.tag === t);
+  });
+
+  updateWordCount();
+  setSaveStatus('saved');
+  renderList();
+}
+
+/* ── NUEVA NOTA ─────────────────────────────────────────── */
+function newNote() {
+  const n = {
+    id: Date.now(),
+    title: '',
+    content: '',
+    tag: 'gen',
+    created: Date.now(),
+    modified: Date.now()
+  };
+  NOTES.unshift(n);
+  saveNotes();
+  openNote(n.id);
+  setTimeout(() => document.getElementById('noteTitle').focus(), 50);
+}
+
+/* ── GUARDAR (auto) ─────────────────────────────────────── */
+function onEdit() {
+  setSaveStatus('unsaved');
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(commitSave, 1200);
+  updateWordCount();
+}
+
+function commitSave() {
+  if (activeId === null) return;
+  const n = NOTES.find(x => x.id === activeId);
+  if (!n) return;
+  n.title = document.getElementById('noteTitle').value.trim() || 'Sin título';
+  n.content = document.getElementById('editorContent').innerHTML;
+  n.modified = Date.now();
+  saveNotes();
+  setSaveStatus('saved');
+  renderList();
+}
+
+/* ── ETIQUETA ───────────────────────────────────────────── */
+function setTag(tag) {
+  if (activeId === null) return;
+  const n = NOTES.find(x => x.id === activeId);
+  if (!n) return;
+  n.tag = tag;
+  ['geo','eco','gen'].forEach(t => {
+    document.getElementById('chip'+t.charAt(0).toUpperCase()+t.slice(1))
+      .classList.toggle('on', t === tag);
+  });
+  commitSave();
+}
+
+/* ── FILTRO ─────────────────────────────────────────────── */
+function setFilter(f, el) {
+  currentFilter = f;
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('on'));
+  el.classList.add('on');
+  renderList();
+}
+
+/* ── ELIMINAR ───────────────────────────────────────────── */
+let pendingDeleteId = null;
+
+function confirmDelete() {
+  pendingDeleteId = activeId;
+  document.getElementById('deleteModal').classList.add('open');
+}
+
+function confirmDeleteId(id, e) {
+  e.stopPropagation();
+  pendingDeleteId = id;
+  document.getElementById('deleteModal').classList.add('open');
+}
+
+function closeModal() {
+  pendingDeleteId = null;
+  document.getElementById('deleteModal').classList.remove('open');
+}
+
+function deleteNote() {
+  NOTES = NOTES.filter(x => x.id !== pendingDeleteId);
+  saveNotes();
+  closeModal();
+  if (activeId === pendingDeleteId) {
+    activeId = null;
+    document.getElementById('editorPanel').style.display = 'none';
+    document.getElementById('emptyEditor').style.display = 'flex';
+  }
+  renderList();
+}
+
+/* ── FORMATO ────────────────────────────────────────────── */
+function fmt(cmd, val) {
+  document.execCommand(cmd, false, val || null);
+  document.getElementById('editorContent').focus();
+  onEdit();
+}
+
+function insertHr() {
+  document.execCommand('insertHTML', false, '<hr>');
+  document.getElementById('editorContent').focus();
+  onEdit();
+}
+
+/* ── ESTADO GUARDADO ────────────────────────────────────── */
+function setSaveStatus(state) {
+  const dot = document.getElementById('saveDot');
+  const lbl = document.getElementById('saveLabel');
+  if (state === 'saved') {
+    dot.className = 'save-dot saved';
+    lbl.textContent = 'Guardado';
+  } else {
+    dot.className = 'save-dot unsaved';
+    lbl.textContent = 'Sin guardar…';
+  }
+}
+
+/* ── WORD COUNT ─────────────────────────────────────────── */
+function updateWordCount() {
+  const text = (document.getElementById('editorContent').innerText || '').trim();
+  const words = text ? text.split(/\s+/).length : 0;
+  document.getElementById('wordCount').textContent = `${words} palabra${words !== 1 ? 's' : ''}`;
+}
+
+/* ── TECLADO ────────────────────────────────────────────── */
+document.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+    e.preventDefault();
+    commitSave();
+  }
+});
+
+/* ── INIT ───────────────────────────────────────────────── */
+renderList();
+if (NOTES.length > 0) openNote(NOTES[0].id);
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+{
+  "id": "manto_inferior",
+  "nombre": "Manto Inferior",
+  "nombre_cientifico": "Mesosfera inferior / Capa D''",
+  "grupo": "Capas Intermedias",
+  "emoji": "🔥",
+  "orden": 3,
+  "color_hex": "#d44820",
+
+  "geometria": {
+    "profundidad_min_km": 660,
+    "profundidad_max_km": 2900,
+    "grosor_promedio_km": 2240,
+    "nota": "La capa más gruesa de la Tierra. La capa D'' (últimos ~200 km antes del núcleo) tiene propiedades únicas"
+  },
+
+  "propiedades_fisicas": {
+    "temperatura_min_C": 1600,
+    "temperatura_max_C": 3700,
+    "presion_min_GPa": 24,
+    "presion_max_GPa": 136,
+    "densidad_gcm3": 4.4,
+    "estado_materia": "Sólido viscoso (fluye en escala geológica)",
+    "velocidad_onda_P_km_s": 10.9,
+    "velocidad_onda_S_km_s": 6.2,
+    "viscosidad_Pa_s_rango": "10²¹ – 10²³"
+  },
+
+  "composicion": {
+    "tipo_roca_principal": "Bridgmanita (Perovskita de Mg-Si)",
+    "clase_roca": "Silicato de alta presión",
+    "minerales": [
+      { "nombre": "Bridgmanita",        "formula": "(Mg,Fe)SiO₃",  "porcentaje": 75, "color": "#4a3820", "dureza_mohs": 9   },
+      { "nombre": "Periclasa ferrosa",   "formula": "(Mg,Fe)O",     "porcentaje": 20, "color": "#382818", "dureza_mohs": 5.5 },
+      { "nombre": "Ca-Perovskita",       "formula": "CaSiO₃",       "porcentaje": 4,  "color": "#5a4030", "dureza_mohs": 8   },
+      { "nombre": "Post-Perovskita D''", "formula": "(Mg,Fe)SiO₃",  "porcentaje": 1,  "color": "#1a0e08", "dureza_mohs": 10  }
+    ],
+    "elementos_abundantes_pct": [
+      { "elemento": "Oxígeno",  "simbolo": "O",  "pct": 44.3 },
+      { "elemento": "Magnesio", "simbolo": "Mg", "pct": 22.0 },
+      { "elemento": "Silicio",  "simbolo": "Si", "pct": 21.0 },
+      { "elemento": "Hierro",   "simbolo": "Fe", "pct": 6.8  },
+      { "elemento": "Calcio",   "simbolo": "Ca", "pct": 2.5  }
+    ]
+  },
+
+  "descripcion_corta": "La capa más gruesa. Silicatos comprimidos a presiones extremas que fluyen lentamente arrastrando las placas.",
+  "descripcion_larga": "El manto inferior ocupa más del 38% del volumen total de la Tierra. Las presiones extremas comprimen los minerales en formas cristalinas de alta densidad como la bridgmanita, el mineral más abundante de todo el planeta. A estas profundidades, las rocas permanecen sólidas por la presión colosal aunque estén a más de 3,000°C, pero fluyen lentamente en millones de años. La enigmática capa D'' en su base marca la transición al núcleo.",
+
+  "descubrimiento_historico": {
+    "nombre_limite": "Discontinuidad de Gutenberg (CMB — Core-Mantle Boundary)",
+    "año": 1914,
+    "cientifico": "Beno Gutenberg",
+    "pais": "Estados Unidos",
+    "metodo": "Zona de sombra sísmica: las ondas S desaparecen al pasar al núcleo líquido. Ondas P crean sombra entre 103°-142° del epicentro",
+    "curiosidad": "La zona de sombra de ondas P fue clave para descubrir que el núcleo tiene propiedades completamente distintas al manto"
+  },
+
+  "fenomenos_asociados": [
+    {
+      "nombre": "Ondas Sísmicas S",
+      "emoji": "📡",
+      "tipo": "sismico",
+      "descripcion": "Las ondas tipo S se propagan por el manto inferior sólido pero se extinguen al entrar al núcleo externo líquido, revelando su existencia.",
+      "bg": "linear-gradient(135deg,#f0fdf4,#86efac)"
+    },
+    {
+      "nombre": "Tomografía Sísmica",
+      "emoji": "🔬",
+      "tipo": "cientifico",
+      "descripcion": "Usando miles de terremotos, los sismólogos mapean variaciones de velocidad en el manto que revelan zonas más frías (placas hundidas) y más calientes (plumas).",
+      "bg": "linear-gradient(135deg,#e0f2fe,#7dd3fc)"
+    },
+    {
+      "nombre": "Subducción Profunda",
+      "emoji": "🌊",
+      "tipo": "tectónico",
+      "descripcion": "Las placas oceánicas hundidas pueden penetrar hasta el manto inferior, acumulándose como 'cementerios de placas' durante cientos de millones de años.",
+      "bg": "linear-gradient(135deg,#ede9fe,#c4b5fd)"
+    },
+    {
+      "nombre": "Capa D'' (D-doble prima)",
+      "emoji": "🧬",
+      "tipo": "mineralogico",
+      "descripcion": "Zona de ~200 km sobre el núcleo con propiedades anómalas: la bridgmanita se convierte en post-perovskita y hay grandes variaciones laterales.",
+      "bg": "linear-gradient(135deg,#fef9c3,#facc15)"
+    }
+  ],
+
+  "dato_curioso": "¡Las ondas sísmicas tipo S no atraviesan el núcleo externo líquido! Los sismólogos 'vieron' el interior de la Tierra usando terremotos como fuente de iluminación, como una ecografía de ultrasonido.",
+  "dato_label": "Dato Sísmico",
+
+  "quiz": [
+    { "pregunta": "¿Cuál es el mineral más abundante del manto inferior y de toda la Tierra?", "respuesta_correcta": "Bridgmanita", "incorrectas": ["Olivino", "Cuarzo", "Feldespato"] },
+    { "pregunta": "¿Qué porcentaje del volumen terrestre ocupa el manto inferior?", "respuesta_correcta": "~38%", "incorrectas": ["15%", "55%", "1%"] },
+    { "pregunta": "¿Qué zona misteriosa se encuentra en la base del manto inferior?", "respuesta_correcta": "Capa D'' (D-doble prima)", "incorrectas": ["Astenosfera", "Litosfera", "Zona de Bridgman"] }
+  ]
+}

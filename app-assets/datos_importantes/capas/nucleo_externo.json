@@ -1,0 +1,96 @@
+{
+  "id": "nucleo_externo",
+
+  "fichas": [
+    {
+      "ico": "📏",
+      "titulo": "Grosor",
+      "valor": "2,250",
+      "unidad": "km",
+      "contexto": "Del límite con el manto inferior (2,900 km) hasta el límite con el núcleo interno (5,150 km). Casi tan ancho como el radio de la Luna."
+    },
+    {
+      "ico": "🌡️",
+      "titulo": "Temperatura",
+      "valor": "4,000 – 5,000",
+      "unidad": "°C",
+      "contexto": "La temperatura sube desde ~4,000 °C en el tope hasta ~5,000 °C en la base. Más caliente que la superficie del Sol (5,500 °C) — aunque a presiones incomparablemente mayores."
+    },
+    {
+      "ico": "⚡",
+      "titulo": "Presión",
+      "valor": "136 – 329",
+      "unidad": "GPa",
+      "contexto": "329 GPa en la base del núcleo externo (límite con el núcleo interno). A esta presión, el hierro permanece líquido gracias a la mezcla de azufre y oxígeno que baja su punto de fusión."
+    },
+    {
+      "ico": "🧲",
+      "titulo": "Campo magnético generado",
+      "valor": "25 – 65",
+      "unidad": "microteslas",
+      "contexto": "El campo magnético varía entre 25 μT (ecuador) y 65 μT (polos). Sin él, el viento solar erosionaría la atmósfera terrestre en millones de años."
+    },
+    {
+      "ico": "⚗️",
+      "titulo": "Composición",
+      "valor": "80% Fe + 5% Ni",
+      "unidad": "+ elementos ligeros",
+      "contexto": "Hierro y níquel fundidos con trazas de S, O, Si. La proporción exacta determina la densidad y el punto de fusión — fundamentales para el mecanismo dínamo."
+    },
+    {
+      "ico": "🌍",
+      "titulo": "Volumen",
+      "valor": "15",
+      "unidad": "% del planeta",
+      "contexto": "El núcleo externo ocupa el 15% del volumen terrestre pero el 28% de su masa. Su hierro-níquel líquido es ~3.5 veces más denso que el granito de la corteza."
+    }
+  ],
+
+  "comparativas": {
+    "descripcion": "El único motor eléctrico natural del sistema solar: su hierro líquido en convección genera el campo magnético que hace posible la vida en la Tierra.",
+    "registros": [
+      { "tipo": "Única capa completamente líquida",       "valor": "2,250 km de espesor", "nota": "El único mecanismo dínamo natural conocido en un planeta rocoso activo" },
+      { "tipo": "Temperatura comparable",                 "valor": "~5,000 °C",           "nota": "Similar a la superficie solar (5,500 °C)" },
+      { "tipo": "Velocidad de convección",                "valor": "~1 mm/s",             "nota": "Mil veces más rápida que el manto (cm/año vs mm/s)" },
+      { "tipo": "Reversiones magnéticas",                 "valor": "~170 en 76 Ma",       "nota": "Última inversión hace ~780,000 años (Brunhes-Matuyama)" }
+    ]
+  },
+
+  "metodos_estudio": [
+    {
+      "metodo": "Análisis de ondas sísmicas P (zona de sombra)",
+      "icon": "📡",
+      "descripcion": "Las ondas S no atraviesan el núcleo externo porque no pueden propagarse en líquidos. La 'zona de sombra' (103°-143°) demuestra que es líquido. Demostrado por Richard Oldham (1906) y refinado por Gutenberg (1926)."
+    },
+    {
+      "metodo": "Magnetometría y paleomagnetismo",
+      "icon": "🧲",
+      "descripcion": "El registro magnético en rocas antiguas revela las inversiones pasadas del campo. La misión SWARM (ESA, 2013) mapea el campo magnético en 3D desde satélite, detectando variaciones del núcleo."
+    },
+    {
+      "metodo": "Experimentos de metal líquido a alta presión",
+      "icon": "🔬",
+      "descripcion": "Se estudian aleaciones Fe-Ni bajo presiones de 100-300 GPa para entender la dinámica de flujo y el mecanismo dínamo. Simulaciones de computadora modelan las corrientes del núcleo externo."
+    }
+  ],
+
+  "hitos": [
+    { "anio": 1906, "evento": "Richard Oldham detecta la zona de sombra sísmica y propone la existencia de un núcleo líquido" },
+    { "anio": 1926, "evento": "Beno Gutenberg determina con precisión el radio del núcleo externo: 3,480 km" },
+    { "anio": 1963, "evento": "Vine, Matthews y Morley confirman las inversiones magnéticas en el fondo oceánico — validando el mecanismo dínamo" },
+    { "anio": 1995, "evento": "Gary Glatzmaier y Paul Roberts crean la primera simulación computacional completa del mecanismo dínamo del núcleo" },
+    { "anio": 2019, "evento": "El campo magnético norte se desplaza 55 km/año hacia Siberia — el modelo geomagnético mundial (WMM) se actualiza con urgencia" }
+  ],
+
+  "analogias": [
+    "El núcleo externo es como el rotor de un generador eléctrico: el hierro líquido girando (influenciado por la rotación terrestre) genera corriente eléctrica que produce el campo magnético.",
+    "Las auroras boreales son la evidencia visible del campo magnético del núcleo externo: las partículas del viento solar son atrapadas y canalizadas hacia los polos por las líneas de campo.",
+    "Si el campo magnético de la Tierra fuera como el de una brújula, el núcleo externo sería la batería que lo alimenta — sin él, la brújula dejaría de funcionar en miles de años."
+  ],
+
+  "recursos_naturales": [
+    "El campo magnético generado es el recurso más importante: protege la atmósfera, permite la navegación, y hace posible la existencia de la vida compleja",
+    "No es explotable directamente — la temperatura y presión harían imposible cualquier acceso",
+    "Investigación sobre materiales: los experimentos para estudiar el núcleo externo generan avances en metalurgia y física de materiales en condiciones extremas"
+  ]
+}

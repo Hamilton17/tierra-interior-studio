@@ -1,0 +1,99 @@
+{
+  "id": "nucleo_interno",
+  "nombre": "Núcleo Interno",
+  "nombre_cientifico": "Núcleo sólido interno (IOCS — Inner cOre Solid)",
+  "grupo": "Núcleo",
+  "emoji": "⭐",
+  "orden": 5,
+  "color_hex": "#f5a020",
+
+  "geometria": {
+    "profundidad_min_km": 5150,
+    "profundidad_max_km": 6371,
+    "grosor_promedio_km": 1221,
+    "radio_km": 1221,
+    "nota": "Radio similar al de la Luna (~1,737 km). Descubierto por Inge Lehmann en 1936"
+  },
+
+  "propiedades_fisicas": {
+    "temperatura_min_C": 5000,
+    "temperatura_max_C": 6000,
+    "presion_min_GPa": 329,
+    "presion_max_GPa": 364,
+    "densidad_gcm3": 13.0,
+    "estado_materia": "Sólido metálico cristalizado por presión extrema",
+    "velocidad_onda_P_km_s": 11.3,
+    "velocidad_onda_S_km_s": 3.5,
+    "rotacion_extra_grados_año": 0.3,
+    "estructura_cristalina": "Hexagonal compacta (hcp)"
+  },
+
+  "composicion": {
+    "tipo_roca_principal": "Aleación de hierro-níquel cristalizada",
+    "clase_roca": "Metal sólido",
+    "minerales": [
+      { "nombre": "Hierro-ε (épsilon)", "formula": "Fe hcp",  "porcentaje": 85, "color": "#d08010" },
+      { "nombre": "Níquel (Ni)",        "formula": "Ni",       "porcentaje": 10, "color": "#b06010" },
+      { "nombre": "Silicio (Si)",       "formula": "Si",       "porcentaje": 3,  "color": "#e0c860" },
+      { "nombre": "Otros (S, C, O)",    "formula": "S, C, O",  "porcentaje": 2,  "color": "#905010" }
+    ],
+    "elementos_abundantes_pct": [
+      { "elemento": "Hierro",  "simbolo": "Fe", "pct": 85.0 },
+      { "elemento": "Níquel",  "simbolo": "Ni", "pct": 10.0 },
+      { "elemento": "Silicio", "simbolo": "Si", "pct": 3.0  },
+      { "elemento": "Azufre",  "simbolo": "S",  "pct": 1.5  }
+    ]
+  },
+
+  "descripcion_corta": "El corazón sólido de la Tierra: hierro-níquel cristalizado, más caliente que la superficie del Sol.",
+  "descripcion_larga": "El núcleo interno es una esfera sólida con radio similar al de la Luna. Aunque su temperatura supera la de la superficie del Sol (~6,000°C), la presión colosal de 364 GPa obliga al hierro a cristalizarse en una fase hexagonal. Tiene estructura anisotrópica: las ondas sísmicas viajan más rápido en dirección al eje de rotación. Existe evidencia de un 'inner inner core' con orientación cristalina diferente: posiblemente una quinta subcapa en el centro.",
+
+  "descubrimiento_historico": {
+    "nombre_limite": "Discontinuidad de Lehmann",
+    "año": 1936,
+    "cientifico": "Inge Lehmann",
+    "pais": "Dinamarca",
+    "metodo": "Análisis de ondas PKIKP del terremoto de Nueva Zelanda de 1929 que aparecen en la zona de sombra sísmica",
+    "curiosidad": "Lehmann fue la primera en proponer el núcleo interno sólido dentro del núcleo externo líquido, basándose en ondas sísmicas anomalas"
+  },
+
+  "fenomenos_asociados": [
+    {
+      "nombre": "Súper-Rotación",
+      "emoji": "🔮",
+      "tipo": "geofisico",
+      "descripcion": "El núcleo interno rota ~0.3-0.5° por año más rápido que la superficie terrestre. La causa exacta aún se investiga.",
+      "bg": "linear-gradient(135deg,#fffbeb,#fbbf24)"
+    },
+    {
+      "nombre": "Anisotropía Sísmica",
+      "emoji": "📐",
+      "tipo": "sismico",
+      "descripcion": "Las ondas sísmicas viajan un 3% más rápido en dirección polar que ecuatorial, revelando que los cristales de hierro están alineados.",
+      "bg": "linear-gradient(135deg,#f0f9ff,#bae6fd)"
+    },
+    {
+      "nombre": "Calor Latente",
+      "emoji": "☀️",
+      "tipo": "termico",
+      "descripcion": "El núcleo interno libera calor al crecer (el líquido externo se solidifica lentamente). Este calor alimenta la convección del núcleo externo y el campo magnético.",
+      "bg": "linear-gradient(135deg,#fff7ed,#fdba74)"
+    },
+    {
+      "nombre": "Inner Inner Core",
+      "emoji": "🔭",
+      "tipo": "investigacion",
+      "descripcion": "Investigaciones de 2021 sugieren que el centro del núcleo interno (~300 km de radio) tiene una orientación cristalina diferente: ¡posiblemente una quinta capa dentro de la Tierra!",
+      "bg": "linear-gradient(135deg,#fdf4ff,#d8b4fe)"
+    }
+  ],
+
+  "dato_curioso": "El núcleo interno rota ~0.3-0.5° por año más rápido que la superficie terrestre. ¡El centro de la Tierra tiene su propio movimiento independiente! En ~900 años habrá dado una vuelta extra completa.",
+  "dato_label": "Dato Asombroso",
+
+  "quiz": [
+    { "pregunta": "¿Quién descubrió el núcleo interno en 1936?", "respuesta_correcta": "Inge Lehmann", "incorrectas": ["Beno Gutenberg", "Mohorovičić", "Marie Curie"] },
+    { "pregunta": "¿Por qué el núcleo interno es sólido a 6,000°C?", "respuesta_correcta": "La presión extrema (364 GPa) obliga al hierro a cristalizarse", "incorrectas": ["Porque está hecho de roca", "Porque se enfría desde el exterior", "Por las ondas sísmicas"] },
+    { "pregunta": "¿Cuánto más rápido rota el núcleo interno respecto a la superficie?", "respuesta_correcta": "~0.3-0.5° por año", "incorrectas": ["10° por año", "Al mismo ritmo exacto", "0.001° por siglo"] }
+  ]
+}

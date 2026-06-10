@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1400">
+<title>Tierra Interior Studio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#000610;font-family:"Segoe UI",system-ui,sans-serif}
+
+#cv{position:fixed;inset:0;display:block;z-index:0}
+
+/* ── TOPBAR glass ─────────────────────────── */
+.topbar{
+  position:fixed;top:0;left:0;right:0;height:54px;z-index:100;
+  background:rgba(2,6,18,.75);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  display:flex;align-items:center;padding:0 22px;gap:14px;
+}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto;text-decoration:none}
+.brand-icon{
+  width:34px;height:34px;border-radius:9px;
+  background:linear-gradient(135deg,#c45c1a,#e64010);
+  display:flex;align-items:center;justify-content:center;font-size:18px;
+  box-shadow:0 0 16px rgba(230,64,16,.4);
+}
+.brand-name{font-size:14px;font-weight:700;color:#fff}
+.brand-sub{font-size:9.5px;color:rgba(255,255,255,.35)}
+.nav-btn{
+  display:flex;align-items:center;gap:5px;padding:5px 12px;border-radius:7px;
+  border:none;background:none;font-size:11.5px;font-weight:600;
+  color:rgba(255,255,255,.45);cursor:pointer;text-decoration:none;transition:all .15s;
+}
+.nav-btn:hover{background:rgba(255,255,255,.09);color:#fff}
+.nav-btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
+
+/* ── HERO title — flotando sobre la cima del globo ─── */
+#hero{
+  position:fixed;top:60px;left:50%;transform:translateX(-50%);
+  text-align:center;z-index:10;pointer-events:none;
+  padding:10px 24px 12px;
+  background:rgba(0,6,16,.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.06);border-radius:14px;
+  min-width:360px;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.22);
+  border-radius:20px;padding:3px 12px;font-size:10px;font-weight:700;
+  color:#fbbf24;margin-bottom:10px;letter-spacing:.05em;
+}
+.hero-title{
+  font-size:32px;font-weight:900;color:#fff;line-height:1.1;
+  text-shadow:0 0 40px rgba(196,92,26,.4),0 2px 8px rgba(0,0,0,.8);
+  margin-bottom:7px;
+}
+.hero-title span{
+  background:linear-gradient(90deg,#f59e0b,#e64010);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-sub{font-size:11.5px;color:rgba(255,255,255,.42);letter-spacing:.04em;font-weight:500}
+
+/* ── BIOME MARKERS (HTML overlay) ──────────── */
+#markers{position:fixed;inset:0;z-index:30;pointer-events:none}
+.mk{
+  position:absolute;transform:translate(-50%,-50%);
+  pointer-events:all;cursor:pointer;
+  transition:opacity .25s ease;
+}
+/* Pulsing rings */
+.mk-ring{
+  position:absolute;top:50%;left:50%;
+  width:28px;height:28px;border-radius:50%;
+  border:2px solid var(--c);
+  transform:translate(-50%,-50%) scale(.5);
+  opacity:0;animation:mkPulse 2.2s ease-out infinite;
+}
+.mk-ring.r2{width:48px;height:48px;animation-delay:.8s;border-width:1.5px}
+.mk-ring.r3{width:68px;height:68px;animation-delay:1.6s;border-width:1px}
+@keyframes mkPulse{
+  0%{transform:translate(-50%,-50%) scale(.35);opacity:.65}
+  80%{opacity:0}
+  100%{transform:translate(-50%,-50%) scale(1);opacity:0}
+}
+/* Center dot */
+.mk-dot{
+  width:13px;height:13px;border-radius:50%;
+  background:var(--c);box-shadow:0 0 12px var(--c),0 0 24px var(--c);
+  position:relative;z-index:2;transition:transform .18s,box-shadow .18s;
+}
+.mk:hover .mk-dot{transform:scale(1.6);box-shadow:0 0 22px var(--c),0 0 44px var(--c)}
+.mk:hover .mk-ring{animation-duration:.9s}
+/* Tooltip card */
+.mk-card{
+  position:absolute;left:50%;bottom:calc(100% + 18px);
+  transform:translateX(-50%) translateY(6px);
+  background:rgba(5,12,28,.93);border:1px solid rgba(255,255,255,.1);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-radius:12px;padding:12px 16px;
+  white-space:nowrap;pointer-events:none;
+  opacity:0;transition:opacity .2s,transform .2s;min-width:170px;
+  box-shadow:0 8px 32px rgba(0,0,0,.6);
+}
+.mk:hover .mk-card{opacity:1;transform:translateX(-50%) translateY(0)}
+.mc-emoji{font-size:20px;display:block;margin-bottom:5px}
+.mc-name{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:2px}
+.mc-desc{font-size:10px;color:rgba(255,255,255,.4);margin-bottom:8px}
+.mc-cta{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:10.5px;font-weight:700;
+  background:rgba(245,158,11,.18);border:1px solid rgba(245,158,11,.3);
+  color:#fbbf24;padding:4px 10px;border-radius:20px;
+}
+
+/* ── BOTTOM HUD ──────────────────────── */
+#hud{
+  position:fixed;bottom:26px;left:50%;transform:translateX(-50%);
+  z-index:40;display:flex;gap:10px;align-items:center;
+}
+.hud-btn{
+  display:flex;align-items:center;gap:7px;
+  padding:9px 18px;border-radius:24px;border:none;cursor:pointer;
+  font-size:12px;font-weight:700;letter-spacing:.02em;white-space:nowrap;
+  transition:all .2s;text-decoration:none;
+}
+.hud-primary{
+  background:linear-gradient(90deg,#c45c1a,#e64010);color:#fff;
+  box-shadow:0 4px 22px rgba(196,92,26,.5);
+}
+.hud-primary:hover{box-shadow:0 6px 32px rgba(196,92,26,.75);transform:translateY(-2px)}
+.hud-ghost{
+  background:rgba(255,255,255,.07);color:rgba(255,255,255,.65);
+  border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px);
+}
+.hud-ghost:hover{background:rgba(255,255,255,.14);color:#fff;transform:translateY(-2px)}
+.hud-btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.2}
+
+/* ── SIDE STAT PILLS ──────────────── */
+#sidePills{
+  position:fixed;right:22px;top:50%;transform:translateY(-50%);
+  z-index:20;display:flex;flex-direction:column;gap:8px;
+}
+.spill{
+  display:flex;flex-direction:column;align-items:center;
+  background:rgba(5,12,28,.7);border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);border-radius:10px;padding:10px 14px;
+  min-width:72px;
+}
+.spill-num{font-size:20px;font-weight:800;color:#fff;line-height:1}
+.spill-lbl{font-size:9px;color:rgba(255,255,255,.35);font-weight:600;letter-spacing:.06em;margin-top:3px;text-align:center}
+
+/* ── SCROLL HINT ──────────────── */
+#scrollHint{
+  position:fixed;left:28px;bottom:28px;z-index:20;
+  display:flex;flex-direction:column;gap:4px;align-items:flex-start;
+}
+.sh-row{display:flex;align-items:center;gap:7px;color:rgba(255,255,255,.28);font-size:10px;font-weight:600}
+.sh-row svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2.5}
+</style>
+</head>
+<body>
+
+<canvas id="cv"></canvas>
+
+<!-- ── TOP NAV ────────────────── -->
+<div class="topbar">
+  <a class="brand" href="index.html">
+    <div class="brand-icon">🌍</div>
+    <div><div class="brand-name">Tierra Interior Studio</div><div class="brand-sub">Geología y Estructura del Planeta</div></div>
+  </a>
+  <a class="nav-btn" href="capas.html">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    Explorador
+  </a>
+  <a class="nav-btn" href="ecosistemas.html">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    Ecosistemas
+  </a>
+  <a class="nav-btn" href="biblioteca.html">
+    <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    Biblioteca
+  </a>
+  <a class="nav-btn" href="cuaderno.html">
+    <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+    Cuaderno
+  </a>
+  <a class="nav-btn" href="juego.html">
+    <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M6 12h4M8 10v4"/><circle cx="16" cy="12" r="1" fill="currentColor"/><circle cx="18" cy="10" r="1" fill="currentColor"/></svg>
+    Hábitats
+  </a>
+</div>
+
+<!-- ── HERO ────────────────── -->
+<div id="hero">
+  <div class="hero-badge">🌍 Plataforma Educativa Interactiva</div>
+  <h1 class="hero-title">El planeta,<br>desde <span>adentro</span></h1>
+  <p class="hero-sub">Haz clic en una región del globo · Arrastra para rotar · Scroll para zoom</p>
+</div>
+
+<!-- ── MARKERS ────────────────── -->
+<div id="markers"></div>
+
+<!-- ── SIDE PILLS ──────────────── -->
+<div id="sidePills">
+  <div class="spill"><div class="spill-num">6</div><div class="spill-lbl">CAPAS DEL PLANETA</div></div>
+  <div class="spill"><div class="spill-num">5</div><div class="spill-lbl">BIOMAS</div></div>
+  <div class="spill"><div class="spill-num">20</div><div class="spill-lbl">ESPECIES 3D</div></div>
+  <div class="spill"><div class="spill-num">8.7M</div><div class="spill-lbl">ESP. EN TIERRA</div></div>
+</div>
+
+<!-- ── SCROLL HINT ─────────────── -->
+<div id="scrollHint">
+  <div class="sh-row"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Arrastra el globo</div>
+  <div class="sh-row"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg> Scroll para zoom</div>
+</div>
+
+<!-- ── BOTTOM HUD ─────────────── -->
+<div id="hud">
+  <a class="hud-btn hud-primary" href="capas.html">
+    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    Explorar el Interior
+  </a>
+  <a class="hud-btn hud-ghost" href="ecosistemas.html">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+    Biomas del Mundo
+  </a>
+  <a class="hud-btn hud-ghost" href="biblioteca.html">
+    <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    Biblioteca
+  </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+// ═══════════════════════════════════════════════════════
+//  BIOME DATA
+//  lat/lon ajustados: polar → Ártico (visible al inicio),
+//  oceano → Pacífico Norte (más visible), sabana → Kenya
+// ═══════════════════════════════════════════════════════
+const BIOMES = [
+  {id:'sabana',   name:'Sabana Africana',    emoji:'🌾', desc:'La gran llanura de África',  color:'#f59e0b', lat:1,   lon:37,   href:'juego.html?level=sabana'},
+  {id:'selva',    name:'Selva Tropical',     emoji:'🌿', desc:'Hogar del 50% de especies',  color:'#22c55e', lat:-3,  lon:-60,  href:'juego.html?level=selva'},
+  {id:'polar',    name:'Polar / Ártico',     emoji:'🧊', desc:'−70 °C y vida adaptada',     color:'#93c5fd', lat:72,  lon:-25,  href:'juego.html?level=polar'},
+  {id:'oceano',   name:'Océano Profundo',    emoji:'🌊', desc:'El 95% sin explorar',        color:'#3b82f6', lat:5,   lon:-155, href:'juego.html?level=oceano'},
+  {id:'desierto', name:'Desierto de Sonora', emoji:'🏜️', desc:'Más de 50 °C al sol',        color:'#f97316', lat:30,  lon:-110, href:'juego.html?level=desierto'},
+];
+
+// ═══════════════════════════════════════════════════════
+//  SETUP — SphereGeometry + texturas GitHub CDN
+//  Funciona sin servidor local (file:// y localhost)
+// ═══════════════════════════════════════════════════════
+const cv = document.getElementById('cv');
+let W = window.innerWidth, H = window.innerHeight;
+
+const renderer = new THREE.WebGLRenderer({canvas:cv, antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(W, H);
+renderer.outputEncoding = THREE.sRGBEncoding;
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x000610);
+
+const camera = new THREE.PerspectiveCamera(45, W/H, 0.1, 100);
+camera.position.set(0, 0.5, 3.2);
+
+// ─── LIGHTS (mismo que scene.json de ecosistemas) ────
+scene.add(new THREE.AmbientLight(0xaaccff, 0.4));
+const sun = new THREE.DirectionalLight(0xffffff, 1.6);
+sun.position.set(5, 3, 5);
+scene.add(sun);
+
+// ─── STARS ───────────────────────────────────────────
+(function(){
+  const sv = [];
+  for(let i=0;i<2000;i++){
+    const r=20+Math.random()*30, t=Math.random()*Math.PI*2, p=Math.acos(2*Math.random()-1);
+    sv.push(r*Math.sin(p)*Math.cos(t), r*Math.sin(p)*Math.sin(t), r*Math.cos(p));
+  }
+  const g=new THREE.BufferGeometry();
+  g.setAttribute('position',new THREE.Float32BufferAttribute(sv,3));
+  scene.add(new THREE.Points(g,new THREE.PointsMaterial({color:0xffffff,size:0.055})));
+})();
+
+// ─── GLOBE (SphereGeometry — funciona sin servidor) ───
+const globeRadius = 1.0;
+
+const earthMat = new THREE.MeshPhongMaterial({
+  color:0x1a4a80, specular:new THREE.Color(0x112244), shininess:30,
+});
+scene.add(new THREE.Mesh(new THREE.SphereGeometry(globeRadius,64,64), earthMat));
+
+// Atmosphere glow
+scene.add(new THREE.Mesh(
+  new THREE.SphereGeometry(globeRadius*1.10,32,32),
+  new THREE.MeshPhongMaterial({color:0x4488ff,transparent:true,opacity:0.10,side:THREE.BackSide,depthWrite:false})
+));
+
+// ─── TEXTURA NASA (GitHub raw — mismo que ecosistemas) ─
+// GitHub raw tiene CORS: Access-Control-Allow-Origin: *
+// Funciona desde file:// y localhost sin ninguna configuración extra
+const tl = new THREE.TextureLoader();
+tl.crossOrigin = 'anonymous';
+const RAW = 'https://raw.githubusercontent.com/mrdoob/three.js/r128/examples/textures/planets/';
+
+tl.load(RAW+'earth_atmos_2048.jpg', tex=>{
+  earthMat.map=tex; earthMat.color.set(0xffffff); earthMat.needsUpdate=true;
+});
+tl.load(RAW+'earth_specular_2048.jpg', tex=>{
+  earthMat.specularMap=tex; earthMat.needsUpdate=true;
+});
+
+// ─── ORBIT CONTROLS ──────────────────────────────────
+const ctrl = new THREE.OrbitControls(camera, cv);
+ctrl.enableDamping    = true;
+ctrl.dampingFactor    = 0.06;
+ctrl.enablePan        = false;
+ctrl.minDistance      = 1.5;
+ctrl.maxDistance      = 8;
+ctrl.autoRotate       = true;
+ctrl.autoRotateSpeed  = 0.3;
+
+let resumeTimer;
+cv.addEventListener('pointerdown', () => {
+  ctrl.autoRotate = false;
+  clearTimeout(resumeTimer);
+});
+cv.addEventListener('pointerup', () => {
+  resumeTimer = setTimeout(() => ctrl.autoRotate = true, 4000);
+});
+
+// ═══════════════════════════════════════════════════════
+//  BIOME MARKERS — HTML elements projected to 3D
+// ═══════════════════════════════════════════════════════
+function latLon3D(lat, lon){
+  const phi   = (90 - lat) * Math.PI / 180;
+  const theta = (lon + 180) * Math.PI / 180;
+  return new THREE.Vector3(
+    -Math.sin(phi) * Math.cos(theta),
+     Math.cos(phi),
+     Math.sin(phi) * Math.sin(theta)
+  ).normalize();
+}
+
+BIOMES.forEach(b => { b._dir = latLon3D(b.lat, b.lon); });
+
+const mkLayer = document.getElementById('markers');
+const mkEls   = [];
+
+BIOMES.forEach(b => {
+  const el = document.createElement('div');
+  el.className = 'mk';
+  el.style.setProperty('--c', b.color);
+  el.innerHTML = `
+    <div class="mk-ring r1"></div>
+    <div class="mk-ring r2"></div>
+    <div class="mk-ring r3"></div>
+    <div class="mk-dot"></div>
+    <div class="mk-card">
+      <span class="mc-emoji">${b.emoji}</span>
+      <div class="mc-name">${b.name}</div>
+      <div class="mc-desc">${b.desc}</div>
+      <span class="mc-cta">▶ Jugar hábitat →</span>
+    </div>`;
+  el.addEventListener('click', e => {
+    e.stopPropagation();
+    el.style.transform = 'translate(-50%,-50%) scale(1.6)';
+    el.style.transition = 'transform .25s ease';
+    setTimeout(() => { location.href = b.href; }, 220);
+  });
+  el.addEventListener('pointerdown', e => e.stopPropagation()); // don't drag globe
+  mkLayer.appendChild(el);
+  mkEls.push(el);
+});
+
+function updateMarkers(){
+  // Con OrbitControls, la cámara orbita y el globo es estático en world space.
+  // La visibilidad de un marcador = si el punto está en el hemisferio que mira la cámara.
+  const camNorm = camera.position.clone().normalize();
+  const r = (globeRadius || 1.0) * 1.08; // ligeramente por encima de la superficie
+
+  BIOMES.forEach((b, i) => {
+    const dot = b._dir.dot(camNorm);
+    if(dot < 0.05){
+      mkEls[i].style.opacity = '0';
+      mkEls[i].style.pointerEvents = 'none';
+      return;
+    }
+
+    const wPos = b._dir.clone().multiplyScalar(r);
+    const proj = wPos.project(camera);
+    const x = ((proj.x + 1) / 2) * W;
+    const y = ((-proj.y + 1) / 2) * H;
+    const alpha = Math.min(1, (dot - 0.05) / 0.22);
+
+    mkEls[i].style.left   = x + 'px';
+    mkEls[i].style.top    = y + 'px';
+    mkEls[i].style.opacity = alpha.toFixed(3);
+    mkEls[i].style.pointerEvents = dot > 0.1 ? 'all' : 'none';
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+//  RENDER LOOP
+// ═══════════════════════════════════════════════════════
+(function loop(){
+  requestAnimationFrame(loop);
+  ctrl.update();
+  updateMarkers();
+  renderer.render(scene, camera);
+})();
+
+window.addEventListener('resize', () => {
+  W = window.innerWidth; H = window.innerHeight;
+  camera.aspect = W / H;
+  camera.updateProjectionMatrix();
+  renderer.setSize(W, H);
+});
+</script>
+</body>
+</html>

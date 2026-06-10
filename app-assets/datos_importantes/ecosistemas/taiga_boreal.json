@@ -1,0 +1,105 @@
+{
+  "id": "taiga_boreal",
+
+  "fichas": [
+    {
+      "ico": "🌡️",
+      "titulo": "Temperatura",
+      "valor": "-50 a 20",
+      "unidad": "°C",
+      "contexto": "Inviernos de hasta –50 °C en Siberia oriental (Yakutia). Los árboles sobreviven gracias a anticongelante natural en su savia y agujas cerosas que reducen pérdida de agua."
+    },
+    {
+      "ico": "💧",
+      "titulo": "Precipitación anual",
+      "valor": "400–900",
+      "unidad": "mm/año",
+      "contexto": "Parte cae como nieve (hasta 6 meses de cobertura). El deshielo primaveral genera inundaciones estacionales que crean hábitats críticos para aves acuáticas."
+    },
+    {
+      "ico": "🌲",
+      "titulo": "Extensión global",
+      "valor": "~17",
+      "unidad": "mill. km²",
+      "contexto": "El bosque continuo más grande de la Tierra. La taiga siberiana sola supera los 12 millones de km² — más grande que Canadá entera."
+    },
+    {
+      "ico": "❄️",
+      "titulo": "Permafrost parcial",
+      "valor": "~50",
+      "unidad": "% del área",
+      "contexto": "La mitad sur de la taiga está sobre permafrost discontinuo. El deshielo por calentamiento crea 'thermokarst' — hundimientos y lagos que liberan metano."
+    },
+    {
+      "ico": "🌿",
+      "titulo": "Diversidad arbórea",
+      "valor": "~20",
+      "unidad": "spp. dominantes",
+      "contexto": "Dominio absoluto de coníferas: píceas, pinos, alerces, abetos. La baja diversidad se compensa con una biomasa forestal enorme (el mayor depósito de carbono arbóreo del mundo)."
+    },
+    {
+      "ico": "🔥",
+      "titulo": "Incendios/año",
+      "valor": "~4,000",
+      "unidad": "eventos/año",
+      "contexto": "El fuego es parte del ciclo natural. Los pinos de lodgepole necesitan el calor para abrir sus piñas. Pero el cambio climático está multiplicando los mega-incendios (>100,000 ha)."
+    }
+  ],
+
+  "comparativas": {
+    "descripcion": "La taiga es el bioma terrestre más extenso y almacena más carbono que cualquier otro. Es el 'escudo ártico' entre los trópicos y las regiones polares.",
+    "registros": [
+      { "tipo": "Bioma más extenso del mundo",           "valor": "~17 millones de km²",  "nota": "17% de la superficie terrestre total" },
+      { "tipo": "Mayor reserva de carbono forestal",     "valor": "~285 Pg C",            "nota": "Más que los tropicales y templados juntos (Pg = petagramo)" },
+      { "tipo": "Temperatura mínima registrada",        "valor": "-67.8 °C",             "nota": "Yakutsk, Siberia — ciudad más fría del mundo" },
+      { "tipo": "Árbol más resistente al frío",         "valor": "-70 °C supervivencia", "nota": "Larix gmelinii (alerce siberiano) — más resistente conocido" }
+    ]
+  },
+
+  "metodos_estudio": [
+    {
+      "metodo": "Estaciones de monitoreo permafrost",
+      "icon": "🌡️",
+      "descripcion": "Más de 1,000 pozos de temperatura en toda Siberia y Canadá miden el gradiente del permafrost. Desde 1980 el permafrost siberiano se ha calentado en promedio 2 °C — record global."
+    },
+    {
+      "metodo": "Inventarios forestales nacionales",
+      "icon": "📋",
+      "descripcion": "Rusia (ROSLESHOZ) y Canadá (NFI) realizan inventarios periódicos de biomasa. La discrepancia entre sus datos y los satélites es objeto de investigación activa."
+    },
+    {
+      "metodo": "Análisis de metano (CH₄) atmosférico",
+      "icon": "📡",
+      "descripcion": "Las turberas boreales liberan CH₄ al descongelarse. Sensores en la red FLUXNET y el satélite GOSAT rastrean estas emisiones en tiempo real."
+    },
+    {
+      "metodo": "Dendrocronología de zonas límite",
+      "icon": "🌲",
+      "descripcion": "En el ecotono taiga-tundra, el avance de los árboles (treeline) hacia el norte se mide con datos de anillos. Predicen el futuro de la zona boreal bajo distintos escenarios de calentamiento."
+    }
+  ],
+
+  "hitos": [
+    { "anio": 1890, "evento": "Primeras expediciones científicas a Siberia (Akademiya Nauk) documentan la extensión del permafrost y la taiga por primera vez" },
+    { "anio": 1971, "evento": "La Conferencia de Espoo (Finlandia) establece las primeras normas internacionales de gestión forestal boreal sostenible" },
+    { "anio": 2003, "evento": "Mega-incendio en Yakutia quema 22 millones de ha en un solo verano — marca el inicio de la era de los mega-fuegos boreales" },
+    { "anio": 2012, "evento": "Estudios en Nature revelan que el permafrost boreal podría liberar hasta 120 Pg de C adicional antes de 2300 bajo escenarios de alta emisión" },
+    { "anio": 2019, "evento": "Incendios en Siberia y Alaska queman 13 millones de ha; el humo alcanza Europa Central por primera vez en registros modernos" },
+    { "anio": 2023, "evento": "Canadá sufre su mayor temporada de incendios histórica: 18 millones de ha quemadas, récord absoluto" }
+  ],
+
+  "analogias": [
+    "La taiga actúa como el 'termostato boreal' del planeta: absorbe calor solar en verano y refleja la nieve en invierno, regulando la temperatura del hemisferio norte.",
+    "Las turberas de la taiga son como fósiles vivos de carbono: acumulan materia orgánica durante miles de años a 1 mm/año — si el permafrost se funde, ese carbono se libera en décadas.",
+    "Para un ave migratoria, la taiga es como un aeropuerto escala: millones de aves árticas paran a criar en verano y parten antes del invierno, conectando el Ártico con África y Sudamérica."
+  ],
+
+  "servicios_ecosistemicos": [
+    "Mayor reserva de carbono terrestre del mundo — clave para frenar el cambio climático",
+    "Regulación hídrica: recarga de acuíferos árticos y flujo de grandes ríos (Ob, Yenisei, Lena, Mackenzie)",
+    "Madera industrial: suministra ~80% de la madera de construcción de Europa y Norteamérica",
+    "Hábitat de cría: más de 3,000 millones de aves migratorias crían en la taiga cada primavera",
+    "Biomasa energética y resinas industriales: trementina, brea, celulosa industrial",
+    "Biodiversidad endémica: hogar exclusivo del bisonte de los bosques, el armiño y el alce de Alasca"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "svg": "/app-assets/capas/nucleo_externo/ilustraciones/perfil.svg",
+  "descripcion": "El núcleo externo (2,900–5,150 km de profundidad) es una capa de hierro-níquel líquido a ~5,000 °C. Sus corrientes de convección, combinadas con la rotación terrestre, generan la dínamo que produce el campo magnético terrestre.",
+  "leyenda": [
+    {
+      "ico": "🔵",
+      "titulo": "Líneas de campo magnético",
+      "texto": "El campo magnético terrestre tiene forma dipolar (como un imán de barra), con los polos magnéticos cerca de los geográficos. Deflectan el viento solar y forman la magnetosfera."
+    },
+    {
+      "ico": "🟠",
+      "titulo": "Corrientes de convección del hierro",
+      "texto": "El hierro líquido caliente asciende, se enfría, desciende. La rotación terrestre (efecto Coriolis) organiza estas corrientes en columnas helicoidales que generan el campo magnético."
+    },
+    {
+      "ico": "🟡",
+      "titulo": "Súper-rotación del núcleo",
+      "texto": "El núcleo externo rota ligeramente más rápido que la corteza. Esta diferencia de rotación es parte del mecanismo dínamo."
+    },
+    {
+      "ico": "🟣",
+      "titulo": "Inversiones del campo",
+      "texto": "El campo magnético se ha invertido ~170 veces en los últimos 76 Ma. Las inversiones tardan miles de años y durante la transición el campo se debilita (no desaparece)."
+    }
+  ]
+}

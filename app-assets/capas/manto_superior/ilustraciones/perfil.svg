@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320">
+  <defs>
+    <linearGradient id="bg_hot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a1800"/>
+      <stop offset="50%" stop-color="#6a2800"/>
+      <stop offset="100%" stop-color="#c85020"/>
+    </linearGradient>
+    <linearGradient id="plate_l" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5a7840"/>
+      <stop offset="100%" stop-color="#8a5030"/>
+    </linearGradient>
+    <linearGradient id="plate_r" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8a5030"/>
+      <stop offset="100%" stop-color="#5a7840"/>
+    </linearGradient>
+    <linearGradient id="asc" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#ff8020"/>
+      <stop offset="100%" stop-color="#ffc060"/>
+    </linearGradient>
+    <linearGradient id="desc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4060a0"/>
+      <stop offset="100%" stop-color="#203080"/>
+    </linearGradient>
+    <marker id="arrow_r" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 L2,4 Z" fill="#ffc060"/>
+    </marker>
+    <marker id="arrow_b" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 L2,4 Z" fill="#6080c0"/>
+    </marker>
+  </defs>
+
+  <!-- Fondo del manto -->
+  <rect width="480" height="320" fill="url(#bg_hot)"/>
+
+  <!-- Gradiente de temperatura de fondo (caliente abajo, frío arriba) -->
+  <rect x="0" y="0" width="480" height="320" fill="none" stroke="none"/>
+  <!-- Líneas isotérmicas -->
+  <path d="M0,80 Q240,70 480,80" stroke="rgba(255,200,100,0.12)" stroke-width="1.5" fill="none"/>
+  <path d="M0,150 Q240,140 480,150" stroke="rgba(255,160,60,0.15)" stroke-width="1.5" fill="none"/>
+  <path d="M0,220 Q240,210 480,220" stroke="rgba(255,120,20,0.18)" stroke-width="1.5" fill="none"/>
+  <path d="M0,280 Q240,270 480,280" stroke="rgba(255,80,0,0.2)" stroke-width="1.5" fill="none"/>
+
+  <!-- CELDA DE CONVECCIÓN IZQUIERDA -->
+  <!-- Material caliente ascendente (izquierda) -->
+  <rect x="38" y="60" width="30" height="220" rx="4" fill="url(#asc)" opacity="0.55"/>
+  <!-- Flecha ascendente izquierda -->
+  <line x1="53" y1="255" x2="53" y2="75" stroke="#ffc060" stroke-width="2.5" marker-end="url(#arrow_r)" opacity="0.9"/>
+
+  <!-- Material frío descendente (más a la izquierda) -->
+  <rect x="4" y="60" width="26" height="220" rx="4" fill="url(#desc)" opacity="0.5"/>
+  <line x1="17" y1="75" x2="17" y2="255" stroke="#6080c0" stroke-width="2" marker-end="url(#arrow_b)" opacity="0.8"/>
+
+  <!-- CELDA DE CONVECCIÓN DERECHA -->
+  <!-- Material caliente ascendente (derecha) -->
+  <rect x="412" y="60" width="30" height="220" rx="4" fill="url(#asc)" opacity="0.55"/>
+  <line x1="427" y1="255" x2="427" y2="75" stroke="#ffc060" stroke-width="2.5" marker-end="url(#arrow_r)" opacity="0.9"/>
+
+  <!-- Material frío descendente -->
+  <rect x="450" y="60" width="26" height="220" rx="4" fill="url(#desc)" opacity="0.5"/>
+  <line x1="463" y1="75" x2="463" y2="255" stroke="#6080c0" stroke-width="2" marker-end="url(#arrow_b)" opacity="0.8"/>
+
+  <!-- CELDA CENTRAL (DORSAL / PUNTO CALIENTE) -->
+  <rect x="222" y="60" width="36" height="220" rx="4" fill="url(#asc)" opacity="0.65"/>
+  <line x1="240" y1="260" x2="240" y2="75" stroke="#ffd080" stroke-width="3" marker-end="url(#arrow_r)" opacity="0.95"/>
+
+  <!-- Flujo horizontal superior (arrastra placas) -->
+  <!-- Flecha izq de dorsal a zona de subducción izquierda -->
+  <path d="M220,72 Q130,66 68,72" stroke="#ffc060" stroke-width="2" marker-end="url(#arrow_r)" fill="none" opacity="0.7"/>
+  <!-- Flecha der de dorsal a zona de subducción derecha -->
+  <path d="M260,72 Q350,66 412,72" stroke="#ffc060" stroke-width="2" marker-end="url(#arrow_r)" fill="none" opacity="0.7"/>
+
+  <!-- Flujo horizontal inferior (retorno frío) -->
+  <path d="M30,264 Q135,272 222,264" stroke="#6080c0" stroke-width="2" marker-end="url(#arrow_b)" fill="none" opacity="0.6"/>
+  <path d="M450,264 Q345,272 258,264" stroke="#6080c0" stroke-width="2" marker-end="url(#arrow_b)" fill="none" opacity="0.6"/>
+
+  <!-- PLACAS TECTÓNICAS (superficie) -->
+  <!-- Placa izquierda -->
+  <rect x="0" y="42" width="208" height="22" rx="3" fill="url(#plate_l)"/>
+  <!-- Placa derecha -->
+  <rect x="272" y="42" width="208" height="22" rx="3" fill="url(#plate_r)"/>
+
+  <!-- DORSAL en el centro (separación de placas) -->
+  <path d="M215,42 Q240,28 265,42" fill="#c85020" stroke="none"/>
+  <path d="M225,40 Q240,30 255,40" fill="#ff6020" stroke="none" opacity="0.8"/>
+  <!-- Magma emergiendo -->
+  <ellipse cx="240" cy="30" rx="10" ry="5" fill="#ff8040" opacity="0.9"/>
+  <ellipse cx="240" cy="28" rx="5" ry="3" fill="#ffc060" opacity="0.8"/>
+
+  <!-- ZONAS DE SUBDUCCIÓN (extremos) -->
+  <!-- Subducción izquierda (placa oceánica bajando) -->
+  <path d="M0,42 L0,64 L35,280 L52,280 L18,64 L18,42 Z" fill="#203080" opacity="0.7"/>
+  <text x="6" y="200" font-family="system-ui,sans-serif" font-size="9" fill="#8090d0" transform="rotate(75,6,200)">Subducción</text>
+
+  <!-- Subducción derecha -->
+  <path d="M480,42 L480,64 L445,280 L428,280 L462,64 L462,42 Z" fill="#203080" opacity="0.7"/>
+  <text x="474" y="120" font-family="system-ui,sans-serif" font-size="9" fill="#8090d0" transform="rotate(-75,474,120)">Subducción</text>
+
+  <!-- ETIQUETAS -->
+  <!-- Litosfera -->
+  <rect x="80" y="44" width="60" height="13" rx="3" fill="rgba(0,0,0,0.5)"/>
+  <text x="84" y="54" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#c8d0b0">Litosfera</text>
+  <rect x="310" y="44" width="60" height="13" rx="3" fill="rgba(0,0,0,0.5)"/>
+  <text x="314" y="54" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#c8d0b0">Litosfera</text>
+
+  <!-- Astenosfera -->
+  <rect x="172" y="100" width="136" height="30" rx="5" fill="rgba(0,0,0,0.55)"/>
+  <text x="240" y="113" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#ffa050" text-anchor="middle">ASTENOSFERA</text>
+  <text x="240" y="125" font-family="system-ui,sans-serif" font-size="9" fill="#d08030" text-anchor="middle">100–410 km · Plástica</text>
+
+  <!-- Caliente / Frío labels -->
+  <rect x="55" y="155" width="58" height="14" rx="3" fill="rgba(255,120,20,0.4)"/>
+  <text x="59" y="165" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#ffd080">↑ Caliente</text>
+
+  <rect x="4" y="120" width="50" height="14" rx="3" fill="rgba(30,50,150,0.4)"/>
+  <text x="8" y="130" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#8090d0">↓ Frío</text>
+
+  <!-- Profundidades -->
+  <line x1="458" y1="42" x2="468" y2="42" stroke="#aaa" stroke-width="1.5"/>
+  <text x="470" y="46" font-family="system-ui,sans-serif" font-size="9" fill="#ccc">35 km</text>
+  <line x1="458" y1="280" x2="468" y2="280" stroke="#aaa" stroke-width="1.5"/>
+  <text x="470" y="284" font-family="system-ui,sans-serif" font-size="9" fill="#ccc">660 km</text>
+  <line x1="463" y1="42" x2="463" y2="280" stroke="#666" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Título -->
+  <rect x="138" y="290" width="204" height="22" rx="5" fill="rgba(0,0,0,0.7)"/>
+  <text x="240" y="305" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="white" text-anchor="middle">Manto Superior — Convección</text>
+</svg>

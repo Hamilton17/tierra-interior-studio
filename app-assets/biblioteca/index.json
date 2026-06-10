@@ -1,0 +1,134 @@
+[
+  {
+    "id": "volcan-art",
+    "tipo": "articulo",
+    "cat": "Vulcanismo",
+    "tema": "vulcanismo",
+    "destacado": true,
+    "titulo": "¿Cómo funciona un volcán? Del magma a la erupción",
+    "extracto": "El camino del magma desde el manto hasta la superficie, los tipos de erupciones y por qué ocurren donde ocurren.",
+    "thumb": { "bg": "linear-gradient(135deg,#fef3c7,#fb923c)", "emoji": "🌋" },
+    "tiempo": "8 min lectura"
+  },
+  {
+    "id": "artico-art",
+    "tipo": "articulo",
+    "cat": "Regiones Polares",
+    "tema": "polares",
+    "destacado": true,
+    "titulo": "El Ártico se derrite: consecuencias globales",
+    "extracto": "Por qué el deshielo ártico importa aunque vivas en el trópico: corrientes oceánicas, nivel del mar y clima global.",
+    "thumb": { "bg": "linear-gradient(135deg,#e0f2fe,#7dd3fc)", "emoji": "🧊" },
+    "tiempo": "10 min lectura"
+  },
+  {
+    "id": "nucleo-int-art",
+    "tipo": "articulo",
+    "cat": "Interior Terrestre",
+    "tema": "interior",
+    "destacado": false,
+    "titulo": "El núcleo interno sólido: la esfera de hierro más caliente del sistema solar",
+    "extracto": "A 6,000 °C y 364 GPa de presión, el núcleo interno sólido desafía la física y mantiene secretos sobre el origen de la Tierra.",
+    "thumb": { "bg": "linear-gradient(135deg,#fef3c7,#f97316)", "emoji": "⭐" },
+    "tiempo": "7 min lectura"
+  },
+  {
+    "id": "selva-art",
+    "tipo": "articulo",
+    "cat": "Selvas Tropicales",
+    "tema": "selvas",
+    "destacado": false,
+    "titulo": "La selva amazónica: el pulmón del planeta bajo amenaza",
+    "extracto": "Cómo el bosque tropical más grande del mundo regula el clima global, almacena carbono y alberga el 10% de todas las especies conocidas.",
+    "thumb": { "bg": "linear-gradient(135deg,#d1fae5,#4ade80)", "emoji": "🌿" },
+    "tiempo": "9 min lectura"
+  },
+  {
+    "id": "sismicas-vid",
+    "tipo": "video",
+    "cat": "Sismos",
+    "tema": "sismos",
+    "destacado": true,
+    "titulo": "Las ondas sísmicas y cómo revelan el interior de la Tierra",
+    "extracto": "Gracias a los terremotos, los científicos pudieron \"ver\" el núcleo líquido sin jamás llegar hasta él.",
+    "thumb": { "bg": "linear-gradient(135deg,#dbeafe,#60a5fa)", "emoji": "⚡" },
+    "tiempo": "5 min"
+  },
+  {
+    "id": "placas-vid",
+    "tipo": "video",
+    "cat": "Tectónica",
+    "tema": "tectonica",
+    "destacado": false,
+    "titulo": "Tectónica de placas: el motor que mueve los continentes",
+    "extracto": "La historia de cómo la idea \"loca\" de Alfred Wegener terminó revolucionando toda la ciencia de la Tierra.",
+    "thumb": { "bg": "linear-gradient(135deg,#dcfce7,#4ade80)", "emoji": "🌏" },
+    "tiempo": "7 min"
+  },
+  {
+    "id": "serengeti-vid",
+    "tipo": "video",
+    "cat": "Ecosistemas",
+    "tema": "selvas",
+    "destacado": true,
+    "titulo": "La Gran Migración del Serengeti",
+    "extracto": "1.5 millones de ñus, 1,800 km y el ciclo de vida más espectacular de la sabana africana.",
+    "thumb": { "bg": "linear-gradient(135deg,#fef9c3,#fde68a)", "emoji": "🌾" },
+    "tiempo": "20 min"
+  },
+  {
+    "id": "tectonica-info",
+    "tipo": "infografia",
+    "cat": "Tectónica",
+    "tema": "tectonica",
+    "destacado": true,
+    "titulo": "Placas tectónicas: el motor del planeta",
+    "extracto": "Cómo la convección del manto mueve continentes enteros y da forma a la geografía que conocemos hoy.",
+    "thumb": { "bg": "linear-gradient(135deg,#dcfce7,#4ade80)", "emoji": "🌍" },
+    "tiempo": "5 min"
+  },
+  {
+    "id": "corteza-info",
+    "tipo": "infografia",
+    "cat": "Interior Terrestre",
+    "tema": "interior",
+    "destacado": false,
+    "titulo": "Corteza Continental: la delgada piel sólida del planeta",
+    "extracto": "Solo el 1% del volumen de la Tierra, pero la única capa que podemos tocar directamente.",
+    "thumb": { "bg": "linear-gradient(135deg,#fef3c7,#86efac)", "emoji": "🏔️" },
+    "tiempo": "4 min"
+  },
+  {
+    "id": "nucleo-ext-info",
+    "tipo": "infografia",
+    "cat": "Interior Terrestre",
+    "tema": "interior",
+    "destacado": false,
+    "titulo": "Núcleo externo líquido: la dínamo que nos protege",
+    "extracto": "El hierro líquido en movimiento genera el campo magnético que desvía el viento solar y hace posible la vida.",
+    "thumb": { "bg": "linear-gradient(135deg,#fce7f3,#f9a8d4)", "emoji": "🧲" },
+    "tiempo": "5 min"
+  },
+  {
+    "id": "campo-quiz",
+    "tipo": "quiz",
+    "cat": "Interior Terrestre",
+    "tema": "interior",
+    "destacado": true,
+    "titulo": "El campo magnético: escudo invisible de la Tierra",
+    "extracto": "El núcleo externo líquido genera el campo magnético que protege toda la vida del viento solar.",
+    "thumb": { "bg": "linear-gradient(135deg,#fdf4ff,#d8b4fe)", "emoji": "🔬" },
+    "tiempo": "10 preguntas"
+  },
+  {
+    "id": "sismos-quiz",
+    "tipo": "quiz",
+    "cat": "Sismos",
+    "tema": "sismos",
+    "destacado": false,
+    "titulo": "Test: Terremotos y sismología",
+    "extracto": "¿Cuánto sabes sobre cómo se producen los sismos y cómo los medimos?",
+    "thumb": { "bg": "linear-gradient(135deg,#fef3c7,#fb923c)", "emoji": "⚡" },
+    "tiempo": "8 preguntas"
+  }
+]

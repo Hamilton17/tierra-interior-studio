@@ -1,0 +1,105 @@
+{
+  "id": "desierto",
+
+  "fichas": [
+    {
+      "ico": "🌡️",
+      "titulo": "Temperatura extrema",
+      "valor": "-5 a 56",
+      "unidad": "°C",
+      "contexto": "56.7 °C en Furnace Creek, Death Valley (1913) — record mundial. Pero los desiertos polares llegan a –50 °C. La amplitud térmica diaria puede superar 40 °C en desiertos cálidos."
+    },
+    {
+      "ico": "💧",
+      "titulo": "Precipitación anual",
+      "valor": "<250",
+      "unidad": "mm/año",
+      "contexto": "La definición técnica de desierto. El Atacama (Chile) registra promedios de 1–3 mm/año en su núcleo. Hay estaciones meteorológicas en el Sahara que no registran lluvia en 20+ años."
+    },
+    {
+      "ico": "🌍",
+      "titulo": "Extensión global",
+      "valor": "~50",
+      "unidad": "mill. km²",
+      "contexto": "Los desiertos cubren el 33% de la superficie terrestre — la mayor bioma del planeta por área. El Sahara (9.2 mill. km²) es el mayor cálido; la Antártida (14.2 mill. km²) el mayor frío."
+    },
+    {
+      "ico": "☀️",
+      "titulo": "Radiación solar",
+      "valor": "hasta 2,500",
+      "unidad": "kWh/m²/año",
+      "contexto": "Los desiertos reciben la mayor radiación solar del planeta. El Sahara y el desierto de Atacama son los mejores lugares del mundo para energía solar fotovoltaica y termosolar."
+    },
+    {
+      "ico": "💨",
+      "titulo": "Evapotranspiración",
+      "valor": "20–100×",
+      "unidad": "lluvia recibida",
+      "contexto": "La evapotranspiración potencial supera en 20 a 100 veces la precipitación recibida. Los organismos tienen que obtener agua del rocío, las nieblas o el metabolismo de sus alimentos."
+    },
+    {
+      "ico": "🌵",
+      "titulo": "Biodiversidad endémica",
+      "valor": "~30",
+      "unidad": "% de endemismos",
+      "contexto": "Muchas especies del desierto son únicas (endémicas): el lanzador del desierto de Namibia bebe niebla con su espalda, el cactus saguaro vive 150–200 años y crece solo 1 cm/año."
+    }
+  ],
+
+  "comparativas": {
+    "descripcion": "El desierto es el bioma más extenso, el de mayor irradiación solar y el de menor precipitación. Paradójicamente, algunos desiertos son ricos en minerales y en biodiversidad adaptada.",
+    "registros": [
+      { "tipo": "Mayor desierto cálido del mundo",     "valor": "9.2 mill. km² (Sahara)",    "nota": "Ocupa toda África del Norte" },
+      { "tipo": "Mayor desierto frío del mundo",       "valor": "14.2 mill. km² (Antártida)","nota": "Técnicamente el mayor desierto del planeta" },
+      { "tipo": "Lugar más seco registrado",           "valor": "0 mm/año",                  "nota": "Estación meteorológica de Arica, Chile — 173 años sin lluvia" },
+      { "tipo": "Mayor reserva de energía solar",      "valor": "2,500 kWh/m²/año",          "nota": "Atacama y Sahara — potencial energético ilimitado" }
+    ]
+  },
+
+  "metodos_estudio": [
+    {
+      "metodo": "Teledetección multitemporal",
+      "icon": "🛰️",
+      "descripcion": "Series temporales de imágenes MODIS/LANDSAT muestran el avance de la desertificación y el efecto de la lluvia esporádica. También detectan las 'mareas de flores' (super bloom) post-lluvia."
+    },
+    {
+      "metodo": "Isótopos de agua en roca",
+      "icon": "🪨",
+      "descripcion": "El análisis de isótopos de O y H en minerales como el yeso permite reconstruir los paleolagos que existían en el Sahara hace 6,000–11,000 años durante el 'Sahara Verde'."
+    },
+    {
+      "metodo": "Monitoreo de dunas con LiDAR",
+      "icon": "✈️",
+      "descripcion": "LiDAR aerotransportado mapea el movimiento de dunas con precisión centimétrica. Las dunas del Sahara se mueven 10–20 m/año según el viento dominante."
+    },
+    {
+      "metodo": "Estaciones microclimáticas automatizadas",
+      "icon": "📡",
+      "descripcion": "Sensores WiFi autónomos miden temperatura, humedad, viento y radiación cada minuto. Revelaron que el suelo del desierto puede alcanzar 80 °C a 2 cm de profundidad al mediodía."
+    }
+  ],
+
+  "hitos": [
+    { "anio": 1869, "evento": "Primera travesía científica del Sahara (Gerhard Rohlfs) — primeros datos de temperatura, dunas y oasis documentados sistemáticamente" },
+    { "anio": 1930, "evento": "Creación del concepto de 'índice de aridez' (de Martonne) — herramienta fundamental para clasificar desiertos" },
+    { "anio": 1974, "evento": "Imágenes Skylab revelan el Sahara Verde en pinturas rupestres y fósiles de río — el desierto era una sabana hace 6,000 años" },
+    { "anio": 1995, "evento": "Inauguración de la primera gran planta solar termosolar en el Mojave (EE.UU.) — demostrando el potencial energético del desierto" },
+    { "anio": 2002, "evento": "La Gran Muralla Verde (Africa) se propone: plantar 8,000 km de arboles a través del Sahel para detener el avance del Sahara" },
+    { "anio": 2019, "evento": "Super bloom en el desierto de Atacama: las lluvias inusuales hicieron florecer el desierto más seco del mundo por primera vez en 7 años" }
+  ],
+
+  "analogias": [
+    "Un cactus saguaro funciona como un tanque de agua: después de una lluvia, puede absorber hasta 750 litros de agua en 24 horas y almacenarlos en su tejido expandible durante meses.",
+    "El Sahara no es permanente: hace 6,000 años era verde, con lagos y elefantes. Los cambios en la órbita terrestre (ciclos de Milankovitch) lo convirtieron en desierto — y volverá a cambiar.",
+    "La niebla del desierto de Atacama es como un mar invisible: el 'camanchaca' (niebla marina) lleva más agua al ecosistema costero que toda la lluvia anual."
+  ],
+
+  "servicios_ecosistemicos": [
+    "Energía solar: los desiertos pueden generar suficiente energía solar para alimentar a toda la humanidad muchas veces",
+    "Minerales: los desiertos contienen los mayores yacimientos de fosfatos, potasio, litio (Atacama) y nitratos",
+    "Investigación astrobiológica: el Atacama es el análogo más cercano a Marte en la Tierra — se prueban rovers y se buscan formas de vida extrema",
+    "Turismo de naturaleza: safaris, expediciones, turismo astronómico (cielos más oscuros del mundo en el Atacama)",
+    "Cultura e historia: las grandes civilizaciones del Nilo, Tigris-Éufrates y Valle del Indo nacieron en las orillas de desiertos",
+    "Banco genético: genes de resistencia a la sequía en plantas del desierto son cruciales para la agricultura del futuro"
+  ]
+}

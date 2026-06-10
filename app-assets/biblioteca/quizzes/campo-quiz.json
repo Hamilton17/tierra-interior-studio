@@ -1,0 +1,55 @@
+{
+  "ilustracion": "/app-assets/capas/nucleo_externo/ilustraciones/perfil.svg",
+  "preguntas": [
+    {
+      "q": "¿Qué parte de la Tierra genera el campo magnético?",
+      "ops": ["El núcleo externo líquido", "El núcleo interno sólido", "El manto superior", "La corteza continental"],
+      "r": 0
+    },
+    {
+      "q": "¿Qué efecto produce el campo magnético en el viento solar?",
+      "ops": ["Lo absorbe completamente", "Lo deflecta, protegiéndonos de partículas energéticas", "Lo convierte en electricidad", "Lo redirige hacia los polos"],
+      "r": 1
+    },
+    {
+      "q": "¿Cuántas veces se ha invertido el campo magnético terrestre en los últimos 76 millones de años?",
+      "ops": ["3 veces", "~20 veces", "~170 veces", "nunca"],
+      "r": 2
+    },
+    {
+      "q": "La \"súper-rotación\" del núcleo significa que...",
+      "ops": ["Gira en dirección opuesta a la Tierra", "Gira más rápido que la corteza terrestre", "Gira más lento que la corteza terrestre", "No rota"],
+      "r": 1
+    },
+    {
+      "q": "¿A qué temperatura se encuentra el núcleo externo?",
+      "ops": ["~1,000 °C", "~2,500 °C", "~5,000 °C", "~10,000 °C"],
+      "r": 2
+    },
+    {
+      "q": "¿Cuál es la principal composición del núcleo externo?",
+      "ops": ["Silicatos fundidos", "Hierro y níquel líquidos", "Agua supercrítica", "Magnesio y calcio fundidos"],
+      "r": 1
+    },
+    {
+      "q": "¿Por qué el núcleo externo es líquido y el interno sólido si el interno es más caliente?",
+      "ops": ["El interno es más frío", "La presión colosal en el interno eleva el punto de fusión del hierro", "El interno contiene distintos minerales", "El externo contiene más agua"],
+      "r": 1
+    },
+    {
+      "q": "¿Qué es la magnetosfera?",
+      "ops": ["La capa de la atmósfera con más ozono", "La región del espacio dominada por el campo magnético terrestre", "El nombre del núcleo externo", "Una capa del manto superior"],
+      "r": 1
+    },
+    {
+      "q": "¿Qué fenómeno visual es causado directamente por el campo magnético y el viento solar?",
+      "ops": ["Los terremotos", "Las mareas", "Las auroras boreales y australes", "Los tsunamis"],
+      "r": 2
+    },
+    {
+      "q": "Si el campo magnético terrestre desapareciera, ¿qué pasaría primero?",
+      "ops": ["Los continentes se moverían más rápido", "La atmósfera sería erosionada gradualmente por el viento solar", "Los océanos se congelarían", "Los volcanes se apagarían"],
+      "r": 1
+    }
+  ]
+}

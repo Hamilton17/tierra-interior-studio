@@ -1,0 +1,108 @@
+{
+  "id": "terremotos",
+  "titulo": "Terremotos",
+  "subtitulo": "La energía liberada en los bordes de las placas",
+  "emoji": "⚡",
+
+  "fichas": [
+    {
+      "ico": "📊",
+      "titulo": "Terremotos/año detectados",
+      "valor": "~500,000",
+      "unidad": "eventos/año",
+      "contexto": "Se producen medio millón de terremotos al año. La mayoría son microseísmos imperceptibles. Solo ~50,000 se sienten y ~100 causan daños. En promedio, 1 terremoto Mw ≥8 ocurre cada 1–2 años."
+    },
+    {
+      "ico": "⚡",
+      "titulo": "Energía del mayor terremoto",
+      "valor": "2.5×10²⁵",
+      "unidad": "ergios (Chile 1960)",
+      "contexto": "El terremoto de Valdivia 1960 (Mw 9.5) liberó más energía que todos los demás terremotos del siglo XX juntos. Equivale a 25,000 bombas atómicas de Hiroshima detonando simultáneamente."
+    },
+    {
+      "ico": "📏",
+      "titulo": "Profundidad del foco",
+      "valor": "0–700",
+      "unidad": "km",
+      "contexto": "Los superficiales (0–70 km) son los más destructivos. Los intermedios (70–300 km) y los profundos (300–700 km) ocurren en la litosfera subducida. Por debajo de 700 km, la roca fluye sin romperse."
+    },
+    {
+      "ico": "🌊",
+      "titulo": "Velocidad de propagación tsunami",
+      "valor": "~800",
+      "unidad": "km/h (en océano profundo)",
+      "contexto": "Un tsunami cruza el Pacífico a la velocidad de un avión comercial. Con solo 30 cm de altura en océano abierto, al llegar a la costa puede superar los 30 metros de altura."
+    },
+    {
+      "ico": "🗺️",
+      "titulo": "Zonas de máximo riesgo",
+      "valor": "Anillo de Fuego",
+      "unidad": "90% de la energía sísmica",
+      "contexto": "El 90% de la energía sísmica y el 81% de los mayores terremotos ocurren en el Anillo de Fuego del Pacífico — bordes de subducción que rodean el océano Pacífico."
+    },
+    {
+      "ico": "📐",
+      "titulo": "Escala de Magnitud de Momento",
+      "valor": "Mw (Kanamori, 1977)",
+      "unidad": "escala estándar",
+      "contexto": "La escala Richter era imprecisa para grandes terremotos. La Mw mide directamente el área de falla, el desplazamiento y la rigidez de la roca — es la medida científica estándar actual."
+    }
+  ],
+
+  "proceso": [
+    {
+      "paso": 1,
+      "titulo": "Acumulación de estrés elástico",
+      "descripcion": "Las placas tectónicas se mueven, pero los bordes (fallas) están trabados por fricción. La tensión se acumula durante décadas o siglos — como estirar una goma elástica lentamente.",
+      "icon": "🔄"
+    },
+    {
+      "paso": 2,
+      "titulo": "Ruptura en el hipocentro",
+      "descripcion": "Cuando el estrés supera la resistencia de la roca, la falla se rompe. La ruptura se propaga a lo largo de la zona de falla a 2–4 km/s. En terremotos grandes, la rotura puede extenderse 1,000+ km.",
+      "icon": "💥"
+    },
+    {
+      "paso": 3,
+      "titulo": "Liberación de ondas sísmicas",
+      "descripcion": "La energía liberada se propaga en todas direcciones como ondas P, S y superficiales. La intensidad disminuye con la distancia, pero los efectos se amplifican en suelos blandos (sedimentos).",
+      "icon": "〰️"
+    },
+    {
+      "paso": 4,
+      "titulo": "Réplicas y ajuste tectónico",
+      "descripcion": "Tras el choque principal, el sistema se reajusta con réplicas (aftershocks) que pueden durar meses. La distribución temporal de réplicas sigue la Ley de Omori (decae como 1/t).",
+      "icon": "📉"
+    }
+  ],
+
+  "grandes_terremotos": [
+    { "lugar": "Valdivia, Chile", "anio": 1960, "mw": "9.5", "victimas": "~5,700",    "nota": "El mayor jamás registrado; generó tsunami transpacífico" },
+    { "lugar": "Alaska, EE.UU.", "anio": 1964, "mw": "9.2", "victimas": "~131",       "nota": "Gran Terremoto de Alaska; levantó el terreno 11 metros" },
+    { "lugar": "Sumatra-Andamán","anio": 2004, "mw": "9.1", "victimas": "~227,000",   "nota": "Tsunami mató más que el terremoto en sí; 14 países afectados" },
+    { "lugar": "Japón (Tōhoku)", "anio": 2011, "mw": "9.1", "victimas": "~20,000",    "nota": "Tsunami y fusión nuclear Fukushima Daiichi" },
+    { "lugar": "Kamchatka",      "anio": 1952, "mw": "9.0", "victimas": "~2,336",     "nota": "Primer gran terremoto bien instrumentado de la era moderna" },
+    { "lugar": "Haití",          "anio": 2010, "mw": "7.0", "victimas": "~316,000",   "nota": "Muestra que un Mw 7 superficial en zona urbana pobre supera a un Mw 9 lejano" }
+  ],
+
+  "relacion_capas": [
+    { "capa": "Corteza Continental", "rol": "Zona de fallas continentales (San Andrés, Anatolia). Los terremotos corticales superficiales son los más destructivos" },
+    { "capa": "Corteza Oceánica",    "rol": "Las zonas de subducción oceánica generan los terremotos más grandes (Mw ≥9) y los tsunamis de gran alcance" },
+    { "capa": "Manto Superior",      "rol": "Las placas subducidas siguen siendo frágiles hasta ~700 km — generando terremotos profundos en las zonas de Wadati-Benioff" },
+    { "capa": "Núcleo Externo",      "rol": "Las ondas P refractadas en el núcleo viajan más rápido, lo que cambia los tiempos de llegada y permite localizar el epicentro con precisión" }
+  ],
+
+  "analogias": [
+    "Un terremoto es como abrir una cerradura oxidada: la energía se acumula girando la llave, y cuando la cerradura cede, toda esa energía se libera de golpe — no suavemente.",
+    "Las réplicas son como el reajuste de los muebles después de mover un frigorífico pesado: el sistema busca su nuevo equilibrio con sacudidas menores pero continuas.",
+    "La diferencia entre Haití 2010 (Mw 7.0, 316,000 muertos) y Chile 2010 (Mw 8.8, 500 muertos) no es la energía sísmica — es el sistema de alerta, los códigos de construcción y la preparación social."
+  ],
+
+  "hitos_ciencia": [
+    { "anio": 1889, "evento": "Primer sismógrafo electromagnético moderno (von Rebeur-Paschwitz) permite registrar terremotos lejanos desde Europa" },
+    { "anio": 1935, "evento": "Charles Richter propone la escala logarítmica de magnitud — usada popularmente aunque fue reemplazada científicamente por la Mw en 1977" },
+    { "anio": 1960, "evento": "Gran Terremoto de Chile (Mw 9.5) demuestra que la Tierra puede vibrar como una campana en sus 'modos normales' durante días" },
+    { "anio": 1977, "evento": "Kanamori y Hanks proponen la Magnitud de Momento (Mw) — medida física rigurosa que reemplaza a la escala Richter en sismología científica" },
+    { "anio": 2011, "evento": "Tōhoku (Mw 9.1): el tsunami superó en 14 m las defensas diseñadas para 5 m, demostrando los límites del 'diseño para el evento máximo conocido'" }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "ilustracion": "/app-assets/capas/nucleo_interno/ilustraciones/perfil.svg",
+  "contenido": {
+    "intro": "El núcleo interno es la estructura más interna de la Tierra: una esfera sólida de hierro y níquel del tamaño de la Luna, tan caliente como la superficie del Sol, y sin embargo sólida por la presión colosal que la rodea.",
+    "secciones": [
+      {
+        "titulo": "¿Cómo sabemos que existe?",
+        "texto": "Las ondas sísmicas P (compresionales) se propagan a través del núcleo externo líquido con cierta velocidad. En 1936, la sismóloga danesa Inge Lehmann notó que algunas ondas P \"rebotaban\" dentro del núcleo externo, indicando que había un núcleo más denso aún en el interior. Era el núcleo interno."
+      },
+      {
+        "titulo": "La anisotropía sísmica",
+        "texto": "Las ondas sísmicas P viajan ~4% más rápido en dirección paralela al eje de rotación de la Tierra que en dirección ecuatorial. Esto indica que los cristales de hierro HCP (hexagonal compacto) están alineados preferencialmente, como un solo cristal gigante orientado de polo a polo."
+      },
+      {
+        "titulo": "Súper-rotación diferencial",
+        "texto": "Evidencias sísmicas sugieren que el núcleo interno rota ligeramente más rápido que la corteza terrestre, en torno a 0.3°–0.5° por año. En un siglo, habría dado casi media vuelta de más. Esta rotación diferencial podría ser consecuencia de la dinámica electromagnética del núcleo externo líquido."
+      }
+    ],
+    "hechos": [
+      "El núcleo interno pesa 100 quintillones de toneladas",
+      "La presión en el centro es 3.6 millones de veces la presión atmosférica",
+      "Se solidificó hace unos 500–1,000 millones de años",
+      "Crece ~1 mm por año conforme la Tierra se enfría lentamente"
+    ]
+  }
+}

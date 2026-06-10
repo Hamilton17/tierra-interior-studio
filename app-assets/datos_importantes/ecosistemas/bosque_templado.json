@@ -1,0 +1,105 @@
+{
+  "id": "bosque_templado",
+
+  "fichas": [
+    {
+      "ico": "🌡️",
+      "titulo": "Temperatura media",
+      "valor": "5–20",
+      "unidad": "°C",
+      "contexto": "4 estaciones marcadas. Los veranos son cálidos (20 °C) y los inviernos fríos (–5 °C). Esta variación estacional determina los ciclos biológicos de los organismos."
+    },
+    {
+      "ico": "💧",
+      "titulo": "Precipitación anual",
+      "valor": "600–2,000",
+      "unidad": "mm/año",
+      "contexto": "Distribuida durante todo el año, con nieve invernal en latitudes altas. Suficiente para sostener árboles caducifolios sin sequía extrema estival."
+    },
+    {
+      "ico": "🌳",
+      "titulo": "Extensión actual",
+      "valor": "~26",
+      "unidad": "mill. km²",
+      "contexto": "El bioma más fragmentado: la mayor parte de Europa, China este y este de EE.UU. eran bosque templado antes de la expansión agrícola (siglos XVIII–XX)."
+    },
+    {
+      "ico": "🍂",
+      "titulo": "Renovación de hojas",
+      "valor": "100",
+      "unidad": "%/año",
+      "contexto": "Los árboles caducifolios (roble, haya, arce) renuevan todas sus hojas anualmente. Las hojas caídas forman el humus que hace tan fértil su suelo."
+    },
+    {
+      "ico": "🌿",
+      "titulo": "Profundidad del suelo",
+      "valor": "hasta 2",
+      "unidad": "metros",
+      "contexto": "El suelo del bosque templado (alfisol, mollisol) es el más fértil del planeta. Contiene 2–4× más materia orgánica que el suelo de la selva tropical."
+    },
+    {
+      "ico": "🐺",
+      "titulo": "Biodiversidad animal",
+      "valor": "~30",
+      "unidad": "% de spp. terrestres",
+      "contexto": "Menor que la selva, pero con fauna icónica: oso pardo, lobo gris, lince, ciervo. Muchas especies migratorias usan el bosque como corredor estacional."
+    }
+  ],
+
+  "comparativas": {
+    "descripcion": "El bosque templado tiene el suelo más fértil de todos los biomas y la mayor historia de impacto humano. Es el bioma más deforestado en términos relativos.",
+    "registros": [
+      { "tipo": "Bioma más alterado por humanos",       "valor": "~70% transformado",       "nota": "Europa central casi no tiene bosque primario; Asia oriental igual" },
+      { "tipo": "Mayor fertilidad del suelo",           "valor": "3–5% materia orgánica",  "nota": "La selva tropical tiene solo 1–2% (suelo pobre)" },
+      { "tipo": "Mayor secuestro de C por ha",          "valor": "~150 Mg C/ha",           "nota": "Bosques templados lluviosos (Oregón, Chile, Nueva Zelanda)" },
+      { "tipo": "Árbol más pesado del mundo",           "valor": "1,385 toneladas",        "nota": "Sequoia General Sherman, California (Sequoiadendron giganteum)" }
+    ]
+  },
+
+  "metodos_estudio": [
+    {
+      "metodo": "Redes de parcelas ILTER",
+      "icon": "📋",
+      "descripcion": "La red internacional ILTER (Long Term Ecological Research) tiene >50 sitios en bosques templados monitoreando suelo, carbono, biodiversidad y respuesta al clima desde los años 70."
+    },
+    {
+      "metodo": "Dendrocronología",
+      "icon": "🌳",
+      "descripcion": "El estudio de los anillos de crecimiento de los árboles revela la historia climática con resolución anual. Árboles milenarios como el pino bristlecone (5,000 años) son archivos climáticos únicos."
+    },
+    {
+      "metodo": "Sensores remotos multiespectrales",
+      "icon": "🛰️",
+      "descripcion": "El índice NDVI (Diferencia Normalizada de Vegetación) detecta el estrés hídrico y la fenología (fechas de brotación y senescencia) que se adelantan por el cambio climático."
+    },
+    {
+      "metodo": "Trampas de hojarasca",
+      "icon": "🍂",
+      "descripcion": "Redes plásticas bajo el dosel capturan la hojarasca caída. Su análisis cuantifica la producción de biomasa, el ciclo de nutrientes y cómo varía con la temperatura."
+    }
+  ],
+
+  "hitos": [
+    { "anio": 1864, "evento": "George Perkins Marsh publica 'Man and Nature' — primer análisis científico de la deforestación de bosques templados y sus consecuencias hidrológicas" },
+    { "anio": 1905, "evento": "EE.UU. crea el Servicio Forestal (USFS) para gestionar los bosques nacionales — modelo adoptado por todo Occidente" },
+    { "anio": 1970, "evento": "El Día de la Tierra y la ola ambientalista llevan a leyes de protección forestal en Europa y Norteamérica" },
+    { "anio": 1994, "evento": "La Red Europea de Investigación Forestal (ENFIN) empieza a documentar el declive de abedules y hayas por la lluvia ácida" },
+    { "anio": 2003, "evento": "Ola de calor europea mata 2,300 millones de árboles; primera evidencia masiva de mortalidad arbórea por calor en bosque templado" },
+    { "anio": 2022, "evento": "Estudios en Nature Climate Change confirman que los bosques templados del norte se adelantan ~2 semanas en su brotación por cada grado de calentamiento" }
+  ],
+
+  "analogias": [
+    "El suelo del bosque templado funciona como una esponja y una fábrica de compost: recicla cada hoja caída en minerales disponibles para los árboles en pocas semanas.",
+    "La estación otoñal no es 'muerte' del bosque — es una inversión: los árboles retiran nutrientes de las hojas antes de soltarlas, preparando sus reservas para el rebrote primaveral.",
+    "Un bosque templado maduro actúa como un banco de carbono: un roble de 200 años ha secuestrado más CO₂ que 20 de sus descendientes jóvenes juntos."
+  ],
+
+  "servicios_ecosistemicos": [
+    "Secuestro de carbono: uno de los principales sumideros de CO₂ del hemisferio norte",
+    "Regulación hídrica: infiltración de agua de lluvia recarga acuíferos y reduce inundaciones",
+    "Madera: fuente de madera de construcción, papel y biomasa energética gestionada de forma sostenible",
+    "Alimentos silvestres: setas, frutos del bosque, nueces, caza — parte de la dieta humana durante milenios",
+    "Recreación y salud: los 'baños de bosque' (shinrin-yoku) reducen el cortisol y mejoran el sistema inmune según estudios clínicos",
+    "Biodiversidad: hábitat de aves migratorias que conectan ecosistemas entre continentes"
+  ]
+}

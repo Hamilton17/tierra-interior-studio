@@ -1,0 +1,105 @@
+{
+  "id": "sabana",
+
+  "fichas": [
+    {
+      "ico": "🌡️",
+      "titulo": "Temperatura media",
+      "valor": "20–35",
+      "unidad": "°C",
+      "contexto": "Calurosa todo el año, sin variaciones extremas. La diferencia clave con el desierto es la temporada húmeda: los aguaceros concentrados en 3–6 meses disparan el crecimiento vegetal."
+    },
+    {
+      "ico": "💧",
+      "titulo": "Precipitación anual",
+      "valor": "500–1,500",
+      "unidad": "mm/año",
+      "contexto": "Con estación seca definida de 3–8 meses. La irregularidad define todo: en la sequía el suelo se agrieta; en la lluvia el pasto crece 5 cm/día. Esta alternancia es lo que moldea la megafauna."
+    },
+    {
+      "ico": "🌍",
+      "titulo": "Extensión global",
+      "valor": "~15",
+      "unidad": "mill. km²",
+      "contexto": "Cubre gran parte de África subsahariana, Brasil (cerrado), norte de Australia y partes de India. El cerrado brasileño es el bioma más biodiverso del mundo entre los no-forestales."
+    },
+    {
+      "ico": "🦁",
+      "titulo": "Megafauna terrestre",
+      "valor": "~70",
+      "unidad": "spp. mamíferos >50 kg",
+      "contexto": "La sabana africana tiene la mayor diversidad de grandes mamíferos del planeta: 30 especies de ungulados, 7 de grandes felinos y 3 de rinocerontes o hipopótamos. Ningún otro bioma se acerca."
+    },
+    {
+      "ico": "🔥",
+      "titulo": "Fuego estacional",
+      "valor": "~40",
+      "unidad": "% del área/año",
+      "contexto": "El fuego no es un desastre en la sabana — es un ciclo. Rejuvenece el pasto, evita que los arbustos invadan y recicla nutrientes rápidamente. Sin fuego, la sabana se convierte en bosque en 30 años."
+    },
+    {
+      "ico": "🌾",
+      "titulo": "Carbono en el suelo",
+      "valor": "~120",
+      "unidad": "Pg C total",
+      "contexto": "A pesar de la sequía estacional, el suelo de la sabana almacena carbono profundamente. El cerrado brasileño ha perdido el 50% de su cobertura original — con la consecuente liberación de CO₂."
+    }
+  ],
+
+  "comparativas": {
+    "descripcion": "La sabana es el reino de la megafauna y los ciclos de fuego. Ningún otro bioma mantiene tal diversidad y biomasa de grandes animales.",
+    "registros": [
+      { "tipo": "Mayor migración animal del mundo",       "valor": "1.5 mill. ñus",        "nota": "Gran Migración del Serengeti, recorrido circular de 1,800 km" },
+      { "tipo": "Mayor concentración de depredadores",   "valor": "~6 spp. ápex/región",  "nota": "León, leopardo, guepardo, hiena manchada, licaón, cocodrilo" },
+      { "tipo": "Mayor árbol individual del mundo",      "valor": "Baobab, ~2,500 años",  "nota": "Baobabs del sur de África con circunferencias de 25 m" },
+      { "tipo": "Mayor biomasa de insectos sociales",    "valor": "~10 kg/ha",            "nota": "Termitas de la sabana africana — más biomasa que los mamíferos" }
+    ]
+  },
+
+  "metodos_estudio": [
+    {
+      "metodo": "Estudios de largo plazo (Serengeti)",
+      "icon": "📋",
+      "descripcion": "El Serengeti Research Institute lleva datos continuos desde 1966. Sus series temporales de >50 años son las más largas del mundo para un ecosistema de sabana. Sin ellas no entenderíamos la dinámica de depredador-presa."
+    },
+    {
+      "metodo": "Telemetría y collar GPS",
+      "icon": "📡",
+      "descripcion": "Collares GPS en leones, elefantes y ñus transmiten posiciones cada 5 minutos. Permiten mapear los corredores de migración y los territorios de caza con precisión sin precedentes."
+    },
+    {
+      "metodo": "Análisis de isótopos de carbono",
+      "icon": "🔬",
+      "descripcion": "Los isótopos de C en el esmalte dental de fósiles revelan si el animal comía pasto (C4) o árboles (C3). Así sabemos cómo han cambiado las dietas de la megafauna africana en 3 millones de años."
+    },
+    {
+      "metodo": "Modelos de teledetección de biomasa",
+      "icon": "🛰️",
+      "descripcion": "El índice EVI (Enhanced Vegetation Index) de satélites MODIS y Sentinel-2 rastrea el 'pulso verde' de la sabana tras cada lluvia, prediciendo la productividad y los movimientos de herbívoros."
+    }
+  ],
+
+  "hitos": [
+    { "anio": 1960, "evento": "Jane Goodall inicia sus estudios de campo en el Gombe (Tanzania), inaugurando la era de la etología de campo en la sabana africana" },
+    { "anio": 1966, "evento": "Fundación del Serengeti Research Institute — el estudio de ecosistema más largo del mundo. Sintetiza datos de lluvia, hierba, depredadores y presas" },
+    { "anio": 1977, "evento": "Primer estudio sistemático de la Gran Migración (Sinclair & Norton-Griffiths) — reveló que 1.5 millones de animales siguen el 'frente del pasto verde'" },
+    { "anio": 2004, "evento": "El Cerrado brasileño (sabana tropical) declarado hotspot de biodiversidad — ha perdido el 50% de su área original por la soja y la ganadería" },
+    { "anio": 2016, "evento": "El jaguar, guepardo y leopardo listados como vulnerables por la UICN — efecto de la fragmentación de la sabana y el conflicto humano-felino" },
+    { "anio": 2022, "evento": "Primeras estimaciones satelitales precisas del cerrado: pierde 8,000 km²/año, convirtiendo el segundo bioma más rico de Brasil en campos de soja" }
+  ],
+
+  "analogias": [
+    "La sabana funciona como un reloj biológico estacional: con la primera lluvia de la temporada húmeda, toda la vida explota simultáneamente — flores, insectos, aves, herbívoros y depredadores.",
+    "Los árboles de la sabana son como castillos de agua: el baobab almacena hasta 120,000 litros en su tronco, suficiente para resistir la larga sequía y sostener pájaros y murciélagos.",
+    "La relación hierba-fuego-herbívoros es un triángulo de retroalimentación: el pasto alimenta a los herbívoros, los excrementos fertilizan el pasto, y el fuego elimina los arbustos que competirían con el pasto."
+  ],
+
+  "servicios_ecosistemicos": [
+    "Ganadería extensiva: las sabanas sostienen más del 50% del ganado bovino mundial (principalmente en Brasil y África)",
+    "Captura de carbono: el suelo profundo de la sabana almacena carbono aunque la biomasa aérea sea baja",
+    "Turismo de safari: industria multi-millonaria que financia la conservación de la megafauna africana",
+    "Semillas y granos silvestres: el pasto de la sabana es ancestro de trigo, maíz, sorgo y mijo — base de la seguridad alimentaria global",
+    "Agua potable: las cuencas hidrográficas del Serengeti, Zambeze y Okavango abastecen a millones de personas",
+    "Cultura e identidad: los maasai, zulus y san (bushman) desarrollaron culturas enteras en simbiosis con la sabana"
+  ]
+}

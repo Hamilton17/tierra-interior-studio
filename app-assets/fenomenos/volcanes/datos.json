@@ -1,0 +1,138 @@
+{
+  "id": "volcanes",
+  "titulo": "Volcanes",
+  "subtitulo": "La válvula de presión del interior terrestre",
+  "emoji": "🌋",
+
+  "fichas": [
+    {
+      "ico": "🌍",
+      "titulo": "Volcanes activos en el mundo",
+      "valor": "~1,500",
+      "unidad": "volcanes activos",
+      "contexto": "De ellos, ~50 están en erupción en cualquier momento dado. Se considera 'activo' el que ha entrado en erupción en los últimos 10,000 años. La mayoría están en el Anillo de Fuego del Pacífico."
+    },
+    {
+      "ico": "🌡️",
+      "titulo": "Temperatura del magma",
+      "valor": "700–1,300",
+      "unidad": "°C",
+      "contexto": "El basalto (volcanes oceánicos) sale a 1,200–1,300 °C. La riolita (volcanes continentales, más viscosa) sale a 700–900 °C. Más viscosidad = explosiones más violentas."
+    },
+    {
+      "ico": "💨",
+      "titulo": "Gases volcánicos emitidos",
+      "valor": "~500",
+      "unidad": "Tg CO₂/año",
+      "contexto": "Los volcanes emiten ~500 Tg de CO₂/año — solo el 1% de lo que emite la humanidad (40,000 Tg/año). A escala geológica larga, el CO₂ volcánico regula el efecto invernadero natural."
+    },
+    {
+      "ico": "💥",
+      "titulo": "Escala VEI máxima",
+      "valor": "8",
+      "unidad": "Índice de Explosividad",
+      "descripcion": "El VEI 8 (supervolcán) expulsa >1,000 km³ de material. Toba (Indonesia, 74,000 a.C.) fue el último — redujo la población humana a quizás 10,000 individuos según la 'hipótesis de la catástrofe de Toba'."
+    },
+    {
+      "ico": "⏱️",
+      "titulo": "Duración de erupciones",
+      "valor": "horas a siglos",
+      "unidad": "variable",
+      "contexto": "El Kilauea (Hawái) lleva en erupción continua desde 1983 (40+ años). El Pinatubo (1991) duró 9 horas de erupción pliniana. La erupción del Deccan Traps (India) duró ~30,000 años."
+    },
+    {
+      "ico": "🌊",
+      "titulo": "Corteza creada",
+      "valor": "~18",
+      "unidad": "km²/año (dorsales)",
+      "contexto": "Los volcanes submarinos en las dorsales oceánicas crean ~18 km² de nueva corteza basáltica cada año. Sin este proceso, los océanos se cerrarían y los continentes se apilarían."
+    }
+  ],
+
+  "proceso": [
+    {
+      "paso": 1,
+      "titulo": "Generación del magma",
+      "descripcion": "El magma se forma por fusión parcial de la roca. En las dorsales: la roca se descomprime al ascender y se funde. En las zonas de subducción: el agua del slab funde la cuña del manto.",
+      "icon": "🔥"
+    },
+    {
+      "paso": 2,
+      "titulo": "Ascenso y cámara magmática",
+      "descripcion": "El magma asciende por su menor densidad. Se acumula en cámaras magmáticas a 5–15 km de profundidad. Aquí se diferencia, acumula gases y puede mantenerse por siglos.",
+      "icon": "⬆️"
+    },
+    {
+      "paso": 3,
+      "titulo": "Presurización y erupción",
+      "descripcion": "El aumento de presión por nuevas inyecciones de magma o desgasificación fuerza la apertura de fracturas. La viscosidad determina si la erupción es efusiva (lava fluida) o explosiva (fragmentos).",
+      "icon": "💥"
+    },
+    {
+      "paso": 4,
+      "titulo": "Depósito y enfriamiento",
+      "descripcion": "La lava se solidifica a 700–1,200 °C. Las cenizas fertilizan el suelo. Los gases SO₂ y H₂S reaccionan en la atmósfera — las grandes erupciones pueden enfriar el planeta temporalmente.",
+      "icon": "❄️"
+    }
+  ],
+
+  "tipos_volcanes": [
+    {
+      "tipo": "Estratovolcán (cono compuesto)",
+      "forma": "Cono alto y empinado",
+      "magma": "Andesita/Riolita (viscosa)",
+      "erupcion": "Explosiva, peligrosa",
+      "ejemplo": "Vesubio (Italia), Pinatubo (Filipinas), Popocatépetl (México)"
+    },
+    {
+      "tipo": "Volcán en escudo",
+      "forma": "Amplio y bajo, como un escudo",
+      "magma": "Basalto (poco viscoso)",
+      "erupcion": "Efusiva, lava fluida",
+      "ejemplo": "Mauna Loa (Hawái), Olympus Mons (Marte)"
+    },
+    {
+      "tipo": "Caldera supervolcánica",
+      "forma": "Gran depresión en el suelo",
+      "magma": "Riolita (muy viscosa)",
+      "erupcion": "VEI 7-8, catastrófica",
+      "ejemplo": "Yellowstone (EE.UU.), Campi Flegrei (Italia), Toba (Indonesia)"
+    },
+    {
+      "tipo": "Volcán submarino / Dorsal",
+      "forma": "No emerge a superficie",
+      "magma": "Basalto (muy fluido)",
+      "erupcion": "Efusiva continua",
+      "ejemplo": "Dorsales oceánicas globales, Lo'ihi (Hawái, futuro volcán)"
+    }
+  ],
+
+  "relacion_capas": [
+    { "capa": "Corteza Oceánica", "rol": "Los volcanes de dorsales crean toda la corteza oceánica. Los puntos calientes (hotspots) perforan la corteza oceánica creando cadenas de islas" },
+    { "capa": "Corteza Continental", "rol": "Los volcanes continentales (estratovolcanes) son los más peligrosos por su viscosidad. Las calderas supervolcánicas forman cuando la cámara magmática colapsa" },
+    { "capa": "Manto Superior", "rol": "La astenosfera parcialmente fundida es el origen del magma en la mayoría de volcanes. Las plumas mantélicas crean los hotspots (Hawái, Islandia)" },
+    { "capa": "Manto Inferior", "rol": "Las plumas del manto inferior (superplumas) como la del Pacífico central generaron los Traps basálticos — erupciones masivas que causaron extinciones masivas" }
+  ],
+
+  "erupciones_historicas": [
+    { "volcan": "Tambora (Indonesia)",  "anio": 1815, "vei": 7, "efecto": "Año sin verano (1816); 90,000 muertos; cosecha fallida en Europa y América" },
+    { "volcan": "Krakatoa (Indonesia)", "anio": 1883, "vei": 6, "efecto": "Tsunami de 30 m; sonido oído en Australia; 36,000 muertos" },
+    { "volcan": "Pinatubo (Filipinas)", "anio": 1991, "vei": 6, "efecto": "Inyectó 20 Mt de SO₂; redujo temperatura global 0.5 °C en 1992-1993" },
+    { "volcan": "Eyjafjallajökull (Islandia)", "anio": 2010, "vei": 4, "efecto": "Cerró espacio aéreo europeo 6 días; 100,000 vuelos cancelados; €1.3 B en pérdidas" },
+    { "volcan": "Tonga (Hunga Tonga)",  "anio": 2022, "vei": 5, "efecto": "La mayor explosión del siglo XXI; tsunami transpacífico; inyectó vapor de agua a la estratosfera" }
+  ],
+
+  "analogias": [
+    "Un volcán es como la válvula de presión de una olla exprés: si la tapa (corteza) no tiene escape, la presión crece hasta la explosión. Las placas en subducción son el fuego bajo la olla.",
+    "La lava basáltica de Hawái fluye como agua: puedes caminar por sus bordes y fotografiarla. La lava riolítica del Pinatubo es como pasta de dientes — tan viscosa que el gas queda atrapado hasta la explosión.",
+    "Las super-erupciones como Yellowstone son el arma atómica natural de la Tierra: una erupción VEI-8 lanzaría suficiente material para tapar el sol durante años y colapsar la agricultura global."
+  ],
+
+  "hitos_ciencia": [
+    { "anio": 79, "evento": "Erupción del Vesubio destruye Pompeya — primera descripción científica de una erupción (Plinio el Joven); nacimiento del término 'erupción pliniana'" },
+    { "anio": 1815, "evento": "Tambora (VEI 7) y el 'año sin verano' demuestran el poder climático de los volcanes por primera vez de forma documentada" },
+    { "anio": 1980, "evento": "Monte Santa Elena (EE.UU.): primeros datos instrumentales completos de una erupción volcánica explosiva — revolución en volcanología" },
+    { "anio": 1991, "evento": "Pinatubo: primera confirmación observacional del enfriamiento global por aerosoles volcánicos de SO₂ — base de las propuestas de 'geoingeniería solar'" },
+    { "anio": 2000, "evento": "InSAR (interferometría radar) permite detectar la deformación del suelo volcanic con mm de precisión — nueva era en predicción eruptiva" }
+  ]
+}

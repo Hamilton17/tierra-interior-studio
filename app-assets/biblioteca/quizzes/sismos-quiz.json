@@ -1,0 +1,45 @@
+{
+  "ilustracion": "/app-assets/capas/manto_inferior/ilustraciones/perfil.svg",
+  "preguntas": [
+    {
+      "q": "¿Dónde se origina la mayoría de los terremotos?",
+      "ops": ["En la superficie terrestre", "En los límites de placas tectónicas", "En el núcleo terrestre", "En el fondo oceánico"],
+      "r": 1
+    },
+    {
+      "q": "¿Qué escala se usa actualmente para medir la energía total de un terremoto?",
+      "ops": ["Escala Richter", "Escala Mercalli", "Magnitud de Momento (Mw)", "Escala Beaufort"],
+      "r": 2
+    },
+    {
+      "q": "Las ondas S sísmicas NO pueden propagarse en...",
+      "ops": ["Rocas sólidas", "Metales sólidos", "Líquidos", "Materiales plásticos"],
+      "r": 2
+    },
+    {
+      "q": "¿Cuál fue el terremoto más potente registrado en la historia?",
+      "ops": ["Japón 2011 (Mw 9.1)", "Alaska 1964 (Mw 9.2)", "Chile 1960 (Mw 9.5)", "Sumatra 2004 (Mw 9.1)"],
+      "r": 2
+    },
+    {
+      "q": "¿A qué profundidad máxima se producen los terremotos más profundos?",
+      "ops": ["~30 km", "~100 km", "~400 km", "~700 km"],
+      "r": 3
+    },
+    {
+      "q": "Un tsunami es causado principalmente por...",
+      "ops": ["Vientos fuertes en el océano", "Terremotos submarinos que desplazan verticalmente el lecho oceánico", "Erupciones volcánicas terrestres", "Cambios de presión atmosférica"],
+      "r": 1
+    },
+    {
+      "q": "La zona de sombra sísmica (entre 103° y 143°) demuestra que...",
+      "ops": ["El núcleo externo es líquido", "La corteza es discontinua", "El manto es sólido", "Los terremotos son más fuertes en el ecuador"],
+      "r": 0
+    },
+    {
+      "q": "¿Qué diferencia hay entre el foco (hipocentro) y el epicentro?",
+      "ops": ["Son lo mismo", "El foco está en la superficie, el epicentro en profundidad", "El foco es donde ocurre el terremoto en profundidad; el epicentro es su proyección en superficie", "El epicentro es donde más daño ocurre"],
+      "r": 2
+    }
+  ]
+}

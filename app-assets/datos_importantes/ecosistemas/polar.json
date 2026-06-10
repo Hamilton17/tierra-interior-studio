@@ -1,0 +1,105 @@
+{
+  "id": "polar",
+
+  "fichas": [
+    {
+      "ico": "🌡️",
+      "titulo": "Temperatura",
+      "valor": "-90 a 0",
+      "unidad": "°C",
+      "contexto": "-89.2 °C en Vostok, Antártida (1983) — el punto más frío jamás registrado en la Tierra. En invierno ártico, las temperaturas de –40 °C son comunes incluso en la costa."
+    },
+    {
+      "ico": "💧",
+      "titulo": "Agua dulce global",
+      "valor": "~70",
+      "unidad": "% del total",
+      "contexto": "La Antártida sola contiene el 70% del agua dulce de la Tierra en forma sólida. Si se derritiera completamente, el nivel del mar subiría 58 metros, inundando todas las ciudades costeras del mundo."
+    },
+    {
+      "ico": "🌍",
+      "titulo": "Extensión total",
+      "valor": "~14",
+      "unidad": "mill. km²",
+      "contexto": "La Antártida tiene 14.2 mill. km², el Ártico marino unos 14 mill. km² de hielo en invierno. Ambas regiones son el 'aire acondicionado' del planeta."
+    },
+    {
+      "ico": "☀️",
+      "titulo": "Albedo del hielo",
+      "valor": "80–90",
+      "unidad": "% de luz reflejada",
+      "contexto": "El hielo blanco refleja el 80–90% de la luz solar. El océano oscuro absorbe el 94%. Cuando el hielo se funde, el calentamiento se acelera exponencialmente — es la retroalimentación positiva más temida."
+    },
+    {
+      "ico": "🐧",
+      "titulo": "Biodiversidad marina",
+      "valor": "alta",
+      "unidad": "en aguas heladas",
+      "contexto": "La productividad marina antártica es enorme: el krill (Euphausia superba) produce >500 millones de toneladas de biomasa/año — base de toda la cadena trófica polar."
+    },
+    {
+      "ico": "⚗️",
+      "titulo": "Grosor del hielo",
+      "valor": "4,776",
+      "unidad": "m máximo",
+      "contexto": "Bajo la estación Concordia en la Antártida Oriental, el hielo tiene casi 5 km de grosor. En sus capas hay burbujas de aire de hace 800,000 años — el mayor archivo climático del planeta."
+    }
+  ],
+
+  "comparativas": {
+    "descripcion": "Las regiones polares son los reguladores térmicos del planeta y los mayores archivos de historia climática. Su derretimiento es el termómetro más sensible del cambio climático.",
+    "registros": [
+      { "tipo": "Temperatura mínima registrada",       "valor": "-89.2 °C (Vostok, 1983)", "nota": "El punto más frío de la historia moderna" },
+      { "tipo": "Mayor reserva de agua dulce",         "valor": "~26.5 mill. km³",         "nota": "Antártida sola: 70% del agua dulce global" },
+      { "tipo": "Hielo más antiguo analizado",         "valor": "800,000 años",            "nota": "Testigo de hielo de Dome C, Antártida" },
+      { "tipo": "Mayor animal terrestre de Antártida", "valor": "0.6 cm",                  "nota": "El insecto más grande es Belgica antarctica, un gusano sin alas de 6 mm" }
+    ]
+  },
+
+  "metodos_estudio": [
+    {
+      "metodo": "Testigos de hielo (Ice cores)",
+      "icon": "🧊",
+      "descripcion": "Cilindros de hielo de hasta 3.4 km de profundidad analizados para CO₂, CH₄, temperatura y polvo atmosférico. Los testigos de Dome C (Antártida) revelan 8 ciclos glaciales en 800,000 años."
+    },
+    {
+      "metodo": "Altimetría satelital (ICESat-2)",
+      "icon": "🛰️",
+      "descripcion": "El satélite ICESat-2 usa láseres de fotones individuales para medir cambios de <1 mm en la altura del hielo. Documentó la pérdida de 280 Gt de hielo antártico solo en 2019."
+    },
+    {
+      "metodo": "Sísmica bajo el hielo",
+      "icon": "📡",
+      "descripcion": "Explosivos y vibraciones generan ondas sísmicas que revelan la topografía del lecho rocoso bajo 4 km de hielo. El proyecto BedMachine Antartida mapó montañas y cañones nunca vistos por nadie."
+    },
+    {
+      "metodo": "ROVs bajo el hielo marino",
+      "icon": "🤿",
+      "descripcion": "Vehículos submarinos autónomos navegan bajo el hielo ártico y antártico, mapeando su topografía inferior y la biodiversidad extrema que vive en las grietas del hielo."
+    }
+  ],
+
+  "hitos": [
+    { "anio": 1911, "evento": "Roald Amundsen alcanza el Polo Sur (14 dic) — primera expedición humana al punto más austral de la Tierra" },
+    { "anio": 1959, "evento": "Firma del Tratado Antártico — primer acuerdo internacional de preservación científica; suspende reclamaciones territoriales y prohíbe la militarización" },
+    { "anio": 1985, "evento": "Descubrimiento del agujero de ozono sobre la Antártida (Farman, Gardiner, Shanklin) — uno de los mayores descubrimientos ambientales del siglo XX" },
+    { "anio": 2002, "evento": "Colapso de la plataforma de hielo Larsen B (3,250 km²) en 35 días — primera señal visible de aceleración del deshielo antártico" },
+    { "anio": 2012, "evento": "El hielo marino ártico alcanza su mínimo histórico de extensión (3.34 mill. km²) — confirmando el calentamiento ártico acelerado" },
+    { "anio": 2023, "evento": "El hielo marino antártico alcanza mínimos sin precedentes en verano austral — investigadores describen el evento como 'absolutamente aterrador'" }
+  ],
+
+  "analogias": [
+    "El hielo polar actúa como el aire acondicionado del planeta: enfría el aire y el océano, genera las corrientes oceánicas profundas que redistribuyen el calor, y regula el clima de todos los continentes.",
+    "Las capas de hielo antártico son como páginas de un libro climático: cada año añade una capa; leyendo las burbujas de aire atrapadas podemos conocer la composición de la atmósfera de hace 800,000 años.",
+    "La pérdida del Ártico es como quitar el freno de mano de un coche en pendiente: cuando el hielo blanco es reemplazado por agua oscura, el calentamiento se retroalimenta y acelera sin límite."
+  ],
+
+  "servicios_ecosistemicos": [
+    "Regulación del clima global: el reflejo del hielo (albedo) mantiene la temperatura del planeta varios grados más baja",
+    "Corrientes oceánicas: el agua fría y densa polar impulsa la 'cinta transportadora oceánica' (AMOC) que templa el clima de Europa",
+    "Archivo climático: los testigos de hielo son el registro más completo de la historia climática terrestre",
+    "Pesca: las aguas polares son las más productivas del planeta (krill, bacalao, atún antártico)",
+    "Biodiversidad única: pingüinos, osos polares, ballenas jorobadas y miles de especies solo existen en las zonas polares",
+    "Investigación científica: la Antártida es el único continente sin propiedad estatal — laboratorio científico global neutral"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "svg": "/app-assets/capas/corteza_continental/ilustraciones/perfil.svg",
+  "descripcion": "La corteza continental tiene 35 km de grosor promedio (hasta 70 km bajo los Himalayas) y está formada principalmente por granito y otras rocas ricas en sílice. Flota sobre el manto por ser menos densa (2.7 vs 3.3 g/cm³).",
+  "leyenda": [
+    {
+      "ico": "🟤",
+      "titulo": "Sedimentos",
+      "texto": "Capas superiores de roca sedimentaria formada por erosión, ríos y mares. Contienen los fósiles que registran la historia de la vida."
+    },
+    {
+      "ico": "🔵",
+      "titulo": "Corteza granítica",
+      "texto": "Roca ígnea plutónica rica en cuarzo y feldespato. Más ligera que el basalto. Es la base de los continentes."
+    },
+    {
+      "ico": "🟠",
+      "titulo": "Discontinuidad de Mohorovičić (Moho)",
+      "texto": "El límite entre corteza y manto, donde la velocidad de las ondas sísmicas aumenta bruscamente. Profundidad: 5 km (océano) a 70 km (montañas)."
+    },
+    {
+      "ico": "🟡",
+      "titulo": "Isostasia",
+      "texto": "Los continentes \"flotan\" en el manto como icebergs en el agua. Las montañas tienen raíces profundas; las regiones erosionadas ascienden lentamente."
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "id": "oceano",
+
+  "fichas": [
+    {
+      "ico": "🌊",
+      "titulo": "Cobertura del planeta",
+      "valor": "71",
+      "unidad": "% de la superficie",
+      "contexto": "El océano es el ecosistema dominante de la Tierra. Tiene un volumen de 1,335 millones de km³ y una profundidad media de 3,688 m. Si se pudiera aplanar la Tierra, el agua cubriría todo."
+    },
+    {
+      "ico": "🌡️",
+      "titulo": "Rango de temperatura",
+      "valor": "-2 a 30",
+      "unidad": "°C",
+      "contexto": "La termoclina (capa de transición) separa el océano superficial cálido del fondo frío. El 90% del océano permanece por debajo de 5 °C — la zona de oscuridad fría que muchos olvidan."
+    },
+    {
+      "ico": "🔵",
+      "titulo": "Profundidad máxima",
+      "valor": "11,034",
+      "unidad": "metros",
+      "contexto": "El Challenger Deep en la Fosa de las Marianas (Pacífico). A esa profundidad, la presión es 1,086 atmósferas — aplastante para cualquier material no diseñado para ello."
+    },
+    {
+      "ico": "🌬️",
+      "titulo": "Producción de oxígeno",
+      "valor": "~50",
+      "unidad": "% del total global",
+      "contexto": "El fitoplancton marino produce la mitad del oxígeno del planeta, principalmente mediante Prochlorococcus — la bacteria fotosintética más abundante de la Tierra. Sin el océano, la atmósfera se agostaría."
+    },
+    {
+      "ico": "🌡️",
+      "titulo": "Calor absorbido (1971–2020)",
+      "valor": "90",
+      "unidad": "% del exceso",
+      "contexto": "El océano ha absorbido el 90% del calor extra generado por el efecto invernadero y el 25% del CO₂ emitido por los humanos. Sin ese amortiguamiento, la temperatura superficial sería 7 °C más alta."
+    },
+    {
+      "ico": "🦈",
+      "titulo": "Biodiversidad marina",
+      "valor": "~250,000",
+      "unidad": "spp. descritas",
+      "contexto": "Se estiman 750,000 spp. en total, con solo un 33% descrito. El 95% del oceano no ha sido explorado. Cada expedición a fondos marinos descubre docenas de nuevas especies."
+    }
+  ],
+
+  "comparativas": {
+    "descripcion": "El océano es el mayor ecosistema de la Tierra y el principal regulador del clima. Sin él, la vida terrestre como la conocemos sería imposible.",
+    "registros": [
+      { "tipo": "Mayor volumen de cualquier ecosistema",  "valor": "1,335 mill. km³",      "nota": "Todo el agua de los continentes no llega al 3% de esa cifra" },
+      { "tipo": "Mayor ser vivo conocido",               "valor": "~33 m (Medusa Lion's Mane)", "nota": "El organismo más largo documentado es una Siphonophora: 49 m" },
+      { "tipo": "Lugar más inhóspito explorado",         "valor": "11,034 m (Challenger Deep)", "nota": "Solo 3 personas han visitado el punto más profundo" },
+      { "tipo": "Mayor migración vertical del planeta",  "valor": "800 m dos veces al día", "nota": "El 'Deep Scattering Layer' sube de noche y baja de día" }
+    ]
+  },
+
+  "metodos_estudio": [
+    {
+      "metodo": "Red Argo de flotadores",
+      "icon": "🌊",
+      "descripcion": "Más de 3,900 flotadores autónomos derivan por todos los océanos, registrando temperatura y salinidad hasta 2,000 m de profundidad cada 10 días. Son la columna vertebral de la oceanografía moderna."
+    },
+    {
+      "metodo": "Vehículos submarinos no tripulados (ROV/AUV)",
+      "icon": "🤿",
+      "descripcion": "ROVs como el JASON (Woods Hole) han explorado las dorsales oceánicas, fumarolas hidrotermales y zonas hadales. Cada expedición profunda descubre decenas de especies nuevas."
+    },
+    {
+      "metodo": "Sismología de cuencas oceánicas",
+      "icon": "📡",
+      "descripcion": "Las estaciones sismológicas submarinas (SOSUS, desarrollado como sistema de defensa) revelaron la extensión de las dorsales oceánicas y las zonas de subducción en la Guerra Fría."
+    },
+    {
+      "metodo": "Satélites altimétricos (TOPEX, Jason)",
+      "icon": "🛰️",
+      "descripcion": "Radares satelitales miden el nivel del mar con precisión de mm. Las anomalías termales detectadas desde el espacio predicen El Niño con 6 meses de antelación."
+    }
+  ],
+
+  "hitos": [
+    { "anio": 1872, "evento": "Expedición HMS Challenger (1872-1876): primer levantamiento oceanográfico global, descubre la Fosa de las Marianas y miles de especies nuevas" },
+    { "anio": 1943, "evento": "Jacques Cousteau y Émile Gagnan inventan el Aqua-Lung (SCUBA) — democratizando la exploración submarina" },
+    { "anio": 1960, "evento": "Jacques Piccard y Don Walsh alcanzan el Challenger Deep (10,916 m) a bordo del Bathyscaphe Trieste — los únicos seres humanos hasta 2012" },
+    { "anio": 1977, "evento": "Descubrimiento de las fumarolas hidrotermales del Pacífico Este — revelaron ecosistemas independientes de la fotosíntesis solar" },
+    { "anio": 1993, "evento": "La misión TOPEX/Poseidon comienza a medir el nivel del mar desde el espacio — registra su subida de 3.4 mm/año" },
+    { "anio": 2022, "evento": "El Océano Ártico podría ser libre de hielo en verano antes de 2035 según estudios en Nature — aceleración del deshielo oceánico ártico" }
+  ],
+
+  "analogias": [
+    "El océano es el sistema de calefacción y refrigeración del planeta: las corrientes oceánicas distribuyen el calor solar desde el ecuador a los polos, haciendo habitables latitudes que de otro modo serían inhóspitas.",
+    "El fitoplancton oceánico es como un campo agrícola invisible: produce la mitad del oxígeno del planeta, pero está compuesto por organismos que solo se ven al microscopio y que nadie recuerda proteger.",
+    "La exploración oceánica va por detrás de la exploración espacial: hemos mapeado con más detalle la superficie de Marte que el fondo de nuestros océanos — el 80% del lecho marino sigue sin explorar."
+  ],
+
+  "servicios_ecosistemicos": [
+    "Regulación del clima: absorbe el 90% del calor extra y el 25% del CO₂ de las emisiones humanas",
+    "Producción de oxígeno: el 50% del O₂ atmosférico proviene del fitoplancton marino",
+    "Pesca: fuente de proteínas para más de 3,000 millones de personas, con capturas de ~90 millones de toneladas/año",
+    "Transporte global: el 90% del comercio mundial se mueve por mar — el océano es la autopista de la globalización",
+    "Farmacología: medicamentos como la Ara-A (antiviral), ziconotida (analgésico), y citarabina (anticáncer) vienen del mar",
+    "Minerales y energía: nódulos polimetálicos, cobaltífera, gas de hidratos de metano, y energía mareomotriz y de olas"
+  ]
+}

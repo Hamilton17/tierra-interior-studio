@@ -1,0 +1,105 @@
+{
+  "id": "matorral_mediterraneo",
+
+  "fichas": [
+    {
+      "ico": "🌡️",
+      "titulo": "Temperatura media",
+      "valor": "10–35",
+      "unidad": "°C",
+      "contexto": "Veranos cálidos y secos (35 °C), inviernos suaves y lluviosos (10 °C). Este patrón inverso de lluvia — calor sin agua, agua sin calor — obliga a adaptaciones únicas en las plantas."
+    },
+    {
+      "ico": "💧",
+      "titulo": "Precipitación anual",
+      "valor": "300–700",
+      "unidad": "mm/año",
+      "contexto": "Casi toda cae en invierno. El verano es seco (2–4 meses con <20 mm). Esta sequía estival, combinada con el calor, es el rasgo definitorio del clima mediterráneo."
+    },
+    {
+      "ico": "🌍",
+      "titulo": "Superficie total",
+      "valor": "~2.3",
+      "unidad": "mill. km²",
+      "contexto": "Solo el 2% de la superficie terrestre. Pero 5 regiones distintas en el mundo tienen este clima: cuenca mediterránea, California, Chile central, SW de Australia y Cabo (Sudáfrica)."
+    },
+    {
+      "ico": "🌸",
+      "titulo": "Endemismo vegetal",
+      "valor": "~25,000",
+      "unidad": "spp. únicas",
+      "contexto": "El 20% de todas las plantas vasculares del mundo viven en estas 5 regiones. El Cabo (Sudáfrica) tiene más diversidad de plantas en 10 km² que toda Europa occidental."
+    },
+    {
+      "ico": "🔥",
+      "titulo": "Frecuencia de incendios",
+      "valor": "cada 10–40",
+      "unidad": "años",
+      "contexto": "El fuego es parte del ciclo natural. Muchas plantas tienen semillas que solo germinan con el calor del fuego (serotinia) o cortezas cork que las protegen de las llamas."
+    },
+    {
+      "ico": "🌿",
+      "titulo": "Plantas aromáticas",
+      "valor": "+500",
+      "unidad": "spp.",
+      "contexto": "Los aceites esenciales de lavanda, romero, tomillo, orégano y salvia son adaptaciones anti-herbívoro y anti-desecación. También son la base de la farmacología y la gastronomía mediterránea."
+    }
+  ],
+
+  "comparativas": {
+    "descripcion": "El matorral mediterráneo ocupa solo el 2% de la superficie pero alberga el 20% de las especies vegetales. Es uno de los 5 hotspots de biodiversidad más amenazados del mundo.",
+    "registros": [
+      { "tipo": "Mayor endemismo vegetal por km²",     "valor": "Fynbos del Cabo, SA",    "nota": "+9,000 spp. en 90,000 km² — más que toda Europa" },
+      { "tipo": "Bioma con mayor endemismo animal",    "valor": "~70% de endemismos",     "nota": "La mayoría de reptiles mediterráneos son únicos" },
+      { "tipo": "Bioma más amenazado por expansión urbana","valor": "50% transformado",   "nota": "California, Chile, Portugal, Cabo — más urbanizados que cualquier otro bioma" },
+      { "tipo": "Mayor diversidad de setas comestibles","valor": "~2,000 spp.",           "nota": "La cuenca mediterránea tiene más setas comestibles que cualquier otra región" }
+    ]
+  },
+
+  "metodos_estudio": [
+    {
+      "metodo": "Estudios de sucesión post-fuego",
+      "icon": "🔥",
+      "descripcion": "Parcelas permanentes monitorizadas antes y después de incendios documentan la resiliencia del matorral. Estudios en California y Israel muestran recuperación completa en 5–15 años si no hay invasoras."
+    },
+    {
+      "metodo": "Dendroecología mediterránea",
+      "icon": "🌳",
+      "descripcion": "Los anillos de crecimiento de encinas (Quercus suber, Q. ilex) con 400–500 años son archivos de sequías históricas. El Proyecto ITRDB tiene >2,000 series de anillos mediterráneos."
+    },
+    {
+      "metodo": "Trampas de fenología floral",
+      "icon": "🌸",
+      "descripcion": "Cámaras automáticas y observadores voluntarios registran las fechas de floración. En los últimos 30 años, la floración mediterránea se adelanta ~2 semanas por el calentamiento."
+    },
+    {
+      "metodo": "Análisis palinológico de sedimentos lacustres",
+      "icon": "🪨",
+      "descripcion": "El polen preservado en los sedimentos del fondo de lagos mediterráneos (Estanya, Padul, Tigalmamine) reconstruye la vegetación y el clima de los últimos 10,000 años."
+    }
+  ],
+
+  "hitos": [
+    { "anio": 1864, "evento": "George Perkins Marsh publica 'Man and Nature' describiendo la deforestación mediterránea en el Mediterráneo clásico como primer ejemplo de degradación ambiental documentada" },
+    { "anio": 1988, "evento": "El incendio de Yellowstone (EE.UU.) y los mega-incendios de Portugal impulsaron el primer estudio comparativo de regímenes de fuego en biomas mediterráneos" },
+    { "anio": 1992, "evento": "Los 5 hotspots mediterráneos incluidos en el plan de 'Conservation International' para biodiversidad global — primera clasificación formal de hotspots" },
+    { "anio": 2003, "evento": "Los mega-incendios del verano europeo (Francia, Portugal) quemaron >700,000 ha — evento sin precedentes atribuido al calentamiento global" },
+    { "anio": 2017, "evento": "Incendios de Portugal: 45 personas mueren en sus coches en una sola noche (17 jun) — mayor tragedia por incendios forestales de Europa occidental" },
+    { "anio": 2021, "evento": "Ola de calor mediterránea: Sicilia alcanza 48.8 °C, nuevo record europeo de temperatura — el clima mediterráneo se desplaza hacia el norte de Europa" }
+  ],
+
+  "analogias": [
+    "Las plantas del matorral mediterráneo son como camaleones bioquímicos: producen ceras, aceites y resinas que las protegen del sol en verano y les permiten crecer rápidamente en invierno.",
+    "El Cabo (Fynbos) de Sudáfrica es el equivalente botánico de las islas Galápagos: aislado por océanos y desiertos, ha evolucionado una flora tan única que los botánicos la consideran un sexto bioma.",
+    "Los incendios del matorral son como un reset del ecosistema: destruyen la capa de hojarasca, mineralizan nutrientes, y desencadenan la germinación de semillas que llevaban décadas esperando el calor del fuego."
+  ],
+
+  "servicios_ecosistemicos": [
+    "Agricultura mediterránea: olivos, viñas, almendros, cítricos — base de la dieta mediterránea declarada patrimonio de la UNESCO",
+    "Aceites esenciales y farmacología: lavanda, romero, tomillo, orégano, eucalipto — millones de euros en exportaciones anuales",
+    "Regulación hídrica: las cuencas mediterráneas amortiguan los aguaceros invernales y alimentan acuíferos que sostienen ciudades de millones de habitantes",
+    "Pesca: el Mediterráneo y California tienen pesquerías de alta valor (atún, anchoa, sardina) que dependen de la salud del ecosistema ribereño",
+    "Turismo cultural y natural: la cuenca mediterránea recibe más turismo internacional que cualquier otra región del mundo",
+    "Banco genético: la región mediterránea es cuna de la mayoría de las plantas cultivadas en Occidente (trigo, vid, olivo, higuera)"
+  ]
+}

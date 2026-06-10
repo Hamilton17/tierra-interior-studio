@@ -1,0 +1,38 @@
+{
+  "camera": {
+    "fov": 45, "near": 0.1, "far": 100,
+    "position": [0, 0.5, 3.0]
+  },
+
+  "autoRotate": {
+    "enabled": true,
+    "speed": 0.3
+  },
+
+  "lights": {
+    "ambient": { "color": "#aaccff", "intensity": 0.4 },
+    "sun":     { "color": "#ffffff", "intensity": 1.6, "position": [5, 3, 5] }
+  },
+
+  "controls": {
+    "minDistance": 1.5,
+    "maxDistance": 8,
+    "dampingFactor": 0.06
+  },
+
+  "overlay": {
+    "alpha": 0.55
+  },
+
+  "stars": {
+    "count": 2000,
+    "minRadius": 20,
+    "maxRadius": 50,
+    "size": 0.055
+  },
+
+  "marker": {
+    "color": "#ff3333",
+    "radius": 0.022
+  }
+}
